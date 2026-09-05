@@ -56,6 +56,7 @@ def run_backtest(df: pd.DataFrame, sig: pd.DataFrame, market: MarketProfile,
     exit_sig = sig["exit"].values
     stop_arr = sig["stop"].values
     tgt_arr = sig["target"].values
+    max_hold = int(sig["max_hold"].iloc[0]) if "max_hold" in sig.columns else 0  # 0 = tanpa time-stop
     idx = df.index
 
     fee_b, fee_s = market.fee_buy * cost_mult, market.fee_sell * cost_mult
@@ -108,7 +109,7 @@ def run_backtest(df: pd.DataFrame, sig: pd.DataFrame, market: MarketProfile,
         # --- 3) keputusan di CLOSE bar i, dieksekusi bar i+1 ---
         if pos is None and entry_sig[i] and np.isfinite(stop_arr[i]) and np.isfinite(tgt_arr[i]):
             pending = {"stop": float(stop_arr[i]), "target": float(tgt_arr[i])}
-        elif pos is not None and exit_sig[i]:
+        elif pos is not None and (exit_sig[i] or (max_hold and i - pos["i"] >= max_hold)):
             pending_exit = True
 
         # mark-to-market

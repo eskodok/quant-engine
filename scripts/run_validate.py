@@ -24,7 +24,9 @@ def main() -> int:
     now = pd.Timestamp.now(tz="UTC")
     groups: dict = {}
     lines = [f"# Validasi mingguan — {now:%Y-%m-%d} ", "", "| Simbol | Strategi | Verdict | Sebelumnya | PF OOS | Trade OOS | DSR | Alasan utama |", "|---|---|---|---|---|---|---|---|"]
-    for it in read_watchlist():
+    from dataclasses import replace
+    items = [replace(it, strategy=name) for it in read_watchlist() for name in STRATEGIES]
+    for it in items:
         prev = (load_validation(it.symbol, it.strategy) or {}).get("verdict", "-")
         if not it.csv_path.exists():
             lines.append(f"| {it.symbol} | {it.strategy} | NO_DATA | {prev} | | | | |"); continue

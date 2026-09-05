@@ -3,16 +3,28 @@
 #   market    : crypto_spot | crypto_perp | idx
 #   simbol    : crypto pakai format BTC/USDT ; saham IDX cukup kode emiten (BBCA)
 #   timeframe : crypto 4h atau 1d ; idx hanya 1d
-#   strategi  : opsional, default trend_pullback (pilihan lain: donchian_breakout)
-# Baris yang diawali # diabaikan.
+#   strategi  : opsional. Kosong = auto (engine memilih strategi yang lolos validasi terbaik).
+#               Pilihan manual: trend_pullback | donchian_breakout | rsi2_reversion | bollinger_reversion
+# Baris yang diawali # diabaikan. Validasi mingguan menguji SEMUA strategi untuk tiap simbol.
 
 crypto_spot BTC/USDT 4h
 crypto_spot ETH/USDT 4h
 crypto_spot SOL/USDT 4h
 crypto_spot BNB/USDT 4h
+crypto_spot BTC/USDT 1d
+crypto_spot ETH/USDT 1d
+crypto_spot SOL/USDT 1d
+crypto_spot BNB/USDT 1d
 
 idx BBCA 1d
 idx BBRI 1d
 idx BMRI 1d
+idx BBNI 1d
 idx TLKM 1d
 idx ASII 1d
+idx ICBP 1d
+idx INDF 1d
+idx KLBF 1d
+idx ANTM 1d
+idx UNTR 1d
+idx PGAS 1d

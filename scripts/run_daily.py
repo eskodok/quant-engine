@@ -17,7 +17,27 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from engine.config import MARKETS, RiskConfig  # noqa: E402
 from engine.data import load_csv  # noqa: E402
 from engine.scrub import scrub  # noqa: E402
-from engine.signal import REPORT_DIR, format_setup, generate  # noqa: E402
+from engine.signal import REPORT_DIR, format_setup, generate, load_validation  # noqa: E402
+from engine.strategy import STRATEGIES  # noqa: E402
+
+RANK = {"SHIP": 2, "FIX": 1}
+
+
+def pick_strategy(it) -> tuple[str, str]:
+    """'auto' -> strategi dengan validasi terbaik (per simbol, lalu basket). Tidak ada yang lolos -> default + catatan."""
+    if it.strategy != "auto":
+        return it.strategy, ""
+    best, best_key = None, (-1, 0.0)
+    for name in STRATEGIES:
+        for label in (it.symbol, f"POOLED_{it.market}_{it.timeframe}"):
+            v = load_validation(label, name)
+            if v and v["verdict"] in RANK:
+                key = (RANK[v["verdict"]], v["oos"].get("profit_factor", 0))
+                if key > best_key:
+                    best, best_key = name, key
+    if best:
+        return best, f"auto: {best} (validasi terbaik)"
+    return "trend_pullback", "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG"
 from engine.watchlist import read_watchlist  # noqa: E402
 
 EQUITY = {"idx": 100_000_000.0, "crypto_spot": 5_000.0, "crypto_perp": 5_000.0}  # ubah sesuai modal
@@ -29,7 +49,9 @@ def main() -> int:
     items = read_watchlist()
     rows, details, out = [], [], {"generated": str(now), "items": []}
     for it in items:
-        rec = {"key": it.key, "market": it.market, "symbol": it.symbol, "timeframe": it.timeframe, "strategy": it.strategy}
+        strat_name, strat_note = pick_strategy(it)
+        rec = {"key": it.key, "market": it.market, "symbol": it.symbol, "timeframe": it.timeframe,
+               "strategy": strat_name, "strategy_note": strat_note}
         if not it.csv_path.exists():
             rec.update(status="NO_DATA", note="file data belum ada (fetch gagal?)")
             out["items"].append(rec); rows.append(rec); continue
@@ -40,7 +62,7 @@ def main() -> int:
             if rep.blocked:
                 rec.update(status="DATA_BLOCKED", note="; ".join(f"{c.name}: {c.detail}" for c in rep.checks if c.severity == "BLOCK"))
                 out["items"].append(rec); rows.append(rec); continue
-            s = generate(df, it.symbol, it.market, it.timeframe, it.strategy,
+            s = generate(df, it.symbol, it.market, it.timeframe, strat_name,
                          risk=RiskConfig(initial_equity=EQUITY[it.market]))
             rec.update(status="OK", setup=asdict(s))
             if s.action == "LONG":

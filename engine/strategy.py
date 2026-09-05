@@ -12,7 +12,7 @@ from dataclasses import dataclass, field, replace
 import numpy as np
 import pandas as pd
 
-from .features import build_features
+from .features import build_features, ema, rsi
 
 
 @dataclass(frozen=True)
@@ -100,3 +100,65 @@ class DonchianBreakout(Strategy):
 
 
 STRATEGIES = {s.name: s for s in (TrendPullback, DonchianBreakout)}
+
+
+class RSI2Reversion(Strategy):
+    """Mean-reversion ala Connors: harga di atas EMA200 (tren besar naik atau minimal
+    tidak turun), RSI(2) sangat oversold -> beli di open berikutnya, keluar saat close
+    kembali di atas EMA cepat atau RSI(2) overbought, atau maksimal `max_hold` bar.
+    SL = close - atr_k*ATR. Target sengaja jauh (exit utama = sinyal)."""
+    name = "rsi2_reversion"
+    params = {"rsi_buy": 10.0, "exit_ema": 5, "atr_k": 2.5, "max_hold": 10, "need_trend": 1}
+    grid = {"rsi_buy": [5.0, 10.0, 15.0], "exit_ema": [5, 10], "need_trend": [0, 1]}
+
+    def features(self, df: pd.DataFrame) -> pd.DataFrame:
+        f = build_features(df, self.params)
+        f["rsi2"] = rsi(df.close, 2)
+        f["ema_exit"] = ema(df.close, int(self.params["exit_ema"]))
+        return f
+
+    def signals(self, f: pd.DataFrame) -> pd.DataFrame:
+        p = self.params
+        trend_ok = (f.close > f.ema_slow) if p["need_trend"] else (f.regime != -1)
+        entry = trend_ok & (f.rsi2 < p["rsi_buy"])
+        exit_ = (f.close > f.ema_exit) | (f.rsi2 > 70)
+        stop = f.close - p["atr_k"] * f.atr
+        target = f.close + 6 * f.atr
+        out = pd.DataFrame({"entry": entry.fillna(False), "exit": exit_.fillna(False),
+                            "stop": stop, "target": target}, index=f.index)
+        out["max_hold"] = int(p["max_hold"])  # time-stop, dieksekusi backtester
+        out["reason"] = np.where(entry, f"RSI2<{p['rsi_buy']:.0f} oversold, di atas EMA200" if p["need_trend"] else f"RSI2<{p['rsi_buy']:.0f} oversold, bukan downtrend", "")
+        out.loc[f[["ema_slow", "atr", "rsi2", "ema_exit"]].isna().any(axis=1), ["entry", "exit"]] = False
+        return out
+
+
+class BollingerReversion(Strategy):
+    """Close menembus di bawah Bollinger bawah (n, k) saat bukan downtrend -> beli;
+    keluar saat close kembali ke garis tengah (SMA n). SL = close - atr_k*ATR."""
+    name = "bollinger_reversion"
+    params = {"bb_n": 20, "bb_k": 2.0, "atr_k": 2.0, "need_trend": 0}
+    grid = {"bb_n": [20, 30], "bb_k": [2.0, 2.5], "need_trend": [0, 1]}
+
+    def features(self, df: pd.DataFrame) -> pd.DataFrame:
+        f = build_features(df, self.params)
+        n = int(self.params["bb_n"])
+        mid = df.close.rolling(n).mean()
+        sd = df.close.rolling(n).std()
+        f["bb_mid"], f["bb_lo"] = mid, mid - self.params["bb_k"] * sd
+        return f
+
+    def signals(self, f: pd.DataFrame) -> pd.DataFrame:
+        p = self.params
+        trend_ok = (f.close > f.ema_slow) if p["need_trend"] else (f.regime != -1)
+        entry = trend_ok & (f.close < f.bb_lo)
+        exit_ = f.close > f.bb_mid
+        stop = f.close - p["atr_k"] * f.atr
+        target = f.close + 6 * f.atr
+        out = pd.DataFrame({"entry": entry.fillna(False), "exit": exit_.fillna(False),
+                            "stop": stop, "target": target}, index=f.index)
+        out["reason"] = np.where(entry, f"close < Bollinger bawah({p['bb_n']},{p['bb_k']})", "")
+        out.loc[f[["ema_slow", "atr", "bb_lo", "bb_mid"]].isna().any(axis=1), ["entry", "exit"]] = False
+        return out
+
+
+STRATEGIES.update({s.name: s for s in (RSI2Reversion, BollingerReversion)})

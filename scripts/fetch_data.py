@@ -23,7 +23,7 @@ def main() -> int:
     failed = 0
     for it in items:
         try:
-            kw = {"limit_bars": 3000} if it.market.startswith("crypto") else {}
+            kw = ({"limit_bars": 12000 if it.timeframe == "4h" else 4000} if it.market.startswith("crypto") else {"years": 8})
             df = load(it.symbol, it.market, it.timeframe, cache=False, **kw)
             df.to_csv(it.csv_path, index_label="ts")
             log.append(f"| {it.key} | OK | {len(df)} | {df.index[-1]} | {df.attrs.get('source', it.market)} |")

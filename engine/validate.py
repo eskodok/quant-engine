@@ -189,6 +189,8 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
     if o["profit_factor"] < th.min_oos_profit_factor:
         fails.append(f"PF OOS {o['profit_factor']:.2f} < {th.min_oos_profit_factor}")
     is_pf, oos_pf = rep.is_metrics.get("profit_factor", 0), o["profit_factor"]
+    if is_pf < 1.0:
+        fails.append(f"PF in-sample {is_pf:.2f} < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan")
     if is_pf > 0 and np.isfinite(is_pf) and (is_pf - oos_pf) / is_pf > th.max_oos_degradation:
         fails.append(f"degradasi IS→OOS {(is_pf - oos_pf) / is_pf:.0%} > {th.max_oos_degradation:.0%}: indikasi overfit")
     if rep.oos_metrics_cost_x2["profit_factor"] < 1.0:
@@ -202,7 +204,7 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
         warns.append(f"parameter tidak stabil antar fold ({rep.param_stability:.0%})")
 
     # SCRAP = edge tidak ada / habis oleh biaya. FIX = edge ada tapi bukti belum cukup.
-    hard_fail = (o["profit_factor"] < th.min_oos_profit_factor
+    hard_fail = (o["profit_factor"] < th.min_oos_profit_factor or is_pf < 1.0
                  or rep.oos_metrics_cost_x2["profit_factor"] < 1.0
                  or o["n_trades"] < th.min_trades_oos // 3)
     if fails:
@@ -256,8 +258,7 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
     # DSR pada seri R-multiple per trade (n_obs = jumlah trade)
     rm = trades.r_multiple.dropna()
     sr_trade = float(rm.mean() / rm.std()) if len(rm) > 2 and rm.std() > 0 else 0.0
-    out.dsr_prob = deflated_sharpe(sr_trade, len(rm), 1, out.n_trials, float(rm.skew()), float(rm.kurt()) + 3,
-                                   var_sr_trials=0.25)
+    out.dsr_prob = deflated_sharpe(sr_trade, len(rm), 1, out.n_trials, float(rm.skew()), float(rm.kurt()) + 3)
     out.monte_carlo = monte_carlo_dd(trades, risk.initial_equity * len(reps))
     fails, warns = [], []
     if o["n_trades"] < th.min_trades_oos:
@@ -265,6 +266,8 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
     if o["profit_factor"] < th.min_oos_profit_factor:
         fails.append(f"PF OOS gabungan {o['profit_factor']:.2f} < {th.min_oos_profit_factor}")
     is_pf, oos_pf = out.is_metrics.get("profit_factor", 0), o["profit_factor"]
+    if is_pf < 1.0:
+        fails.append(f"PF in-sample {is_pf:.2f} < 1: OOS untung = kebetulan rezim, bukan edge")
     if is_pf > 0 and np.isfinite(is_pf) and (is_pf - oos_pf) / is_pf > th.max_oos_degradation:
         fails.append(f"degradasi IS→OOS {(is_pf - oos_pf) / is_pf:.0%} > {th.max_oos_degradation:.0%}")
     if out.oos_metrics_cost_x2["profit_factor"] < 1.0:
@@ -276,7 +279,7 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
     n_pos = sum(1 for r in reps if r.oos_metrics.get("profit_factor", 0) > 1)
     if n_pos < len(reps) / 2:
         warns.append(f"hanya {n_pos}/{len(reps)} simbol profitable OOS: edge tidak merata")
-    hard_fail = (oos_pf < th.min_oos_profit_factor or out.oos_metrics_cost_x2["profit_factor"] < 1.0
+    hard_fail = (oos_pf < th.min_oos_profit_factor or is_pf < 1.0 or out.oos_metrics_cost_x2["profit_factor"] < 1.0
                  or o["n_trades"] < th.min_trades_oos // 3)
     out.verdict = "SCRAP" if (fails and hard_fail) else ("FIX" if fails or warns else "SHIP")
     out.reasons = [f"Gabungan {len(reps)} simbol: " + ", ".join(r.symbol for r in reps)]

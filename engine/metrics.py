@@ -51,7 +51,7 @@ def deflated_sharpe(sharpe_annual: float, n_obs: int, bars_per_year: int, n_tria
     sr = sharpe_annual / np.sqrt(bars_per_year)  # per-bar Sharpe
     # ekspektasi maksimum SR dari n_trials percobaan tanpa sinyal
     if var_sr_trials is None:
-        var_sr_trials = (1.0 / np.sqrt(bars_per_year)) ** 2 * 0.25  # asumsi konservatif
+        var_sr_trials = 1.0 / n_obs  # varians estimator SR per-observasi di bawah H0 (SR=0)
     emc = 0.5772156649
     if n_trials > 1:
         sr0 = np.sqrt(var_sr_trials) * ((1 - emc) * stats.norm.ppf(1 - 1 / n_trials) +

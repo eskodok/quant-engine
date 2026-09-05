@@ -1,4 +1,4 @@
-# Quant Swing Engine v0.3 — anti garbage-in, garbage-out
+# Quant Swing Engine v0.4 — anti garbage-in, garbage-out
 
 > **Tidak bisa coding? Baca `SETUP.md`** — semua lewat browser, tidak perlu install apa pun.
 
@@ -65,6 +65,11 @@ watchlist.txt  --> scripts/fetch_data.py  --> data/*.csv          (GitHub, 06:15
 Claude (07:00 WIB) clone repo -> baca reports -> cari berita -> ringkasan ke kamu
 ```
 
+Validasi mingguan menguji **semua strategi** untuk tiap simbol; `run_daily` memilih otomatis
+strategi dengan verdict terbaik (SHIP > FIX) bila kolom strategi di watchlist kosong.
+Aturan tambahan: strategi harus profitable **in-sample** juga — OOS untung tapi IS rugi
+berarti kebetulan rezim, bukan edge (kasus nyata: Bollinger crypto 4H, IS 0.62 / OOS 1.31).
+
 Validasi dilakukan per simbol **dan** per basket (semua simbol satu market digabung):
 strategi swing per simbol hanya memberi 5–30 trade OOS, terlalu sedikit untuk disimpulkan;
 basket 5 saham memberi 5x bukti. Sinyal memakai verdict basket bila per simbol gagal hanya
@@ -77,7 +82,7 @@ engine/config.py    profil market (fee, slippage, lot, ARA/ARB), risk, threshold
 engine/data.py      loader ccxt / yfinance / csv -> satu format, bar belum tutup dibuang
 engine/scrub.py     gerbang kualitas data (BLOCK/WARN/OK)
 engine/features.py  indikator past-only + assert_no_lookahead()
-engine/strategy.py  TrendPullback, DonchianBreakout (fungsi murni close t -> keputusan)
+engine/strategy.py  TrendPullback, DonchianBreakout, RSI2Reversion, BollingerReversion (fungsi murni)
 engine/backtest.py  simulasi bar-per-bar, fill open t+1, SL/TP intrabar konservatif
 engine/metrics.py   PF, Sharpe, DD, deflated Sharpe, Monte Carlo DD
 engine/validate.py  walk-forward + stress biaya + verdict
@@ -94,7 +99,13 @@ Subclass `Strategy` di `engine/strategy.py`: isi `params`, `grid` (kecil!), dan
 `signals(f)` yang mengembalikan kolom `entry, exit, stop, target, reason` dari fitur
 sampai bar t saja. Daftarkan di `STRATEGIES`. Test lookahead otomatis mencakupnya.
 
-## Batasan v0.1 (sengaja)
+## Hasil di data riil (Sep 2026)
+
+Keempat strategi SCRAP pada BTC/ETH/SOL/BNB 4H (500 hari) dan 5 blue chip IDX (6 tahun):
+PF OOS basket 0.47–0.87. Engine bekerja; strateginya belum. v0.4 memperbesar bukti
+(crypto 4H 12.000 bar + 1D 4.000 bar, IDX 8 tahun, 12 emiten) sebelum riset lanjut.
+
+## Batasan v0.4 (sengaja)
 
 Long only; satu posisi per simbol; funding perp tidak dimodelkan (ada WARN);
 IDX hanya 1D via Yahoo (delay ~15 menit, split harus di-handle manual bila scrub BLOCK);

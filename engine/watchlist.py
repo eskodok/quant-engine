@@ -13,7 +13,7 @@ class Item:
     market: str
     symbol: str
     timeframe: str
-    strategy: str = "trend_pullback"
+    strategy: str = "auto"
 
     @property
     def key(self) -> str:
@@ -35,7 +35,7 @@ def read_watchlist(path: Path | str = ROOT / "watchlist.txt") -> list[Item]:
             errors.append(f"baris {ln}: butuh 'market simbol timeframe' -> '{line}'")
             continue
         market, symbol, tf = parts[0].lower(), parts[1].upper(), parts[2].lower()
-        strat = parts[3].lower() if len(parts) > 3 else "trend_pullback"
+        strat = parts[3].lower() if len(parts) > 3 else "auto"
         if market not in ("crypto_spot", "crypto_perp", "idx"):
             errors.append(f"baris {ln}: market '{market}' tidak dikenal")
             continue
