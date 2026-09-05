@@ -1,0 +1,13 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {},
+  "oos": {},
+  "oos_cost_x2": {},
+  "dsr_prob": 0.0,
+  "n_trials": 0,
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "Data terlalu pendek untuk 5 fold (test_len=37 bar)"
+  ],
+  "generated": "2026-09-05 01:39:39.871207+00:00"
+}

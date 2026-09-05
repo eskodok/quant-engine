@@ -1,0 +1,34 @@
+{
+  "verdict": "FIX",
+  "best_params": {},
+  "oos": {
+    "n_trades": 17,
+    "profit_factor": 2.000312594955341,
+    "win_rate": 0.7058823529411765,
+    "expectancy_r": 0.3047099186967991,
+    "avg_win_r": 0.8865707339691205,
+    "avg_loss_r": -1.091756037956772,
+    "avg_bars": 11.882352941176471,
+    "exposure": 11.222222222222221,
+    "sharpe": 14.31607057160709,
+    "sortino": 54.43117127632475,
+    "max_dd": -0.019283920598234385,
+    "total_return": 0.03868493987141797,
+    "cagr": 100.28222319528524,
+    "calmar": 5200.3026399344835,
+    "skew": -0.3702105937408016,
+    "kurt": -0.6041563139371124
+  },
+  "oos_cost_x2": {
+    "profit_factor": 1.6295451613321543,
+    "n_trades": 17
+  },
+  "dsr_prob": 0.2088477923996349,
+  "n_trials": 40,
+  "reasons": [
+    "Gabungan 1 simbol: BNB/USDT",
+    "GAGAL: trade OOS gabungan 17 < 30",
+    "PERINGATAN: deflated Sharpe prob 0.21 < 0.9"
+  ],
+  "generated": "2026-09-05 01:41:05.387984+00:00"
+}

@@ -2,36 +2,35 @@
   "verdict": "SCRAP",
   "best_params": {},
   "oos": {
-    "n_trades": 16,
-    "profit_factor": 0.47256561041718653,
-    "win_rate": 0.25,
-    "expectancy_r": -0.19834066213477675,
-    "avg_win_r": 0.9812630388489322,
-    "avg_loss_r": -0.591541895796013,
-    "avg_bars": 5.1875,
-    "exposure": 4.882352941176471,
-    "sharpe": -4.7074193049466775,
-    "sortino": -9.00906179091426,
-    "max_dd": -0.009186109828636945,
-    "total_return": -0.00918610982863699,
-    "cagr": -0.12453479293912839,
-    "calmar": -13.55685869886961,
-    "skew": 0.9226512665838611,
-    "kurt": 0.3058072331814108
+    "n_trades": 99,
+    "profit_factor": 0.7661353069064037,
+    "win_rate": 0.30303030303030304,
+    "expectancy_r": -0.07583658679100641,
+    "avg_win_r": 1.1320323431070909,
+    "avg_loss_r": -0.600996991094527,
+    "avg_bars": 7.090909090909091,
+    "exposure": 7.02,
+    "sharpe": -1.731646828957816,
+    "sortino": -4.552972436458861,
+    "max_dd": -0.014448975222558547,
+    "total_return": -0.0076279272074104565,
+    "cagr": -0.018585188444220635,
+    "calmar": -1.2862634310012797,
+    "skew": 1.0002227861707675,
+    "kurt": 0.21438075888953012
   },
   "oos_cost_x2": {
-    "profit_factor": 0.30550200189928123,
-    "n_trades": 16
+    "profit_factor": 0.6898772988676286,
+    "n_trades": 99
   },
-  "dsr_prob": 4.135066120130979e-08,
+  "dsr_prob": 0.00046819491233151563,
   "n_trials": 135,
   "reasons": [
-    "Gabungan 4 simbol: BBCA, BMRI, TLKM, ASII",
-    "GAGAL: trade OOS gabungan 16 < 30",
-    "GAGAL: PF OOS gabungan 0.47 < 1.15",
-    "GAGAL: PF rata-rata dengan biaya x2 = 0.31 < 1",
-    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9",
-    "PERINGATAN: hanya 1/4 simbol profitable OOS: edge tidak merata"
+    "Gabungan 12 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, KLBF, ANTM, UNTR, PGAS",
+    "GAGAL: PF OOS gabungan 0.77 < 1.15",
+    "GAGAL: PF in-sample 0.78 < 1: OOS untung = kebetulan rezim, bukan edge",
+    "GAGAL: PF rata-rata dengan biaya x2 = 0.69 < 1",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9"
   ],
-  "generated": "2026-09-05 01:24:48.348791+00:00"
+  "generated": "2026-09-05 01:41:05.419085+00:00"
 }

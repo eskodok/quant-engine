@@ -1,0 +1,37 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {},
+  "oos": {
+    "n_trades": 43,
+    "profit_factor": 0.9277143085039609,
+    "win_rate": 0.3023255813953488,
+    "expectancy_r": 0.011178189356056746,
+    "avg_win_r": 2.4259752345165597,
+    "avg_loss_r": -1.0352338635468281,
+    "avg_bars": 10.976744186046512,
+    "exposure": 10.727272727272727,
+    "sharpe": -1.1767069937479024,
+    "sortino": -5.716430882212814,
+    "max_dd": -0.059959050445992756,
+    "total_return": -0.0151716906057201,
+    "cagr": -0.5327652044058083,
+    "calmar": -8.885484350451629,
+    "skew": 1.2809275027481204,
+    "kurt": 0.3374293530041452
+  },
+  "oos_cost_x2": {
+    "profit_factor": 0.8022197673199527,
+    "n_trades": 43
+  },
+  "dsr_prob": 0.014844073793277188,
+  "n_trials": 45,
+  "reasons": [
+    "Gabungan 1 simbol: BNB/USDT",
+    "GAGAL: PF OOS gabungan 0.93 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 40% > 40%",
+    "GAGAL: PF rata-rata dengan biaya x2 = 0.80 < 1",
+    "PERINGATAN: deflated Sharpe prob 0.01 < 0.9",
+    "PERINGATAN: hanya 0/1 simbol profitable OOS: edge tidak merata"
+  ],
+  "generated": "2026-09-05 01:41:05.332473+00:00"
+}

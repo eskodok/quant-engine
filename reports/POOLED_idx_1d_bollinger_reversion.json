@@ -1,0 +1,37 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {},
+  "oos": {
+    "n_trades": 82,
+    "profit_factor": 0.7020446595558542,
+    "win_rate": 0.5121951219512195,
+    "expectancy_r": -0.345345163622326,
+    "avg_win_r": 0.7256142878110372,
+    "avg_loss_r": -1.4698525876273574,
+    "avg_bars": 7.012195121951219,
+    "exposure": 6.927710843373494,
+    "sharpe": -2.5378385288551275,
+    "sortino": -8.6822872980343,
+    "max_dd": -0.013522488395886628,
+    "total_return": -0.010414459746395988,
+    "cagr": -0.030430068777488994,
+    "calmar": -2.2503305520857713,
+    "skew": 0.10124272714666097,
+    "kurt": -1.5450869072548057
+  },
+  "oos_cost_x2": {
+    "profit_factor": 0.706193249594707,
+    "n_trades": 82
+  },
+  "dsr_prob": 5.467130914359115e-11,
+  "n_trials": 40,
+  "reasons": [
+    "Gabungan 12 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, KLBF, ANTM, UNTR, PGAS",
+    "GAGAL: PF OOS gabungan 0.70 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 42% > 40%",
+    "GAGAL: PF rata-rata dengan biaya x2 = 0.71 < 1",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9",
+    "PERINGATAN: hanya 3/12 simbol profitable OOS: edge tidak merata"
+  ],
+  "generated": "2026-09-05 01:41:05.511678+00:00"
+}

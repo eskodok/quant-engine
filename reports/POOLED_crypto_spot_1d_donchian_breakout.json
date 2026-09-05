@@ -1,0 +1,12 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {},
+  "oos": {},
+  "oos_cost_x2": {},
+  "dsr_prob": 0.0,
+  "n_trials": 0,
+  "reasons": [
+    "tidak ada laporan OOS yang bisa digabung"
+  ],
+  "generated": "2026-09-05 01:41:05.388501+00:00"
+}

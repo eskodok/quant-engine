@@ -1,123 +1,79 @@
 {
-  "generated": "2026-09-05 01:24:48.819579+00:00",
+  "generated": "2026-09-05 01:41:05.947296+00:00",
   "items": [
     {
       "key": "crypto_spot__BTC-USDT__4h",
       "market": "crypto_spot",
       "symbol": "BTC/USDT",
       "timeframe": "4h",
-      "strategy": "trend_pullback",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "BTC/USDT",
-        "market": "crypto_spot",
-        "timeframe": "4h",
-        "strategy": "trend_pullback",
-        "as_of": "2026-09-04 20:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 79652.7,
-        "entry_zone": [
-          79398.844085,
-          79906.555915
-        ],
-        "stop": 78151.5881702008,
-        "target": 81904.36774469879,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.0,
-        "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.83 -> +0.00"
-        ],
-        "reasons": [
-          "regime UPTREND, ADX 23, RSI 54, close vs EMA20/50/200: +0.3%/+1.5%/+9.3%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
-        ],
-        "regime": "UPTREND",
-        "validation_verdict": "SCRAP",
-        "data_warnings": []
-      }
+      "strategy": "bollinger_reversion",
+      "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
+      "scrub": [
+        {
+          "check": "freshness",
+          "sev": "BLOCK",
+          "detail": "bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "freshness: bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
     },
     {
       "key": "crypto_spot__ETH-USDT__4h",
       "market": "crypto_spot",
       "symbol": "ETH/USDT",
       "timeframe": "4h",
-      "strategy": "trend_pullback",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "ETH/USDT",
-        "market": "crypto_spot",
-        "timeframe": "4h",
-        "strategy": "trend_pullback",
-        "as_of": "2026-09-04 20:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 2455.69,
-        "entry_zone": [
-          2446.037593,
-          2465.342407
-        ],
-        "stop": 2412.8851859408283,
-        "target": 2519.8972210887578,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.0,
-        "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 1.13 -> +0.00"
-        ],
-        "reasons": [
-          "regime UPTREND, ADX 21, RSI 50, close vs EMA20/50/200: -0.2%/+0.5%/+10.0%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
-        ],
-        "regime": "UPTREND",
-        "validation_verdict": "SCRAP",
-        "data_warnings": []
-      }
+      "strategy": "bollinger_reversion",
+      "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
+      "scrub": [
+        {
+          "check": "freshness",
+          "sev": "BLOCK",
+          "detail": "bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "freshness: bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
     },
     {
       "key": "crypto_spot__SOL-USDT__4h",
       "market": "crypto_spot",
       "symbol": "SOL/USDT",
       "timeframe": "4h",
-      "strategy": "trend_pullback",
+      "strategy": "bollinger_reversion",
+      "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
       "scrub": [],
       "status": "OK",
       "setup": {
         "symbol": "SOL/USDT",
         "market": "crypto_spot",
         "timeframe": "4h",
-        "strategy": "trend_pullback",
+        "strategy": "bollinger_reversion",
         "as_of": "2026-09-04 20:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 101.93,
+        "action": "AVOID_OR_EXIT",
+        "entry_ref": 101.91,
         "entry_zone": [
-          101.458882,
-          102.401118
+          101.455969,
+          102.364031
         ],
-        "stop": 99.26776476842026,
-        "target": 105.92335284736961,
+        "stop": 98.2777506978775,
+        "target": 112.8067479063675,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.0,
+        "confidence": 0.55,
         "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.37 -> +0.00"
+          "validasi per simbol SCRAP -> memakai validasi basket FIX (PF OOS 2.00, 17 trade)",
+          "verdict validasi FIX -> basis 0.35",
+          "PF OOS 2.00 -> +0.20"
         ],
         "reasons": [
           "regime UPTREND, ADX 20, RSI 48, close vs EMA20/50/200: -0.4%/+0.5%/+12.1%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "UPTREND",
-        "validation_verdict": "SCRAP",
+        "validation_verdict": "FIX",
         "data_warnings": []
       }
     },
@@ -126,38 +82,208 @@
       "market": "crypto_spot",
       "symbol": "BNB/USDT",
       "timeframe": "4h",
-      "strategy": "trend_pullback",
+      "strategy": "bollinger_reversion",
+      "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
       "scrub": [],
       "status": "OK",
       "setup": {
         "symbol": "BNB/USDT",
         "market": "crypto_spot",
         "timeframe": "4h",
-        "strategy": "trend_pullback",
+        "strategy": "bollinger_reversion",
         "as_of": "2026-09-04 20:00:00+00:00",
-        "action": "NO_TRADE",
+        "action": "AVOID_OR_EXIT",
         "entry_ref": 721.3,
         "entry_zone": [
           719.014128,
           723.585872
         ],
-        "stop": 704.4282563927565,
-        "target": 746.6076154108653,
+        "stop": 703.0130255710257,
+        "target": 776.160923286923,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.052552223167682696,
+        "confidence": 0.6000000000000001,
         "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 1.16 -> +0.00",
+          "validasi per simbol SCRAP -> memakai validasi basket FIX (PF OOS 2.00, 17 trade)",
+          "verdict validasi FIX -> basis 0.35",
+          "PF OOS 2.00 -> +0.20",
           "ADX 27 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
           "regime UPTREND, ADX 27, RSI 63, close vs EMA20/50/200: +1.7%/+3.1%/+9.7%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "UPTREND",
+        "validation_verdict": "FIX",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__BTC-USDT__1d",
+      "market": "crypto_spot",
+      "symbol": "BTC/USDT",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BTC/USDT",
+        "market": "crypto_spot",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 00:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 79646.6,
+        "entry_zone": [
+          79023.447642,
+          80269.752358
+        ],
+        "stop": 75029.1952840574,
+        "target": 88881.40943188523,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00",
+          "ADX 46 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime SIDEWAYS, ADX 46, RSI 66, close vs EMA20/50/200: +5.2%/+12.0%/+9.8%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "SIDEWAYS",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__ETH-USDT__1d",
+      "market": "crypto_spot",
+      "symbol": "ETH/USDT",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "ETH/USDT",
+        "market": "crypto_spot",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 00:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 2456.02,
+        "entry_zone": [
+          2430.793602,
+          2481.246398
+        ],
+        "stop": 2306.617203955366,
+        "target": 2754.8255920892675,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00",
+          "ADX 50 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime SIDEWAYS, ADX 50, RSI 63, close vs EMA20/50/200: +4.7%/+14.0%/+13.0%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "SIDEWAYS",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__SOL-USDT__1d",
+      "market": "crypto_spot",
+      "symbol": "SOL/USDT",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "SOL/USDT",
+        "market": "crypto_spot",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 00:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 101.91,
+        "entry_zone": [
+          100.646101,
+          103.173899
+        ],
+        "stop": 94.88220208858502,
+        "target": 115.96559582282995,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00",
+          "ADX 49 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime SIDEWAYS, ADX 49, RSI 63, close vs EMA20/50/200: +5.9%/+16.4%/+12.3%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "SIDEWAYS",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__BNB-USDT__1d",
+      "market": "crypto_spot",
+      "symbol": "BNB/USDT",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BNB/USDT",
+        "market": "crypto_spot",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 00:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 721.05,
+        "entry_zone": [
+          716.114959,
+          725.985041
+        ],
+        "stop": 665.5799186352585,
+        "target": 831.9901627294828,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00",
+          "ADX 42 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime SIDEWAYS, ADX 42, RSI 71, close vs EMA20/50/200: +6.2%/+12.3%/+10.8%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "SIDEWAYS",
         "validation_verdict": "SCRAP",
         "data_warnings": []
       }
@@ -168,6 +294,7 @@
       "symbol": "BBCA",
       "timeframe": "1d",
       "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
       "scrub": [],
       "status": "OK",
       "setup": {
@@ -191,7 +318,7 @@
         "confidence": 0.0,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00"
+          "PF OOS 0.69 -> +0.00"
         ],
         "reasons": [
           "regime DOWNTREND, ADX 19, RSI 64, close vs EMA20/50/200: +3.4%/+5.5%/-1.9%",
@@ -208,6 +335,7 @@
       "symbol": "BBRI",
       "timeframe": "1d",
       "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
       "scrub": [],
       "status": "OK",
       "setup": {
@@ -223,15 +351,15 @@
           3407.091856
         ],
         "stop": 3135.8162884334806,
-        "target": 3771.275567349779,
+        "target": 3898.3674231330388,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.05,
+        "confidence": 0.13094342545053544,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00",
+          "PF OOS 1.49 -> +0.08",
           "ADX 35 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
@@ -249,6 +377,7 @@
       "symbol": "BMRI",
       "timeframe": "1d",
       "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
       "scrub": [],
       "status": "OK",
       "setup": {
@@ -264,7 +393,7 @@
           4439.371244
         ],
         "stop": 4161.257512971342,
-        "target": 5196.227461085973,
+        "target": 4808.113730542987,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -272,7 +401,7 @@
         "confidence": 0.0,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00"
+          "PF OOS 0.24 -> +0.00"
         ],
         "reasons": [
           "regime DOWNTREND, ADX 15, RSI 64, close vs EMA20/50/200: +3.8%/+4.5%/-1.4%",
@@ -284,11 +413,54 @@
       }
     },
     {
+      "key": "idx__BBNI__1d",
+      "market": "idx",
+      "symbol": "BBNI",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BBNI",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 3940.0,
+        "entry_zone": [
+          3919.624865,
+          3960.375135
+        ],
+        "stop": 3719.2497300346927,
+        "target": 4381.500539930615,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.05 -> +0.00",
+          "ADX 30 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime SIDEWAYS, ADX 30, RSI 71, close vs EMA20/50/200: +5.2%/+7.8%/+1.8%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "SIDEWAYS",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
       "key": "idx__TLKM__1d",
       "market": "idx",
       "symbol": "TLKM",
       "timeframe": "1d",
       "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
       "scrub": [],
       "status": "OK",
       "setup": {
@@ -312,7 +484,7 @@
         "confidence": 0.0,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00"
+          "PF OOS 0.44 -> +0.00"
         ],
         "reasons": [
           "regime DOWNTREND, ADX 10, RSI 49, close vs EMA20/50/200: -0.0%/-1.3%/-10.0%",
@@ -329,6 +501,7 @@
       "symbol": "ASII",
       "timeframe": "1d",
       "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
       "scrub": [],
       "status": "OK",
       "setup": {
@@ -349,13 +522,260 @@
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.1388152758741698,
+        "confidence": 0.09300465538069247,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 1.74 -> +0.14"
+          "PF OOS 1.55 -> +0.09"
         ],
         "reasons": [
           "regime DOWNTREND, ADX 16, RSI 51, close vs EMA20/50/200: +0.5%/-1.0%/-9.9%",
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__ICBP__1d",
+      "market": "idx",
+      "symbol": "ICBP",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "ICBP",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "AVOID_OR_EXIT",
+        "entry_ref": 7275.0,
+        "entry_zone": [
+          7226.244234,
+          7323.755766
+        ],
+        "stop": 7152.488467379167,
+        "target": 7458.7672989312505,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00",
+          "ADX 39 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 39, RSI 43, close vs EMA20/50/200: -2.9%/-0.1%/-5.0%",
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__INDF__1d",
+      "market": "idx",
+      "symbol": "INDF",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "INDF",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 7225.0,
+        "entry_zone": [
+          7189.900452,
+          7260.099548
+        ],
+        "stop": 7004.800904912152,
+        "target": 7665.398190175696,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.02923794510600279,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.27 -> +0.03"
+        ],
+        "reasons": [
+          "regime UPTREND, ADX 24, RSI 50, close vs EMA20/50/200: -0.4%/+1.9%/+3.8%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "UPTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__KLBF__1d",
+      "market": "idx",
+      "symbol": "KLBF",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "KLBF",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "AVOID_OR_EXIT",
+        "entry_ref": 775.0,
+        "entry_zone": [
+          768.464874,
+          781.535126
+        ],
+        "stop": 736.9297480728679,
+        "target": 832.105377890698,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.10705662706422839,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.60 -> +0.11"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 23, RSI 49, close vs EMA20/50/200: -1.0%/-0.4%/-16.8%",
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__ANTM__1d",
+      "market": "idx",
+      "symbol": "ANTM",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "ANTM",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 3120.0,
+        "entry_zone": [
+          3096.932845,
+          3143.067155
+        ],
+        "stop": 2973.8656899535013,
+        "target": 3339.2014650697483,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.67 -> +0.00"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 13, RSI 53, close vs EMA20/50/200: +0.7%/+1.5%/-2.3%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__UNTR__1d",
+      "market": "idx",
+      "symbol": "UNTR",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "UNTR",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 24950.0,
+        "entry_zone": [
+          24792.283909,
+          25107.716091
+        ],
+        "stop": 23409.56781891567,
+        "target": 28030.864362168657,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.18152939170634136,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.92 -> +0.18"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 21, RSI 56, close vs EMA20/50/200: +2.2%/+1.9%/-3.6%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__PGAS__1d",
+      "market": "idx",
+      "symbol": "PGAS",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "PGAS",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "AVOID_OR_EXIT",
+        "entry_ref": 1520.0,
+        "entry_zone": [
+          1511.821699,
+          1528.178301
+        ],
+        "stop": 1478.6433985119743,
+        "target": 1602.7132029760514,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.48 -> +0.00"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 11, RSI 50, close vs EMA20/50/200: -0.1%/-1.2%/-10.3%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",

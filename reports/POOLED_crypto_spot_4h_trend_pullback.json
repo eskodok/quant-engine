@@ -2,34 +2,36 @@
   "verdict": "SCRAP",
   "best_params": {},
   "oos": {
-    "n_trades": 70,
-    "profit_factor": 0.8688146370372882,
-    "win_rate": 0.2857142857142857,
-    "expectancy_r": -0.05405615236095273,
-    "avg_win_r": 1.4709603328771128,
-    "avg_loss_r": -0.6640627464561788,
-    "avg_bars": 5.542857142857143,
-    "exposure": 5.464788732394366,
-    "sharpe": -2.684756196267412,
-    "sortino": -6.684793105947544,
-    "max_dd": -0.017298665208281407,
-    "total_return": -0.005898396769365766,
-    "cagr": -0.16679465097313673,
-    "calmar": -9.642053243118836,
-    "skew": 0.8815284458481357,
-    "kurt": 0.05536081165280349
+    "n_trades": 36,
+    "profit_factor": 0.4989432207896822,
+    "win_rate": 0.16666666666666666,
+    "expectancy_r": -0.12318638199082546,
+    "avg_win_r": 1.9375151345780484,
+    "avg_loss_r": -0.5353266853046003,
+    "avg_bars": 9.86111111111111,
+    "exposure": 9.594594594594595,
+    "sharpe": -11.386817577989962,
+    "sortino": -22.303094190055234,
+    "max_dd": -0.06070551594486266,
+    "total_return": -0.06070551594486262,
+    "cagr": -0.9754439258554496,
+    "calmar": -16.06845622960229,
+    "skew": 1.5187185126182268,
+    "kurt": 2.9922138104872245
   },
   "oos_cost_x2": {
-    "profit_factor": 0.6647061310783399,
-    "n_trades": 70
+    "profit_factor": 0.4023833314401204,
+    "n_trades": 36
   },
-  "dsr_prob": 4.6402117646326027e-29,
+  "dsr_prob": 0.0016218376866695512,
   "n_trials": 135,
   "reasons": [
-    "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
-    "GAGAL: PF OOS gabungan 0.87 < 1.15",
-    "GAGAL: PF rata-rata dengan biaya x2 = 0.66 < 1",
-    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9"
+    "Gabungan 1 simbol: BNB/USDT",
+    "GAGAL: PF OOS gabungan 0.50 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 51% > 40%",
+    "GAGAL: PF rata-rata dengan biaya x2 = 0.40 < 1",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9",
+    "PERINGATAN: hanya 0/1 simbol profitable OOS: edge tidak merata"
   ],
-  "generated": "2026-09-05 01:24:48.319906+00:00"
+  "generated": "2026-09-05 01:41:05.305081+00:00"
 }

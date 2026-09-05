@@ -2,26 +2,25 @@
 
 **Verdict: SCRAP**
 
-- Gabungan 4 simbol: BBCA, BMRI, TLKM, ASII
-- GAGAL: trade OOS gabungan 16 < 30
-- GAGAL: PF OOS gabungan 0.47 < 1.15
-- GAGAL: PF rata-rata dengan biaya x2 = 0.31 < 1
+- Gabungan 12 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, KLBF, ANTM, UNTR, PGAS
+- GAGAL: PF OOS gabungan 0.77 < 1.15
+- GAGAL: PF in-sample 0.78 < 1: OOS untung = kebetulan rezim, bukan edge
+- GAGAL: PF rata-rata dengan biaya x2 = 0.69 < 1
 - PERINGATAN: deflated Sharpe prob 0.00 < 0.9
-- PERINGATAN: hanya 1/4 simbol profitable OOS: edge tidak merata
 
 | Metrik | In-sample (rata2 fold) | Out-of-sample (gabungan) | OOS biaya x2 |
 |---|---|---|---|
-| Trades | 13 | 16 | 16 |
-| Profit factor | 0.74 | 0.47 | 0.31 |
-| Win rate | 26.3% | 25.0% | 0.0% |
-| Expectancy (R) | -0.10 | -0.20 | 0.00 |
-| Sharpe | -0.24 | -4.71 | 0.00 |
-| Max DD | -3.2% | -0.9% | 0.0% |
-| CAGR | -0.3% | -12.5% | 0.0% |
+| Trades | 18 | 99 | 99 |
+| Profit factor | 0.78 | 0.77 | 0.69 |
+| Win rate | 25.0% | 30.3% | 0.0% |
+| Expectancy (R) | -0.11 | -0.08 | 0.00 |
+| Sharpe | -0.28 | -1.73 | 0.00 |
+| Max DD | -4.8% | -1.4% | 0.0% |
+| CAGR | -0.4% | -1.9% | 0.0% |
 
 - Deflated Sharpe prob (n_trials=135): 0.00
-- Stabilitas parameter antar fold: 75%
-- Monte Carlo max DD: median -1.2%, p95 -1.5%
+- Stabilitas parameter antar fold: 77%
+- Monte Carlo max DD: median -1.1%, p95 -1.5%
 - Parameter terpilih (fold terakhir): {}
 
 ### Fold
