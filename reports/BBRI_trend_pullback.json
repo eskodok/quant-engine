@@ -1,0 +1,47 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 15.0,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 0,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": 0.0,
+    "sharpe": 0.0,
+    "sortino": 0.0,
+    "max_dd": 0.0,
+    "cagr": 0.0,
+    "total_return": 0.0,
+    "avg_bars": 0.0,
+    "exposure": 0.0
+  },
+  "oos_cost_x2": {
+    "n_trades": 0,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": 0.0,
+    "sharpe": 0.0,
+    "sortino": 0.0,
+    "max_dd": 0.0,
+    "cagr": 0.0,
+    "total_return": 0.0,
+    "avg_bars": 0.0,
+    "exposure": 0.0
+  },
+  "dsr_prob": 0.033463271426786186,
+  "n_trials": 135,
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 0 < 30: belum cukup bukti",
+    "GAGAL: PF OOS 0.00 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 100% > 40%: indikasi overfit",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.00 < 1: edge habis dimakan biaya",
+    "PERINGATAN: deflated Sharpe prob 0.03 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 0 trade OOS (300.0/100 trade)",
+    "PERINGATAN: parameter tidak stabil antar fold (40%)"
+  ],
+  "generated": "2026-09-05 01:24:39.115818+00:00"
+}

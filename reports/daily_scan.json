@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-05 01:11:58.185793+00:00",
+  "generated": "2026-09-05 01:24:48.819579+00:00",
   "items": [
     {
       "key": "crypto_spot__BTC-USDT__4h",
@@ -168,15 +168,39 @@
       "symbol": "BBCA",
       "timeframe": "1d",
       "strategy": "trend_pullback",
-      "scrub": [
-        {
-          "check": "timestamp.gaps",
-          "sev": "BLOCK",
-          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
-        }
-      ],
-      "status": "DATA_BLOCKED",
-      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BBCA",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 6700.0,
+        "entry_zone": [
+          6664.870362,
+          6735.129638
+        ],
+        "stop": 6329.740724508059,
+        "target": 7255.388913237911,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 19, RSI 64, close vs EMA20/50/200: +3.4%/+5.5%/-1.9%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
     },
     {
       "key": "idx__BBRI__1d",
@@ -184,15 +208,40 @@
       "symbol": "BBRI",
       "timeframe": "1d",
       "strategy": "trend_pullback",
-      "scrub": [
-        {
-          "check": "timestamp.gaps",
-          "sev": "BLOCK",
-          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
-        }
-      ],
-      "status": "DATA_BLOCKED",
-      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BBRI",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 3390.0,
+        "entry_zone": [
+          3372.908144,
+          3407.091856
+        ],
+        "stop": 3135.8162884334806,
+        "target": 3771.275567349779,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.05,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00",
+          "ADX 35 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime SIDEWAYS, ADX 35, RSI 71, close vs EMA20/50/200: +5.6%/+9.2%/+2.0%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "SIDEWAYS",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
     },
     {
       "key": "idx__BMRI__1d",
@@ -200,15 +249,39 @@
       "symbol": "BMRI",
       "timeframe": "1d",
       "strategy": "trend_pullback",
-      "scrub": [
-        {
-          "check": "timestamp.gaps",
-          "sev": "BLOCK",
-          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
-        }
-      ],
-      "status": "DATA_BLOCKED",
-      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BMRI",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 4420.0,
+        "entry_zone": [
+          4400.628756,
+          4439.371244
+        ],
+        "stop": 4161.257512971342,
+        "target": 5196.227461085973,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 15, RSI 64, close vs EMA20/50/200: +3.8%/+4.5%/-1.4%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
     },
     {
       "key": "idx__TLKM__1d",
@@ -216,15 +289,39 @@
       "symbol": "TLKM",
       "timeframe": "1d",
       "strategy": "trend_pullback",
-      "scrub": [
-        {
-          "check": "timestamp.gaps",
-          "sev": "BLOCK",
-          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
-        }
-      ],
-      "status": "DATA_BLOCKED",
-      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "TLKM",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "AVOID_OR_EXIT",
+        "entry_ref": 2610.0,
+        "entry_zone": [
+          2596.691085,
+          2623.308915
+        ],
+        "stop": 2533.3821692162132,
+        "target": 2724.92674617568,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.00 -> +0.00"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 10, RSI 49, close vs EMA20/50/200: -0.0%/-1.3%/-10.0%",
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
     },
     {
       "key": "idx__ASII__1d",
@@ -232,15 +329,39 @@
       "symbol": "ASII",
       "timeframe": "1d",
       "strategy": "trend_pullback",
-      "scrub": [
-        {
-          "check": "timestamp.gaps",
-          "sev": "BLOCK",
-          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
-        }
-      ],
-      "status": "DATA_BLOCKED",
-      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "ASII",
+        "market": "idx",
+        "timeframe": "1d",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 09:00:00+00:00",
+        "action": "AVOID_OR_EXIT",
+        "entry_ref": 4900.0,
+        "entry_zone": [
+          4870.93315,
+          4929.06685
+        ],
+        "stop": 4711.866300235743,
+        "target": 5182.200549646384,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.1388152758741698,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.74 -> +0.14"
+        ],
+        "reasons": [
+          "regime DOWNTREND, ADX 16, RSI 51, close vs EMA20/50/200: +0.5%/-1.0%/-9.9%",
+          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
+        ],
+        "regime": "DOWNTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
     }
   ]
 }
