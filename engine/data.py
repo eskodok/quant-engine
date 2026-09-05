@@ -36,7 +36,7 @@ def _finalize(df: pd.DataFrame, timeframe: str, drop_open_bar: bool = True) -> p
 
 # Urutan fallback exchange. Binance/OKX/Bybit memblokir IP Amerika (termasuk server
 # GitHub Actions), jadi kita coba berurutan sampai ada yang memberi data.
-EXCHANGE_FALLBACK = ("binance", "kucoin", "kraken", "coinbase", "bitstamp")
+EXCHANGE_FALLBACK = ("binance", "kucoin", "gateio", "mexc", "bitget", "kraken", "coinbase", "bitstamp")
 
 
 def load_crypto(symbol: str, timeframe: str = "4h", limit_bars: int = 3000,
@@ -73,26 +73,39 @@ def load_crypto(symbol: str, timeframe: str = "4h", limit_bars: int = 3000,
 
 
 def _fetch_ccxt(ex, symbol: str, timeframe: str, limit_bars: int) -> pd.DataFrame:
+    """Tarik OHLCV mundur dari sekarang, halaman demi halaman, sampai `limit_bars` atau
+    histori exchange habis. Berhenti HANYA bila halaman kosong / tidak maju — halaman
+    yang tidak penuh bukan tanda habis (KuCoin dkk. punya lubang kecil di datanya)."""
     ms = TIMEFRAME_SECONDS[timeframe] * 1000
-    since = int(time.time() * 1000) - limit_bars * ms
+    now_ms = int(time.time() * 1000)
+    since = now_ms - limit_bars * ms
+    per_call = 720 if ex.id == "kraken" else 1000
     rows: list = []
-    per_call = min(1000, getattr(ex, "options", {}).get("fetchOHLCVLimit", 1000) or 1000)
-    if ex.id in ("kraken",):
-        per_call = 720  # kraken hanya memberi ~720 bar terakhir apa pun 'since'-nya
-    while True:
+    last_ts = None
+    for _ in range(400):  # pengaman: maks 400 halaman
         batch = ex.fetch_ohlcv(symbol, timeframe=timeframe, since=since, limit=per_call)
         if not batch:
-            break
+            # tidak ada data di rentang ini (exchange belum ada saat itu) -> lompat ke depan
+            since += per_call * ms
+            if since >= now_ms:
+                break
+            continue
         rows.extend(batch)
-        if len(batch) < per_call or batch[-1][0] + ms >= int(time.time() * 1000):
-            break
-        since = batch[-1][0] + ms
-        if len(rows) > limit_bars + 2000:
-            break
+        newest = batch[-1][0]
+        if last_ts is not None and newest <= last_ts:
+            break  # tidak maju
+        last_ts = newest
+        if newest + ms >= now_ms - ms:
+            break  # sudah sampai bar terakhir yang tutup
+        since = newest + ms
     df = pd.DataFrame(rows, columns=["ts", *COLUMNS])
     df["ts"] = pd.to_datetime(df["ts"], unit="ms", utc=True)
     df = df.set_index("ts")
-    return _finalize(df, timeframe)
+    df = _finalize(df, timeframe)
+    # data harus segar; kalau tidak, exchange ini dianggap gagal (pemanggil pindah ke exchange lain)
+    if len(df) and (pd.Timestamp.now(tz="UTC") - df.index[-1]).total_seconds() > 3 * TIMEFRAME_SECONDS[timeframe]:
+        raise RuntimeError(f"data tidak segar: bar terakhir {df.index[-1]}")
+    return df
 
 
 def load_idx(ticker: str, timeframe: str = "1d", years: int = 6) -> pd.DataFrame:

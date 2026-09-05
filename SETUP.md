@@ -14,7 +14,7 @@ menjalankan engine, dan menyimpan hasilnya. Claude (Cowork) lalu membaca hasil i
 3. Jangan centang apa pun. Klik **Create repository**.
 
 ## Langkah 3 — Upload file engine
-1. Ekstrak `quant-engine-v0.4.zip` di komputer/HP. Akan ada folder `quant-engine`.
+1. Ekstrak `quant-engine-v0.5.zip` di komputer/HP. Akan ada folder `quant-engine`.
 2. Di halaman repo yang baru dibuat, klik link **uploading an existing file**
    (atau tombol **Add file → Upload files**).
 3. Buka folder `quant-engine` hasil ekstrak, **pilih semua isinya** (Ctrl+A / Cmd+A) dan seret

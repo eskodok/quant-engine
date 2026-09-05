@@ -1,4 +1,4 @@
-# Quant Swing Engine v0.4 — anti garbage-in, garbage-out
+# Quant Swing Engine v0.5 — anti garbage-in, garbage-out
 
 > **Tidak bisa coding? Baca `SETUP.md`** — semua lewat browser, tidak perlu install apa pun.
 
