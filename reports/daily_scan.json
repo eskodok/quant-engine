@@ -1,0 +1,246 @@
+{
+  "generated": "2026-09-05 01:11:58.185793+00:00",
+  "items": [
+    {
+      "key": "crypto_spot__BTC-USDT__4h",
+      "market": "crypto_spot",
+      "symbol": "BTC/USDT",
+      "timeframe": "4h",
+      "strategy": "trend_pullback",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BTC/USDT",
+        "market": "crypto_spot",
+        "timeframe": "4h",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 20:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 79652.7,
+        "entry_zone": [
+          79398.844085,
+          79906.555915
+        ],
+        "stop": 78151.5881702008,
+        "target": 81904.36774469879,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.83 -> +0.00"
+        ],
+        "reasons": [
+          "regime UPTREND, ADX 23, RSI 54, close vs EMA20/50/200: +0.3%/+1.5%/+9.3%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "UPTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__ETH-USDT__4h",
+      "market": "crypto_spot",
+      "symbol": "ETH/USDT",
+      "timeframe": "4h",
+      "strategy": "trend_pullback",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "ETH/USDT",
+        "market": "crypto_spot",
+        "timeframe": "4h",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 20:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 2455.69,
+        "entry_zone": [
+          2446.037593,
+          2465.342407
+        ],
+        "stop": 2412.8851859408283,
+        "target": 2519.8972210887578,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.13 -> +0.00"
+        ],
+        "reasons": [
+          "regime UPTREND, ADX 21, RSI 50, close vs EMA20/50/200: -0.2%/+0.5%/+10.0%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "UPTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__SOL-USDT__4h",
+      "market": "crypto_spot",
+      "symbol": "SOL/USDT",
+      "timeframe": "4h",
+      "strategy": "trend_pullback",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "SOL/USDT",
+        "market": "crypto_spot",
+        "timeframe": "4h",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 20:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 101.93,
+        "entry_zone": [
+          101.458882,
+          102.401118
+        ],
+        "stop": 99.26776476842026,
+        "target": 105.92335284736961,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.0,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 0.37 -> +0.00"
+        ],
+        "reasons": [
+          "regime UPTREND, ADX 20, RSI 48, close vs EMA20/50/200: -0.4%/+0.5%/+12.1%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "UPTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "crypto_spot__BNB-USDT__4h",
+      "market": "crypto_spot",
+      "symbol": "BNB/USDT",
+      "timeframe": "4h",
+      "strategy": "trend_pullback",
+      "scrub": [],
+      "status": "OK",
+      "setup": {
+        "symbol": "BNB/USDT",
+        "market": "crypto_spot",
+        "timeframe": "4h",
+        "strategy": "trend_pullback",
+        "as_of": "2026-09-04 20:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 721.3,
+        "entry_zone": [
+          719.014128,
+          723.585872
+        ],
+        "stop": 704.4282563927565,
+        "target": 746.6076154108653,
+        "rr": 0.0,
+        "qty": 0.0,
+        "position_value": 0.0,
+        "risk_amount": 0.0,
+        "confidence": 0.052552223167682696,
+        "confidence_notes": [
+          "verdict validasi SCRAP -> basis 0.00",
+          "PF OOS 1.16 -> +0.00",
+          "ADX 27 > 25 tren kuat -> +0.05"
+        ],
+        "reasons": [
+          "regime UPTREND, ADX 27, RSI 63, close vs EMA20/50/200: +1.7%/+3.1%/+9.7%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
+        ],
+        "regime": "UPTREND",
+        "validation_verdict": "SCRAP",
+        "data_warnings": []
+      }
+    },
+    {
+      "key": "idx__BBCA__1d",
+      "market": "idx",
+      "symbol": "BBCA",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "BLOCK",
+          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+    },
+    {
+      "key": "idx__BBRI__1d",
+      "market": "idx",
+      "symbol": "BBRI",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "BLOCK",
+          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+    },
+    {
+      "key": "idx__BMRI__1d",
+      "market": "idx",
+      "symbol": "BMRI",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "BLOCK",
+          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+    },
+    {
+      "key": "idx__TLKM__1d",
+      "market": "idx",
+      "symbol": "TLKM",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "BLOCK",
+          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+    },
+    {
+      "key": "idx__ASII__1d",
+      "market": "idx",
+      "symbol": "ASII",
+      "timeframe": "1d",
+      "strategy": "trend_pullback",
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "BLOCK",
+          "detail": "5 gap > 7 hari (kemungkinan suspensi)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "timestamp.gaps: 5 gap > 7 hari (kemungkinan suspensi)"
+    }
+  ]
+}
