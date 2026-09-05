@@ -1,10 +1,10 @@
-# Scan harian — 2026-09-05 02:29 UTC (09:29 WIB)
+# Scan harian — 2026-09-05 02:43 UTC (09:43 WIB)
 
 | Simbol | TF | Aksi | Regime | Conf | Close | SL | TP | Validasi | Catatan |
 |---|---|---|---|---|---|---|---|---|---|
 | BTC/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 55% | 79,652.7 |  |  | FIX |  |
-| ETH/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 44% | 2,455.69 |  |  | FIX |  |
-| SOL/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 44% | 101.93 |  |  | FIX |  |
+| ETH/USDT | 4h | **NO_TRADE** | UPTREND | 0% | 2,455.69 |  |  | SCRAP |  |
+| SOL/USDT | 4h | **NO_TRADE** | UPTREND | 11% | 101.93 |  |  | SCRAP |  |
 | BNB/USDT | 4h | **NO_TRADE** | UPTREND | 60% | 721.3 |  |  | FIX |  |
 | BTC/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 60% | 79,652.7 |  |  | FIX | outlier.return |
 | ETH/USDT | 1d | **NO_TRADE** | SIDEWAYS | 5% | 2,455.69 |  |  | SCRAP | outlier.return |
@@ -28,8 +28,8 @@
 ## Regime pasar
 
 - BTC/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- ETH/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- SOL/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- ETH/USDT (4h): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- SOL/USDT (4h): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BNB/USDT (4h): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BTC/USDT (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ETH/USDT (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir

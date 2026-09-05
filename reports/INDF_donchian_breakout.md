@@ -4,7 +4,7 @@
 
 - Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)
 - GAGAL: trade OOS 8 < 30: belum cukup bukti
-- GAGAL: PF in-sample 0.71 < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan
+- GAGAL: PF in-sample 0.71 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan
 - GAGAL: PF OOS dengan biaya x2.0 = 0.92 < 1: edge habis dimakan biaya
 - PERINGATAN: PBO 0.30 agak tinggi
 - PERINGATAN: Sharpe OOS 0.13 < buy&hold 0.21: belum lebih baik dari sekadar memegang aset

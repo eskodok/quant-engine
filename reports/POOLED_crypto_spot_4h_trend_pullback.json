@@ -9,15 +9,15 @@
     "avg_win_r": 1.6458414473854823,
     "avg_loss_r": -0.601606028240071,
     "avg_bars": 7.9,
-    "exposure": 7.813186813186813,
-    "sharpe": -10.30100172953481,
-    "sortino": -22.34893961982241,
-    "max_dd": -0.032918065888639984,
-    "total_return": -0.030715907175958734,
-    "cagr": -0.5280100880390763,
-    "calmar": -16.04013096715055,
-    "skew": 1.4297259098097546,
-    "kurt": 2.1358786914151606
+    "exposure": 0.15143769968051118,
+    "sharpe": -1.1152137507904054,
+    "sortino": -0.5151544098604541,
+    "max_dd": -0.03425035371636634,
+    "total_return": -0.030471749531516323,
+    "cagr": -0.014331038281962916,
+    "calmar": -0.4184201541578506,
+    "skew": -1.159306468263124,
+    "kurt": 102.7607216454497
   },
   "oos_cost_x2": {
     "profit_factor": 0.4390074942192233,
@@ -40,9 +40,10 @@
     "GAGAL: PF rata-rata dengan biaya x2 = 0.44 < 1",
     "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 47 < 75)",
     "GAGAL: PBO rata-rata 0.60 >= 0.5: overfit",
-    "PERINGATAN: Sharpe OOS -10.30 < rata-rata buy&hold -0.33",
+    "GAGAL: 4/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
+    "PERINGATAN: Sharpe OOS -1.12 < rata-rata buy&hold -0.33",
     "PERINGATAN: deflated Sharpe prob 0.00 < 0.9",
     "PERINGATAN: hanya 0/4 simbol profitable OOS: edge tidak merata"
   ],
-  "generated": "2026-09-05 02:29:26.083723+00:00"
+  "generated": "2026-09-05 02:43:08.399892+00:00"
 }

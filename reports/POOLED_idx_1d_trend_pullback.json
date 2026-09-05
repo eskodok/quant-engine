@@ -9,15 +9,15 @@
     "avg_win_r": 1.1320323431070909,
     "avg_loss_r": -0.600996991094527,
     "avg_bars": 7.090909090909091,
-    "exposure": 7.02,
-    "sharpe": -1.731646828957816,
-    "sortino": -4.552972436458861,
-    "max_dd": -0.014448975222558547,
-    "total_return": -0.0076279272074104565,
-    "cagr": -0.018585188444220635,
-    "calmar": -1.2862634310012797,
-    "skew": 1.0002227861707675,
-    "kurt": 0.21438075888953012
+    "exposure": 1.0308370044052864,
+    "sharpe": -0.5830279753043537,
+    "sortino": -0.65616958574094,
+    "max_dd": -0.014198518187625084,
+    "total_return": -0.0076924528625393895,
+    "cagr": -0.002774319385184687,
+    "calmar": -0.19539499464124951,
+    "skew": -0.20431520452520346,
+    "kurt": 7.9598714958663646
   },
   "oos_cost_x2": {
     "profit_factor": 0.6898772988676286,
@@ -36,11 +36,12 @@
   "reasons": [
     "Gabungan 12 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, KLBF, ANTM, UNTR, PGAS",
     "GAGAL: PF OOS gabungan 0.77 < 1.15",
-    "GAGAL: PF in-sample 0.78 < 1: OOS untung = kebetulan rezim, bukan edge",
+    "GAGAL: PF in-sample 0.78 < 1.1: OOS untung = kebetulan rezim, bukan edge",
     "GAGAL: PF rata-rata dengan biaya x2 = 0.69 < 1",
     "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 63 < 75)",
-    "PERINGATAN: Sharpe OOS -1.73 < rata-rata buy&hold -0.04",
+    "GAGAL: 9/12 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
+    "PERINGATAN: Sharpe OOS -0.58 < rata-rata buy&hold -0.04",
     "PERINGATAN: deflated Sharpe prob 0.00 < 0.9"
   ],
-  "generated": "2026-09-05 02:29:26.387559+00:00"
+  "generated": "2026-09-05 02:43:08.941154+00:00"
 }

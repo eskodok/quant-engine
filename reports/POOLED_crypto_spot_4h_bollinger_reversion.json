@@ -1,5 +1,5 @@
 {
-  "verdict": "FIX",
+  "verdict": "SCRAP",
   "best_params": {},
   "oos": {
     "n_trades": 44,
@@ -9,15 +9,15 @@
     "avg_win_r": 0.8100812668182074,
     "avg_loss_r": -1.103670413812591,
     "avg_bars": 9.477272727272727,
-    "exposure": 9.266666666666667,
-    "sharpe": 8.8627161110647,
-    "sortino": 32.084992619045636,
-    "max_dd": -0.00790637097497775,
-    "total_return": 0.014193298991267644,
-    "cagr": 0.9855272624869154,
-    "calmar": 124.64976227474435,
-    "skew": -0.13233919836636834,
-    "kurt": -0.8821968709262835
+    "exposure": 0.08881789137380192,
+    "sharpe": 0.7180356980152162,
+    "sortino": 0.2753722823182893,
+    "max_dd": -0.00897785977539665,
+    "total_return": 0.013984411867627333,
+    "cagr": 0.006498917301595242,
+    "calmar": 0.7238826918866768,
+    "skew": 4.453816848840694,
+    "kurt": 208.00224354902116
   },
   "oos_cost_x2": {
     "profit_factor": 1.4822184356604482,
@@ -35,7 +35,9 @@
   },
   "reasons": [
     "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
+    "GAGAL: PF in-sample 1.00 < 1.1: OOS untung = kebetulan rezim, bukan edge",
+    "GAGAL: 2/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
     "PERINGATAN: deflated Sharpe prob 0.14 < 0.9"
   ],
-  "generated": "2026-09-05 02:29:26.177488+00:00"
+  "generated": "2026-09-05 02:43:08.584295+00:00"
 }

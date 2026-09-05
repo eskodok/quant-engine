@@ -9,15 +9,15 @@
     "avg_win_r": 0.2449706929796885,
     "avg_loss_r": -0.5186658878160086,
     "avg_bars": 4.0476190476190474,
-    "exposure": 4.023668639053255,
-    "sharpe": -5.344565695650982,
-    "sortino": -5.853673189231745,
-    "max_dd": -0.025141194065219218,
-    "total_return": -0.01968257288109032,
-    "cagr": -0.22709700086748974,
-    "calmar": -9.032864559987619,
-    "skew": -1.005330835502604,
-    "kurt": 0.621980516786246
+    "exposure": 0.1448349307774228,
+    "sharpe": -0.8544326797146224,
+    "sortino": -0.40123347350784616,
+    "max_dd": -0.024991960189788942,
+    "total_return": -0.01952002564313593,
+    "cagr": -0.009153081254516193,
+    "calmar": -0.36624103051572166,
+    "skew": -1.4001228814265383,
+    "kurt": 47.900808166689046
   },
   "oos_cost_x2": {
     "profit_factor": 0.44908356066917166,
@@ -36,11 +36,11 @@
   "reasons": [
     "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
     "GAGAL: PF OOS gabungan 0.72 < 1.15",
-    "GAGAL: PF in-sample 0.83 < 1: OOS untung = kebetulan rezim, bukan edge",
+    "GAGAL: PF in-sample 0.83 < 1.1: OOS untung = kebetulan rezim, bukan edge",
     "GAGAL: PF rata-rata dengan biaya x2 = 0.45 < 1",
-    "PERINGATAN: Sharpe OOS -5.34 < rata-rata buy&hold -0.33",
+    "PERINGATAN: Sharpe OOS -0.85 < rata-rata buy&hold -0.33",
     "PERINGATAN: deflated Sharpe prob 0.00 < 0.9",
     "PERINGATAN: hanya 1/4 simbol profitable OOS: edge tidak merata"
   ],
-  "generated": "2026-09-05 02:29:26.148735+00:00"
+  "generated": "2026-09-05 02:43:08.525556+00:00"
 }

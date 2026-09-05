@@ -9,15 +9,15 @@
     "avg_win_r": 2.257808241276187,
     "avg_loss_r": -0.9867727980869497,
     "avg_bars": 11.979166666666666,
-    "exposure": 11.73469387755102,
-    "sharpe": 1.8206775373050987,
-    "sortino": 22.37124161587758,
-    "max_dd": -0.020988429963164433,
-    "total_return": 0.018879532807957178,
-    "cagr": 0.14949439065577685,
-    "calmar": 7.122704791075165,
-    "skew": 0.9142714596971929,
-    "kurt": -1.029964355334927
+    "exposure": 0.48197820620285,
+    "sharpe": 0.36790507156900804,
+    "sortino": 0.2844739241051801,
+    "max_dd": -0.022537764059755893,
+    "total_return": 0.019289032252877814,
+    "cagr": 0.005862427577892015,
+    "calmar": 0.26011575781646157,
+    "skew": -0.30403430541314486,
+    "kurt": 18.336859916500668
   },
   "oos_cost_x2": {
     "profit_factor": 1.179972303497483,
@@ -38,7 +38,9 @@
     "GAGAL: degradasi IS\u2192OOS 57% > 40%",
     "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 42 < 75)",
     "GAGAL: PBO rata-rata 0.70 >= 0.5: overfit",
+    "GAGAL: 3/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
+    "PERINGATAN: Sharpe OOS 0.37 < rata-rata buy&hold 0.50",
     "PERINGATAN: deflated Sharpe prob 0.05 < 0.9"
   ],
-  "generated": "2026-09-05 02:29:26.266283+00:00"
+  "generated": "2026-09-05 02:43:08.728355+00:00"
 }

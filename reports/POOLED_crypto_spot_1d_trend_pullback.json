@@ -9,15 +9,15 @@
     "avg_win_r": 1.5474269085251227,
     "avg_loss_r": -0.5138718372176675,
     "avg_bars": 10.726027397260275,
-    "exposure": 10.58108108108108,
-    "sharpe": 2.420990616417182,
-    "sortino": 9.50403260389152,
-    "max_dd": -0.02471228276748041,
-    "total_return": 0.027550798951657685,
-    "cagr": 0.1434547579894203,
-    "calmar": 5.804998240720864,
-    "skew": 1.4680054193314322,
-    "kurt": 0.9415355147608206
+    "exposure": 0.6563285834031852,
+    "sharpe": 0.5045664390066803,
+    "sortino": 0.4299757582738683,
+    "max_dd": -0.02552516356065154,
+    "total_return": 0.02793492975999534,
+    "cagr": 0.00846516039868317,
+    "calmar": 0.33163981020410327,
+    "skew": -0.39324623312279705,
+    "kurt": 25.73795495924527
   },
   "oos_cost_x2": {
     "profit_factor": 1.566961583606947,
@@ -37,7 +37,8 @@
     "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
     "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 63 < 75)",
     "GAGAL: PBO rata-rata 0.74 >= 0.5: overfit",
+    "GAGAL: 4/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
     "PERINGATAN: deflated Sharpe prob 0.05 < 0.9"
   ],
-  "generated": "2026-09-05 02:29:26.237557+00:00"
+  "generated": "2026-09-05 02:43:08.686849+00:00"
 }

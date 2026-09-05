@@ -5,6 +5,7 @@
 - Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)
 - GAGAL: trade OOS 6 < 30: belum cukup bukti
 - GAGAL: PF OOS 0.57 < 1.15
+- GAGAL: PF in-sample 1.07 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan
 - GAGAL: degradasi IS→OOS 47% > 40%: indikasi overfit
 - GAGAL: PF OOS dengan biaya x2.0 = 0.46 < 1: edge habis dimakan biaya
 - GAGAL: timing entry tidak lebih baik dari acak (persentil 48 < 75): hasil = arus pasar, bukan sinyal

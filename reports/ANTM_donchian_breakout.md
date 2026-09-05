@@ -4,7 +4,7 @@
 
 - Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)
 - GAGAL: trade OOS 9 < 30: belum cukup bukti
-- GAGAL: PF in-sample 0.68 < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan
+- GAGAL: PF in-sample 0.68 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan
 - PERINGATAN: PBO 0.49 agak tinggi
 - PERINGATAN: Sharpe OOS 0.30 < buy&hold 0.66: belum lebih baik dari sekadar memegang aset
 - PERINGATAN: deflated Sharpe prob 0.04 < 0.9: Sharpe bisa hasil kebetulan

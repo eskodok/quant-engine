@@ -7,7 +7,8 @@
 - GAGAL: degradasi IS→OOS 42% > 40%
 - GAGAL: PF rata-rata dengan biaya x2 = 0.71 < 1
 - GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 60 < 75)
-- PERINGATAN: Sharpe OOS -2.54 < rata-rata buy&hold -0.04
+- GAGAL: 9/12 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas
+- PERINGATAN: Sharpe OOS -0.66 < rata-rata buy&hold -0.04
 - PERINGATAN: deflated Sharpe prob 0.00 < 0.9
 - PERINGATAN: hanya 3/12 simbol profitable OOS: edge tidak merata
 
@@ -17,14 +18,14 @@
 | Profit factor | 1.22 | 0.70 | 0.71 |
 | Win rate | 59.4% | 51.2% | 0.0% |
 | Expectancy (R) | 0.04 | -0.35 | 0.00 |
-| Sharpe | 0.09 | -2.54 | 0.00 |
+| Sharpe | 0.09 | -0.66 | 0.00 |
 | Max DD | -3.3% | -1.4% | 0.0% |
-| CAGR | 0.1% | -3.0% | 0.0% |
+| CAGR | 0.1% | -0.4% | 0.0% |
 
 - Deflated Sharpe prob (n_trials=40): 0.00
 - Timing vs entry acak: persentil 60 (harus >= 75)
 - Probability of Backtest Overfitting (CSCV): 0.46 (harus < 0.5)
-- Buy & hold jendela OOS: return -11.2%, Sharpe -0.04, maxDD -48.1% | strategi: return -1.1%, Sharpe -2.54, maxDD -1.4%
+- Buy & hold jendela OOS: return -11.2%, Sharpe -0.04, maxDD -48.1% | strategi: return -1.1%, Sharpe -0.66, maxDD -1.4%
 - Stabilitas parameter antar fold: 95%
 - Monte Carlo max DD: median -1.3%, p95 -1.7%
 - Parameter terpilih (fold terakhir): {}

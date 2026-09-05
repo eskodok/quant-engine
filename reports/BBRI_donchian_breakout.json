@@ -53,9 +53,10 @@
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
     "GAGAL: trade OOS 2 < 30: belum cukup bukti",
+    "GAGAL: PF in-sample 1.00 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
     "GAGAL: PBO 0.60 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
     "PERINGATAN: deflated Sharpe prob 0.10 < 0.9: Sharpe bisa hasil kebetulan",
     "PERINGATAN: 2 parameter untuk 2 trade OOS (100.0/100 trade)"
   ],
-  "generated": "2026-09-05 02:27:16.515358+00:00"
+  "generated": "2026-09-05 02:40:59.331104+00:00"
 }
