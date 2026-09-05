@@ -85,3 +85,4 @@ class ValidationThresholds:
     cost_stress_multiplier: float = 2.0  # strategi harus tetap PF>1 saat biaya x2
     min_random_pctile: float = 75.0      # PF strategi harus > 75% dari versi entry-acak dirinya
     max_pbo: float = 0.5                 # Probability of Backtest Overfitting (CSCV) harus < 0.5
+    min_is_profit_factor: float = 1.10   # setelah dioptimasi pun in-sample harus jelas untung

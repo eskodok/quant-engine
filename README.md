@@ -1,4 +1,4 @@
-# Quant Swing Engine v0.7 — anti garbage-in, garbage-out
+# Quant Swing Engine v0.8 — anti garbage-in, garbage-out
 
 > **Tidak bisa coding? Baca `SETUP.md`** — semua lewat browser, tidak perlu install apa pun.
 
@@ -111,8 +111,11 @@ IDX SCRAP (PF 0.70, tapi maxDD −10% vs buy&hold −55%); crypto 1D: BTC PF 3.7
 vs B&H +180% dengan maxDD −14% vs −53%, Sharpe 1.04 vs 0.92 — ciri klasik trend following
 (bukan lebih untung, tapi drawdown jauh lebih kecil), namun gagal tes acak (p69) dan PBO 0.74
 → SCRAP sebagai *signal engine*. Layak hanya sebagai overlay risiko untuk yang memang memegang crypto.
+v0.8: Bollinger crypto 4H sempat FIX di basket (IS PF 1.0008, separuh anggota gagal) → aturan
+diperketat (IS PF ≥ 1.10; basket gagal bila ≥ separuh anggota gagal PBO/acak; equity basket
+berbasis waktu) → SCRAP. Status akhir: **tidak ada strategi yang lolos** di universe ini.
 
-## Batasan v0.7 (sengaja)
+## Batasan v0.8 (sengaja)
 
 Long only; satu posisi per simbol; funding perp tidak dimodelkan (ada WARN);
 IDX hanya 1D via Yahoo (delay ~15 menit, split harus di-handle manual bila scrub BLOCK);

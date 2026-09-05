@@ -276,8 +276,8 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
     if o["profit_factor"] < th.min_oos_profit_factor:
         fails.append(f"PF OOS {o['profit_factor']:.2f} < {th.min_oos_profit_factor}")
     is_pf, oos_pf = rep.is_metrics.get("profit_factor", 0), o["profit_factor"]
-    if is_pf < 1.0:
-        fails.append(f"PF in-sample {is_pf:.2f} < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan")
+    if is_pf < th.min_is_profit_factor:
+        fails.append(f"PF in-sample {is_pf:.2f} < {th.min_is_profit_factor}: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan")
     if is_pf > 0 and np.isfinite(is_pf) and (is_pf - oos_pf) / is_pf > th.max_oos_degradation:
         fails.append(f"degradasi IS→OOS {(is_pf - oos_pf) / is_pf:.0%} > {th.max_oos_degradation:.0%}: indikasi overfit")
     if rep.oos_metrics_cost_x2["profit_factor"] < 1.0:
@@ -299,7 +299,7 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
         warns.append(f"parameter tidak stabil antar fold ({rep.param_stability:.0%})")
 
     # SCRAP = edge tidak ada / habis oleh biaya. FIX = edge ada tapi bukti belum cukup.
-    hard_fail = (o["profit_factor"] < th.min_oos_profit_factor or is_pf < 1.0
+    hard_fail = (o["profit_factor"] < th.min_oos_profit_factor or is_pf < th.min_is_profit_factor
                  or rep.oos_metrics_cost_x2["profit_factor"] < 1.0
                  or o["n_trades"] < th.min_trades_oos // 3
                  or (np.isfinite(rep.random_pctile) and rep.random_pctile < th.min_random_pctile)
@@ -338,9 +338,12 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
         out.reasons.append("tidak ada laporan OOS yang bisa digabung")
         return out
     trades = pd.concat([r.oos_trades for r in reps], ignore_index=True).sort_values("exit_ts")
-    # kurva equity gabungan: setiap simbol dialokasikan modal sama, P&L dijumlahkan urut waktu
-    eq = risk.initial_equity + trades.pnl.cumsum().values / len(reps)
-    eq = pd.Series(np.concatenate([[risk.initial_equity], eq]))
+    # kurva equity gabungan BERBASIS WAKTU: modal dibagi rata, kurva tiap simbol (dinormalisasi)
+    # disejajarkan per tanggal lalu dirata-rata -> Sharpe/DD/CAGR yang bermakna.
+    curves = [(r.oos_equity / r.oos_equity.iloc[0]) for r in reps if r.oos_equity is not None]
+    idx = sorted(set().union(*[c.index for c in curves]))
+    aligned = pd.concat([c.reindex(idx).ffill().fillna(1.0) for c in curves], axis=1)
+    eq = aligned.mean(axis=1) * risk.initial_equity
     out.oos_metrics = summarize(trades, eq, bars_per_year)
     out.oos_trades, out.oos_equity = trades, eq
     # biaya x2: hitung ulang dari laporan per simbol
@@ -370,8 +373,8 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
     if o["profit_factor"] < th.min_oos_profit_factor:
         fails.append(f"PF OOS gabungan {o['profit_factor']:.2f} < {th.min_oos_profit_factor}")
     is_pf, oos_pf = out.is_metrics.get("profit_factor", 0), o["profit_factor"]
-    if is_pf < 1.0:
-        fails.append(f"PF in-sample {is_pf:.2f} < 1: OOS untung = kebetulan rezim, bukan edge")
+    if is_pf < th.min_is_profit_factor:
+        fails.append(f"PF in-sample {is_pf:.2f} < {th.min_is_profit_factor}: OOS untung = kebetulan rezim, bukan edge")
     if is_pf > 0 and np.isfinite(is_pf) and (is_pf - oos_pf) / is_pf > th.max_oos_degradation:
         fails.append(f"degradasi IS→OOS {(is_pf - oos_pf) / is_pf:.0%} > {th.max_oos_degradation:.0%}")
     if out.oos_metrics_cost_x2["profit_factor"] < 1.0:
@@ -389,10 +392,14 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
     n_pos = sum(1 for r in reps if r.oos_metrics.get("profit_factor", 0) > 1)
     if n_pos < len(reps) / 2:
         warns.append(f"hanya {n_pos}/{len(reps)} simbol profitable OOS: edge tidak merata")
-    hard_fail = (oos_pf < th.min_oos_profit_factor or is_pf < 1.0 or out.oos_metrics_cost_x2["profit_factor"] < 1.0
+    n_bad = sum(1 for r in reps if (np.isfinite(r.pbo) and r.pbo >= th.max_pbo)
+                or (np.isfinite(r.random_pctile) and r.random_pctile < th.min_random_pctile))
+    if n_bad >= len(reps) / 2:
+        fails.append(f"{n_bad}/{len(reps)} simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas")
+    hard_fail = (oos_pf < th.min_oos_profit_factor or is_pf < th.min_is_profit_factor or out.oos_metrics_cost_x2["profit_factor"] < 1.0
                  or o["n_trades"] < th.min_trades_oos // 3
                  or (np.isfinite(out.random_pctile) and out.random_pctile < th.min_random_pctile)
-                 or (np.isfinite(out.pbo) and out.pbo >= th.max_pbo))
+                 or (np.isfinite(out.pbo) and out.pbo >= th.max_pbo) or n_bad >= len(reps) / 2)
     out.verdict = "SCRAP" if (fails and hard_fail) else ("FIX" if fails or warns else "SHIP")
     out.reasons = [f"Gabungan {len(reps)} simbol: " + ", ".join(r.symbol for r in reps)]
     out.reasons += [f"GAGAL: {f}" for f in fails] + [f"PERINGATAN: {w}" for w in warns]
