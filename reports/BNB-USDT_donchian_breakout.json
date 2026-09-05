@@ -1,13 +1,54 @@
 {
   "verdict": "SCRAP",
-  "best_params": {},
-  "oos": {},
-  "oos_cost_x2": {},
-  "dsr_prob": 0.0,
-  "n_trials": 0,
+  "best_params": {
+    "donchian_n": 55,
+    "rr": 3.0
+  },
+  "oos": {
+    "n_trades": 43,
+    "profit_factor": 0.9277143085039609,
+    "win_rate": 0.3023255813953488,
+    "expectancy_r": 0.011178189356056746,
+    "avg_win_r": 2.4259752345165597,
+    "avg_loss_r": -1.0352338635468281,
+    "avg_bars": 10.976744186046512,
+    "exposure": 0.10053248136315229,
+    "sharpe": -0.18076690950769506,
+    "sortino": -0.08774530947435386,
+    "max_dd": -0.0624430377109314,
+    "total_return": -0.01792938200034966,
+    "cagr": -0.008403598913262478,
+    "calmar": -0.13458023858745308,
+    "skew": 0.46655089349581585,
+    "kurt": 47.883388742042634
+  },
+  "oos_cost_x2": {
+    "n_trades": 43,
+    "profit_factor": 0.8022197673199527,
+    "win_rate": 0.3023255813953488,
+    "expectancy_r": -0.10535441706903882,
+    "avg_win_r": 2.2559397798200878,
+    "avg_loss_r": -1.1285819023876604,
+    "avg_bars": 10.976744186046512,
+    "exposure": 0.10053248136315229,
+    "sharpe": -0.5143024794556421,
+    "sortino": -0.24449704799304348,
+    "max_dd": -0.07277950608470042,
+    "total_return": -0.047320548093010895,
+    "cagr": -0.022358437106090645,
+    "calmar": -0.3072078708540562,
+    "skew": -0.08794135007082349,
+    "kurt": 46.58846439112081
+  },
+  "dsr_prob": 0.006252418682308678,
+  "n_trials": 45,
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
-    "Data terlalu pendek untuk 5 fold (test_len=20 bar)"
+    "GAGAL: PF OOS 0.93 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 40% > 40%: indikasi overfit",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.80 < 1: edge habis dimakan biaya",
+    "PERINGATAN: deflated Sharpe prob 0.01 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 43 trade OOS (4.7/100 trade)"
   ],
-  "generated": "2026-09-05 01:39:40.221670+00:00"
+  "generated": "2026-09-05 02:00:00.212054+00:00"
 }

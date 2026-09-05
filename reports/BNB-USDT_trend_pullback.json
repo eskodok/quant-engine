@@ -1,13 +1,55 @@
 {
   "verdict": "SCRAP",
-  "best_params": {},
-  "oos": {},
-  "oos_cost_x2": {},
-  "dsr_prob": 0.0,
-  "n_trials": 0,
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 25.0,
+    "rr": 3.0
+  },
+  "oos": {
+    "n_trades": 36,
+    "profit_factor": 0.4989432207896822,
+    "win_rate": 0.16666666666666666,
+    "expectancy_r": -0.12318638199082546,
+    "avg_win_r": 1.9375151345780484,
+    "avg_loss_r": -0.5353266853046003,
+    "avg_bars": 9.86111111111111,
+    "exposure": 0.07561235356762513,
+    "sharpe": -0.9150725118324731,
+    "sortino": -0.31692716937597243,
+    "max_dd": -0.06522830009855292,
+    "total_return": -0.059909977157971306,
+    "cagr": -0.028406080150667368,
+    "calmar": -0.4354870525178312,
+    "skew": -3.107119865137733,
+    "kurt": 96.50344104050303
+  },
+  "oos_cost_x2": {
+    "n_trades": 36,
+    "profit_factor": 0.4023833314401204,
+    "win_rate": 0.16666666666666666,
+    "expectancy_r": -0.22384189991834427,
+    "avg_win_r": 1.768666459351924,
+    "avg_loss_r": -0.622343571772398,
+    "avg_bars": 9.86111111111111,
+    "exposure": 0.07561235356762513,
+    "sharpe": -1.2530605997127275,
+    "sortino": -0.43774121129301136,
+    "max_dd": -0.0859729132203741,
+    "total_return": -0.08169341366693272,
+    "cagr": -0.03897325008405095,
+    "calmar": -0.45332010541681816,
+    "skew": -3.395067663442662,
+    "kurt": 98.05397982282877
+  },
+  "dsr_prob": 2.252085494839226e-05,
+  "n_trials": 135,
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
-    "Data terlalu pendek untuk 5 fold (test_len=20 bar)"
+    "GAGAL: PF OOS 0.50 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 51% > 40%: indikasi overfit",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.40 < 1: edge habis dimakan biaya",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 36 trade OOS (8.3/100 trade)"
   ],
-  "generated": "2026-09-05 01:39:40.134637+00:00"
+  "generated": "2026-09-05 01:59:58.539807+00:00"
 }

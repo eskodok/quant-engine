@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-05 01:41:05.947296+00:00",
+  "generated": "2026-09-05 02:01:18.890322+00:00",
   "items": [
     {
       "key": "crypto_spot__BTC-USDT__4h",
@@ -10,13 +10,23 @@
       "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
       "scrub": [
         {
-          "check": "freshness",
+          "check": "timestamp.gaps",
+          "sev": "WARN",
+          "detail": "1 gap > 1.5x TF (maks 1001.0x)"
+        },
+        {
+          "check": "outlier.return",
           "sev": "BLOCK",
-          "detail": "bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
+          "detail": "1 bar |return| > 35% (terakhir 2024-05-24)"
+        },
+        {
+          "check": "outlier.gap_open",
+          "sev": "BLOCK",
+          "detail": "1 open gap > 35%"
         }
       ],
       "status": "DATA_BLOCKED",
-      "note": "freshness: bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
+      "note": "outlier.return: 1 bar |return| > 35% (terakhir 2024-05-24); outlier.gap_open: 1 open gap > 35%"
     },
     {
       "key": "crypto_spot__ETH-USDT__4h",
@@ -27,13 +37,23 @@
       "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
       "scrub": [
         {
-          "check": "freshness",
+          "check": "timestamp.gaps",
+          "sev": "WARN",
+          "detail": "1 gap > 1.5x TF (maks 1001.0x)"
+        },
+        {
+          "check": "outlier.return",
           "sev": "BLOCK",
-          "detail": "bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
+          "detail": "1 bar |return| > 35% (terakhir 2024-05-24)"
+        },
+        {
+          "check": "outlier.gap_open",
+          "sev": "BLOCK",
+          "detail": "1 open gap > 35%"
         }
       ],
       "status": "DATA_BLOCKED",
-      "note": "freshness: bar terakhir 2023-12-10 00:00:00+00:00 (6000.4x TF yang lalu)"
+      "note": "outlier.return: 1 bar |return| > 35% (terakhir 2024-05-24); outlier.gap_open: 1 open gap > 35%"
     },
     {
       "key": "crypto_spot__SOL-USDT__4h",
@@ -42,40 +62,25 @@
       "timeframe": "4h",
       "strategy": "bollinger_reversion",
       "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "SOL/USDT",
-        "market": "crypto_spot",
-        "timeframe": "4h",
-        "strategy": "bollinger_reversion",
-        "as_of": "2026-09-04 20:00:00+00:00",
-        "action": "AVOID_OR_EXIT",
-        "entry_ref": 101.91,
-        "entry_zone": [
-          101.455969,
-          102.364031
-        ],
-        "stop": 98.2777506978775,
-        "target": 112.8067479063675,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.55,
-        "confidence_notes": [
-          "validasi per simbol SCRAP -> memakai validasi basket FIX (PF OOS 2.00, 17 trade)",
-          "verdict validasi FIX -> basis 0.35",
-          "PF OOS 2.00 -> +0.20"
-        ],
-        "reasons": [
-          "regime UPTREND, ADX 20, RSI 48, close vs EMA20/50/200: -0.4%/+0.5%/+12.1%",
-          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
-        ],
-        "regime": "UPTREND",
-        "validation_verdict": "FIX",
-        "data_warnings": []
-      }
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "WARN",
+          "detail": "1 gap > 1.5x TF (maks 1001.0x)"
+        },
+        {
+          "check": "outlier.return",
+          "sev": "BLOCK",
+          "detail": "1 bar |return| > 35% (terakhir 2024-05-24)"
+        },
+        {
+          "check": "outlier.gap_open",
+          "sev": "BLOCK",
+          "detail": "1 open gap > 35%"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "outlier.return: 1 bar |return| > 35% (terakhir 2024-05-24); outlier.gap_open: 1 open gap > 35%"
     },
     {
       "key": "crypto_spot__BNB-USDT__4h",
@@ -106,7 +111,6 @@
         "risk_amount": 0.0,
         "confidence": 0.6000000000000001,
         "confidence_notes": [
-          "validasi per simbol SCRAP -> memakai validasi basket FIX (PF OOS 2.00, 17 trade)",
           "verdict validasi FIX -> basis 0.35",
           "PF OOS 2.00 -> +0.20",
           "ADX 27 > 25 tren kuat -> +0.05"
@@ -127,40 +131,20 @@
       "timeframe": "1d",
       "strategy": "trend_pullback",
       "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "BTC/USDT",
-        "market": "crypto_spot",
-        "timeframe": "1d",
-        "strategy": "trend_pullback",
-        "as_of": "2026-09-04 00:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 79646.6,
-        "entry_zone": [
-          79023.447642,
-          80269.752358
-        ],
-        "stop": 75029.1952840574,
-        "target": 88881.40943188523,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.05,
-        "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00",
-          "ADX 46 > 25 tren kuat -> +0.05"
-        ],
-        "reasons": [
-          "regime SIDEWAYS, ADX 46, RSI 66, close vs EMA20/50/200: +5.2%/+12.0%/+9.8%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
-        ],
-        "regime": "SIDEWAYS",
-        "validation_verdict": "SCRAP",
-        "data_warnings": []
-      }
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "WARN",
+          "detail": "4 gap > 1.5x TF (maks 3.0x)"
+        },
+        {
+          "check": "outlier.return",
+          "sev": "BLOCK",
+          "detail": "1 bar |return| > 35% (terakhir 2020-03-12)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "outlier.return: 1 bar |return| > 35% (terakhir 2020-03-12)"
     },
     {
       "key": "crypto_spot__ETH-USDT__1d",
@@ -169,40 +153,20 @@
       "timeframe": "1d",
       "strategy": "trend_pullback",
       "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "ETH/USDT",
-        "market": "crypto_spot",
-        "timeframe": "1d",
-        "strategy": "trend_pullback",
-        "as_of": "2026-09-04 00:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 2456.02,
-        "entry_zone": [
-          2430.793602,
-          2481.246398
-        ],
-        "stop": 2306.617203955366,
-        "target": 2754.8255920892675,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.05,
-        "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00",
-          "ADX 50 > 25 tren kuat -> +0.05"
-        ],
-        "reasons": [
-          "regime SIDEWAYS, ADX 50, RSI 63, close vs EMA20/50/200: +4.7%/+14.0%/+13.0%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
-        ],
-        "regime": "SIDEWAYS",
-        "validation_verdict": "SCRAP",
-        "data_warnings": []
-      }
+      "scrub": [
+        {
+          "check": "timestamp.gaps",
+          "sev": "BLOCK",
+          "detail": "7 gap > 1.5x TF (maks 7.0x)"
+        },
+        {
+          "check": "outlier.return",
+          "sev": "BLOCK",
+          "detail": "1 bar |return| > 35% (terakhir 2020-03-12)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "timestamp.gaps: 7 gap > 1.5x TF (maks 7.0x); outlier.return: 1 bar |return| > 35% (terakhir 2020-03-12)"
     },
     {
       "key": "crypto_spot__SOL-USDT__1d",
@@ -211,82 +175,32 @@
       "timeframe": "1d",
       "strategy": "trend_pullback",
       "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "SOL/USDT",
-        "market": "crypto_spot",
-        "timeframe": "1d",
-        "strategy": "trend_pullback",
-        "as_of": "2026-09-04 00:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 101.91,
-        "entry_zone": [
-          100.646101,
-          103.173899
-        ],
-        "stop": 94.88220208858502,
-        "target": 115.96559582282995,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.05,
-        "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00",
-          "ADX 49 > 25 tren kuat -> +0.05"
-        ],
-        "reasons": [
-          "regime SIDEWAYS, ADX 49, RSI 63, close vs EMA20/50/200: +5.9%/+16.4%/+12.3%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
-        ],
-        "regime": "SIDEWAYS",
-        "validation_verdict": "SCRAP",
-        "data_warnings": []
-      }
+      "scrub": [
+        {
+          "check": "outlier.return",
+          "sev": "BLOCK",
+          "detail": "1 bar |return| > 35% (terakhir 2022-11-09)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "outlier.return: 1 bar |return| > 35% (terakhir 2022-11-09)"
     },
     {
       "key": "crypto_spot__BNB-USDT__1d",
       "market": "crypto_spot",
       "symbol": "BNB/USDT",
       "timeframe": "1d",
-      "strategy": "trend_pullback",
-      "strategy_note": "auto: belum ada strategi yang lolos validasi -> tidak akan ada sinyal LONG",
-      "scrub": [],
-      "status": "OK",
-      "setup": {
-        "symbol": "BNB/USDT",
-        "market": "crypto_spot",
-        "timeframe": "1d",
-        "strategy": "trend_pullback",
-        "as_of": "2026-09-04 00:00:00+00:00",
-        "action": "NO_TRADE",
-        "entry_ref": 721.05,
-        "entry_zone": [
-          716.114959,
-          725.985041
-        ],
-        "stop": 665.5799186352585,
-        "target": 831.9901627294828,
-        "rr": 0.0,
-        "qty": 0.0,
-        "position_value": 0.0,
-        "risk_amount": 0.0,
-        "confidence": 0.05,
-        "confidence_notes": [
-          "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.00 -> +0.00",
-          "ADX 42 > 25 tren kuat -> +0.05"
-        ],
-        "reasons": [
-          "regime SIDEWAYS, ADX 42, RSI 71, close vs EMA20/50/200: +6.2%/+12.3%/+10.8%",
-          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
-        ],
-        "regime": "SIDEWAYS",
-        "validation_verdict": "SCRAP",
-        "data_warnings": []
-      }
+      "strategy": "bollinger_reversion",
+      "strategy_note": "auto: bollinger_reversion (validasi terbaik)",
+      "scrub": [
+        {
+          "check": "outlier.return",
+          "sev": "BLOCK",
+          "detail": "2 bar |return| > 35% (terakhir 2021-02-19)"
+        }
+      ],
+      "status": "DATA_BLOCKED",
+      "note": "outlier.return: 2 bar |return| > 35% (terakhir 2021-02-19)"
     },
     {
       "key": "idx__BBCA__1d",
