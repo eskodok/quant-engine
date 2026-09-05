@@ -83,3 +83,5 @@ class ValidationThresholds:
     min_deflated_sharpe_prob: float = 0.90
     max_params_per_100_trades: float = 1.0
     cost_stress_multiplier: float = 2.0  # strategi harus tetap PF>1 saat biaya x2
+    min_random_pctile: float = 75.0      # PF strategi harus > 75% dari versi entry-acak dirinya
+    max_pbo: float = 0.5                 # Probability of Backtest Overfitting (CSCV) harus < 0.5

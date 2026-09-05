@@ -72,9 +72,15 @@ def scrub(df: pd.DataFrame, market: MarketProfile, timeframe: str,
     tf = TIMEFRAME_SECONDS[timeframe]
     deltas = df.index.to_series().diff().dt.total_seconds().dropna()
     if market.continuous:
-        gaps = deltas[deltas > tf * 1.5]
-        sev = "BLOCK" if len(gaps) > max(3, 0.002 * len(df)) else ("WARN" if len(gaps) else "OK")
-        add(Check("timestamp.gaps", sev, f"{len(gaps)} gap > 1.5x TF (maks {deltas.max()/tf:.1f}x)",
+        small = deltas[(deltas > tf * 1.5) & (deltas <= tf * 3)]   # 1-2 bar hilang: exchange sering begini
+        big = deltas[deltas > tf * 3]                                # >2 bar hilang: feed mati / histori bolong
+        if len(big) > 2 or len(small) > 0.02 * len(df):
+            sev = "BLOCK"
+        elif len(big) or len(small) > 0.002 * len(df):
+            sev = "WARN"
+        else:
+            sev = "OK"
+        add(Check("timestamp.gaps", sev, f"{len(small)} lubang kecil (<=2 bar), {len(big)} lubang besar (maks {deltas.max()/tf:.1f}x TF)",
                   "isi dari exchange lain / potong rentang" if sev != "OK" else ""))
     else:
         # IDX: gap 1-4 hari normal (weekend, libur), 8-13 hari = libur Lebaran (1x/tahun).
@@ -118,18 +124,32 @@ def scrub(df: pd.DataFrame, market: MarketProfile, timeframe: str,
               "likuiditas rendah: jangan trading simbol ini" if sev != "OK" else ""))
 
     # 7. Outlier return (split, data error, ARA/ARB beruntun)
-    ret = df.close.pct_change().abs()
+    ret_signed = df.close.pct_change()
+    ret = ret_signed.abs()
     out = ret[ret > market.max_abs_return]
     if len(out):
-        add(Check("outlier.return", "BLOCK", f"{len(out)} bar |return| > {market.max_abs_return:.0%} (terakhir {out.index[-1].date()})",
-                  "kemungkinan stock split / data error: adjust atau potong histori sebelum tanggal itu"))
+        if market.continuous:
+            # Crypto: tidak ada split, dan crash 35-40% memang terjadi (COVID 2020, FTX 2022).
+            # Data error berbentuk PAKU: lonjakan lalu langsung berbalik >50% di bar berikutnya.
+            # net pergerakan dua bar (t-1 -> t+1) hampir nol = paku; crash nyata tidak kembali.
+            net2 = (df.close.shift(-1) / df.close.shift(1) - 1).abs().reindex(out.index)
+            spike = out[net2 < 0.10]
+            if len(spike):
+                add(Check("outlier.return", "BLOCK", f"{len(spike)} paku data (lonjakan lalu balik) — terakhir {spike.index[-1].date()}",
+                          "buang bar tersebut / ganti sumber"))
+            else:
+                add(Check("outlier.return", "WARN", f"{len(out)} pergerakan ekstrem nyata > {market.max_abs_return:.0%} (terakhir {out.index[-1].date()})"))
+        else:
+            add(Check("outlier.return", "BLOCK", f"{len(out)} bar |return| > {market.max_abs_return:.0%} (terakhir {out.index[-1].date()})",
+                      "kemungkinan stock split / data error: adjust atau potong histori sebelum tanggal itu"))
     else:
         add(Check("outlier.return", "OK", f"maks |return| {ret.max():.1%}"))
-    # gap open vs close sebelumnya juga (split sering muncul di open)
+    # gap open vs close sebelumnya (split di IDX sering muncul di open; di crypto = lubang data)
     gap_open = (df.open / df.close.shift(1) - 1).abs()
     go = gap_open[gap_open > market.max_abs_return]
     if len(go):
-        add(Check("outlier.gap_open", "BLOCK", f"{len(go)} open gap > {market.max_abs_return:.0%}", "cek corporate action"))
+        add(Check("outlier.gap_open", "BLOCK" if not market.continuous else "WARN",
+                  f"{len(go)} open gap > {market.max_abs_return:.0%}", "cek corporate action / lubang data"))
 
     # 8. Volume spike (bukan blocker, tapi ditandai)
     med = df.volume.rolling(50, min_periods=20).median()

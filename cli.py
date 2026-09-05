@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from engine.config import MARKETS, RiskConfig  # noqa: E402
 from engine.scrub import scrub, gate  # noqa: E402
-from engine.strategy import STRATEGIES  # noqa: E402
+from engine.strategy import STRATEGIES, make_strategy  # noqa: E402
 from engine.backtest import run_backtest  # noqa: E402
 from engine.metrics import summarize, monte_carlo_dd  # noqa: E402
 from engine.validate import walk_forward  # noqa: E402
@@ -52,7 +52,7 @@ def cmd_backtest(a):
     for sym in a.symbols:
         df = _load(sym, a)
         gate(df, m, a.tf)
-        strat = STRATEGIES[a.strategy]()
+        strat = make_strategy(a.strategy, a.market, a.tf)
         res = run_backtest(df, strat.run(df), m, RiskConfig(), cost_mult=a.cost_mult)
         met = summarize(res.trades, res.equity, m.bars_per_year[a.tf])
         mc = monte_carlo_dd(res.trades, RiskConfig().initial_equity)
@@ -71,7 +71,7 @@ def cmd_validate(a):
     for sym in a.symbols:
         df = _load(sym, a)
         gate(df, m, a.tf)
-        strat = STRATEGIES[a.strategy]()
+        strat = make_strategy(a.strategy, a.market, a.tf)
         rep = walk_forward(df, strat, m, a.tf, symbol=sym, n_folds=a.folds)
         print(rep.to_markdown())
         p = save_validation(sym, a.strategy, rep)

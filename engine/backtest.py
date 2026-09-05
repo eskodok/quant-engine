@@ -57,6 +57,7 @@ def run_backtest(df: pd.DataFrame, sig: pd.DataFrame, market: MarketProfile,
     stop_arr = sig["stop"].values
     tgt_arr = sig["target"].values
     max_hold = int(sig["max_hold"].iloc[0]) if "max_hold" in sig.columns else 0  # 0 = tanpa time-stop
+    weight_arr = sig["weight"].values if "weight" in sig.columns else None  # fraksi equity (vol-target)
     idx = df.index
 
     fee_b, fee_s = market.fee_buy * cost_mult, market.fee_sell * cost_mult
@@ -77,8 +78,11 @@ def run_backtest(df: pd.DataFrame, sig: pd.DataFrame, market: MarketProfile,
             stop, target = pending["stop"], pending["target"]
             if stop < fill:  # kalau gap up melewati target/merusak RR, tetap pakai stop asli
                 risk_per_unit = fill - stop
-                qty = risk.risk_per_trade * equity / risk_per_unit
-                qty = min(qty, risk.max_position_pct * equity / fill)
+                if pending.get("weight") is not None:
+                    qty = pending["weight"] * equity / fill            # ukuran dari vol-target
+                else:
+                    qty = risk.risk_per_trade * equity / risk_per_unit  # ukuran dari jarak SL
+                    qty = min(qty, risk.max_position_pct * equity / fill)
                 qty = _round_qty(qty, market.lot_size)
                 if qty > 0:
                     fee = fill * qty * fee_b
@@ -108,7 +112,8 @@ def run_backtest(df: pd.DataFrame, sig: pd.DataFrame, market: MarketProfile,
 
         # --- 3) keputusan di CLOSE bar i, dieksekusi bar i+1 ---
         if pos is None and entry_sig[i] and np.isfinite(stop_arr[i]) and np.isfinite(tgt_arr[i]):
-            pending = {"stop": float(stop_arr[i]), "target": float(tgt_arr[i])}
+            pending = {"stop": float(stop_arr[i]), "target": float(tgt_arr[i]),
+                       "weight": (float(np.clip(weight_arr[i], 0, 1)) if weight_arr is not None and np.isfinite(weight_arr[i]) else None)}
         elif pos is not None and (exit_sig[i] or (max_hold and i - pos["i"] >= max_hold)):
             pending_exit = True
 

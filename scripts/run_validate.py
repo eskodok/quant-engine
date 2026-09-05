@@ -14,7 +14,7 @@ from engine.config import MARKETS  # noqa: E402
 from engine.data import load_csv  # noqa: E402
 from engine.scrub import scrub  # noqa: E402
 from engine.signal import REPORT_DIR, load_validation, save_validation  # noqa: E402
-from engine.strategy import STRATEGIES  # noqa: E402
+from engine.strategy import STRATEGIES, make_strategy  # noqa: E402
 from engine.validate import pool_reports, walk_forward  # noqa: E402
 from engine.watchlist import read_watchlist  # noqa: E402
 
@@ -35,7 +35,7 @@ def main() -> int:
             rep_s = scrub(df, MARKETS[it.market], it.timeframe, now=now)
             if rep_s.blocked:
                 lines.append(f"| {it.symbol} | {it.strategy} | DATA_BLOCKED | {prev} | | | | data gagal scrub |"); continue
-            rep = walk_forward(df, STRATEGIES[it.strategy](), MARKETS[it.market], it.timeframe, symbol=it.symbol)
+            rep = walk_forward(df, make_strategy(it.strategy, it.market, it.timeframe), MARKETS[it.market], it.timeframe, symbol=it.symbol)
             groups.setdefault((it.market, it.timeframe, it.strategy), []).append(rep)
             p = save_validation(it.symbol, it.strategy, rep)
             (REPORT_DIR / (p.stem + ".md")).write_text(rep.to_markdown())

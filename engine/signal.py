@@ -14,7 +14,7 @@ import pandas as pd
 
 from .config import MARKETS, RiskConfig
 from .scrub import scrub
-from .strategy import STRATEGIES, Strategy
+from .strategy import STRATEGIES, Strategy, make_strategy
 
 REPORT_DIR = Path(__file__).resolve().parent.parent / "reports"
 
@@ -56,6 +56,7 @@ def save_validation(symbol: str, strategy: str, rep) -> Path:
     p.write_text(json.dumps({
         "verdict": rep.verdict, "best_params": rep.best_params, "oos": rep.oos_metrics,
         "oos_cost_x2": rep.oos_metrics_cost_x2, "dsr_prob": rep.dsr_prob, "n_trials": rep.n_trials,
+        "random_pctile": rep.random_pctile, "pbo": rep.pbo, "benchmark": rep.benchmark,
         "reasons": rep.reasons, "generated": str(pd.Timestamp.now(tz="UTC"))}, indent=2, default=float))
     return p
 
@@ -100,7 +101,7 @@ def generate(df: pd.DataFrame, symbol: str, market_name: str, timeframe: str,
         val_note = f"validasi per simbol {(val or {}).get('verdict', 'NONE')} -> memakai validasi basket {pooled['verdict']} " \
                    f"(PF OOS {pooled['oos'].get('profit_factor', 0):.2f}, {pooled['oos'].get('n_trades', 0)} trade)"
         val = pooled
-    strat: Strategy = STRATEGIES[strategy](**p)
+    strat: Strategy = make_strategy(strategy, market_name, timeframe, **p)
     f = strat.features(df)
     sig = strat.signals(f)
     last, s = f.iloc[-1], sig.iloc[-1]

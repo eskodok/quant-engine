@@ -161,4 +161,52 @@ class BollingerReversion(Strategy):
         return out
 
 
-STRATEGIES.update({s.name: s for s in (RSI2Reversion, BollingerReversion)})
+
+
+class TSMOM(Strategy):
+    """Time-series momentum (trend following) bulanan dengan vol-targeting.
+    Keputusan hanya tiap `rebalance` bar: return `lookback` bar > 0 DAN close > EMA200 -> long,
+    ukuran posisi = target_vol / vol realisasi (maks 100% equity). Keluar bila return lookback < 0
+    (dicek di hari rebalance) atau close < EMA200 (dicek setiap bar). Stop bencana 3 ATR.
+    Sumber ide: literatur time-series momentum (Moskowitz-Ooi-Pedersen; Quantpedia TS vs CS)."""
+    name = "tsmom"
+    params = {"lookback": 120, "rebalance": 21, "target_vol": 0.20, "atr_k": 3.0, "bars_per_year": 365}
+    grid = {"lookback": [60, 120, 250], "rebalance": [10, 21]}
+
+    def features(self, df: pd.DataFrame) -> pd.DataFrame:
+        f = build_features(df, self.params)
+        L = int(self.params["lookback"])
+        f["mom"] = df.close / df.close.shift(L) - 1
+        f["rvol"] = df.close.pct_change().rolling(20).std() * np.sqrt(self.params["bars_per_year"])
+        return f
+
+    def signals(self, f: pd.DataFrame) -> pd.DataFrame:
+        p = self.params
+        n = len(f)
+        # hari rebalance: setiap `rebalance` bar dihitung dari awal seri (deterministik, tanpa lookahead)
+        rb = pd.Series((np.arange(n) % int(p["rebalance"])) == 0, index=f.index)
+        trend = (f.mom > 0) & (f.close > f.ema_slow)
+        entry = rb & trend
+        exit_ = (rb & (f.mom < 0)) | (f.close < f.ema_slow)
+        weight = (p["target_vol"] / f.rvol).clip(upper=1.0)
+        stop = f.close - p["atr_k"] * f.atr
+        target = f.close + 20 * f.atr  # praktis tak terpakai; exit oleh sinyal
+        out = pd.DataFrame({"entry": entry.fillna(False), "exit": exit_.fillna(False),
+                            "stop": stop, "target": target, "weight": weight}, index=f.index)
+        out["reason"] = np.where(entry, f"TSMOM: return {p['lookback']} bar > 0 & close > EMA200, bobot vol-target", "")
+        out.loc[f[["ema_slow", "atr", "mom", "rvol"]].isna().any(axis=1), ["entry", "exit"]] = False
+        return out
+
+
+STRATEGIES.update({s.name: s for s in (RSI2Reversion, BollingerReversion, TSMOM)})
+
+
+def make_strategy(name: str, market_name: str | None = None, timeframe: str | None = None, **overrides) -> Strategy:
+    """Buat strategi dengan parameter yang bergantung market (mis. bars_per_year untuk TSMOM)."""
+    from .config import MARKETS
+    kw = dict(overrides)
+    if name == "tsmom" and market_name and timeframe:
+        kw.setdefault("bars_per_year", MARKETS[market_name].bars_per_year[timeframe])
+        if market_name == "idx":
+            kw.setdefault("target_vol", 0.15)
+    return STRATEGIES[name](**kw)

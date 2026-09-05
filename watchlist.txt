@@ -4,7 +4,7 @@
 #   simbol    : crypto pakai format BTC/USDT ; saham IDX cukup kode emiten (BBCA)
 #   timeframe : crypto 4h atau 1d ; idx hanya 1d
 #   strategi  : opsional. Kosong = auto (engine memilih strategi yang lolos validasi terbaik).
-#               Pilihan manual: trend_pullback | donchian_breakout | rsi2_reversion | bollinger_reversion
+#               Pilihan manual: trend_pullback | donchian_breakout | rsi2_reversion | bollinger_reversion | tsmom
 # Baris yang diawali # diabaikan. Validasi mingguan menguji SEMUA strategi untuk tiap simbol.
 
 crypto_spot BTC/USDT 4h

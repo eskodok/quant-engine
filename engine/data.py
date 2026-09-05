@@ -85,11 +85,18 @@ def _fetch_ccxt(ex, symbol: str, timeframe: str, limit_bars: int) -> pd.DataFram
     for _ in range(400):  # pengaman: maks 400 halaman
         batch = ex.fetch_ohlcv(symbol, timeframe=timeframe, since=since, limit=per_call)
         if not batch:
-            # tidak ada data di rentang ini (exchange belum ada saat itu) -> lompat ke depan
-            since += per_call * ms
-            if since >= now_ms:
-                break
-            continue
+            # halaman kosong: coba lagi 2x (KuCoin kadang mengembalikan kosong secara acak),
+            # baru anggap exchange belum ada di rentang itu dan lompat ke depan.
+            for _retry in range(2):
+                time.sleep(1.0)
+                batch = ex.fetch_ohlcv(symbol, timeframe=timeframe, since=since, limit=per_call)
+                if batch:
+                    break
+            if not batch:
+                since += per_call * ms
+                if since >= now_ms:
+                    break
+                continue
         rows.extend(batch)
         newest = batch[-1][0]
         if last_ts is not None and newest <= last_ts:
@@ -102,10 +109,50 @@ def _fetch_ccxt(ex, symbol: str, timeframe: str, limit_bars: int) -> pd.DataFram
     df["ts"] = pd.to_datetime(df["ts"], unit="ms", utc=True)
     df = df.set_index("ts")
     df = _finalize(df, timeframe)
+    df = _fill_gaps(ex, symbol, timeframe, df)
+    df = _trim_before_big_gap(df, timeframe)
     # data harus segar; kalau tidak, exchange ini dianggap gagal (pemanggil pindah ke exchange lain)
     if len(df) and (pd.Timestamp.now(tz="UTC") - df.index[-1]).total_seconds() > 3 * TIMEFRAME_SECONDS[timeframe]:
         raise RuntimeError(f"data tidak segar: bar terakhir {df.index[-1]}")
     return df
+
+
+def _fill_gaps(ex, symbol: str, timeframe: str, df: pd.DataFrame, max_gaps: int = 30) -> pd.DataFrame:
+    """Minta ulang rentang yang bolong (> 1.5x TF). Yang tetap bolong dibiarkan — tidak dikarang."""
+    tf = TIMEFRAME_SECONDS[timeframe]
+    for _ in range(2):  # dua putaran cukup
+        d = df.index.to_series().diff().dt.total_seconds()
+        gaps = d[d > tf * 1.5]
+        if gaps.empty:
+            break
+        extra = []
+        for end_ts, secs in list(gaps.items())[:max_gaps]:
+            start_ms = int((end_ts.timestamp() - secs) * 1000) + tf * 1000
+            need = int(secs // tf)
+            try:
+                batch = ex.fetch_ohlcv(symbol, timeframe=timeframe, since=start_ms, limit=min(1000, need + 2))
+            except Exception:  # noqa: BLE001
+                batch = []
+            extra.extend(batch)
+        if not extra:
+            break
+        add = pd.DataFrame(extra, columns=["ts", *COLUMNS])
+        add["ts"] = pd.to_datetime(add["ts"], unit="ms", utc=True)
+        df = _finalize(pd.concat([df, add.set_index("ts")]), timeframe)
+    return df
+
+
+def _trim_before_big_gap(df: pd.DataFrame, timeframe: str, min_keep: int = 1500) -> pd.DataFrame:
+    """Kalau masih ada lubang > 3x TF (biasanya data awal exchange 2017), buang histori
+    SEBELUM lubang terakhir — asal sisanya masih >= min_keep bar. Lebih baik pendek tapi utuh."""
+    tf = TIMEFRAME_SECONDS[timeframe]
+    d = df.index.to_series().diff().dt.total_seconds()
+    big = d[d > tf * 3]
+    if big.empty:
+        return df
+    cut = big.index[-1]
+    rest = df.loc[cut:]
+    return rest if len(rest) >= min_keep else df
 
 
 def load_idx(ticker: str, timeframe: str = "1d", years: int = 6) -> pd.DataFrame:

@@ -1,4 +1,4 @@
-# Quant Swing Engine v0.5 — anti garbage-in, garbage-out
+# Quant Swing Engine v0.7 — anti garbage-in, garbage-out
 
 > **Tidak bisa coding? Baca `SETUP.md`** — semua lewat browser, tidak perlu install apa pun.
 
@@ -14,6 +14,8 @@ outputnya setup (entry, SL, TP, qty, confidence, alasan) yang kamu eksekusi manu
 | Backtest bagus, live jelek | Fill di **open bar berikutnya** + slippage, fee dua sisi eksplisit per market, SL menang bila SL & TP kena di bar sama, gap melewati SL diisi di open. |
 | Overfit | Walk-forward 5 fold (optimasi hanya dari data sebelum blok test), grid sengaja kecil (≤3 parameter), degradasi IS→OOS >40% = FIX, deflated Sharpe (koreksi jumlah percobaan), stabilitas parameter antar fold. |
 | Edge semu dari biaya | Stress test biaya ×2: PF harus tetap > 1. |
+| Overfit pemilihan parameter | PBO/CSCV (Bailey et al. 2015, via laporan Huatai di quant-wiki): semua kombinasi grid dijalankan, 70 pembagian in/out-of-sample; PBO ≥ 0.5 = SCRAP. Laporan juga selalu menampilkan buy & hold pada jendela OOS yang sama; Sharpe di bawah buy & hold = peringatan. |
+| Edge semu dari arus pasar (bull market) | Baseline entry-acak: titik masuk diacak (jumlah trade, SL, TP, aturan exit sama) 100×; PF strategi harus mengalahkan ≥75% versi acaknya. Strategi harus profitable in-sample juga. Kasus nyata: crypto 1D 2023–26, PF 1.44 "FIX" ternyata persentil 63 → SCRAP. |
 | Confidence karangan | Confidence diturunkan dari verdict validasi + PF OOS + DSR + regime + likuiditas, dan tiap komponennya dicetak. Strategi yang belum SHIP/FIX → tidak boleh keluar sinyal LONG. |
 | Terlalu rumit | 5 perintah CLI, ~900 baris Python, pandas/numpy/scipy saja. Setiap modul satu tanggung jawab. |
 
@@ -82,7 +84,7 @@ engine/config.py    profil market (fee, slippage, lot, ARA/ARB), risk, threshold
 engine/data.py      loader ccxt / yfinance / csv -> satu format, bar belum tutup dibuang
 engine/scrub.py     gerbang kualitas data (BLOCK/WARN/OK)
 engine/features.py  indikator past-only + assert_no_lookahead()
-engine/strategy.py  TrendPullback, DonchianBreakout, RSI2Reversion, BollingerReversion (fungsi murni)
+engine/strategy.py  TrendPullback, DonchianBreakout, RSI2Reversion, BollingerReversion, TSMOM (vol-target)
 engine/backtest.py  simulasi bar-per-bar, fill open t+1, SL/TP intrabar konservatif
 engine/metrics.py   PF, Sharpe, DD, deflated Sharpe, Monte Carlo DD
 engine/validate.py  walk-forward + stress biaya + verdict
@@ -101,11 +103,16 @@ sampai bar t saja. Daftarkan di `STRATEGIES`. Test lookahead otomatis mencakupny
 
 ## Hasil di data riil (Sep 2026)
 
-Keempat strategi SCRAP pada BTC/ETH/SOL/BNB 4H (500 hari) dan 5 blue chip IDX (6 tahun):
-PF OOS basket 0.47–0.87. Engine bekerja; strateginya belum. v0.4 memperbesar bukti
-(crypto 4H 12.000 bar + 1D 4.000 bar, IDX 8 tahun, 12 emiten) sebelum riset lanjut.
+Keempat strategi SCRAP di semua market: IDX 1D (12 emiten, 8 tahun; PF OOS 0.69–0.77),
+crypto 4H (~5 tahun; 0.56–0.83, Bollinger 1.54 tapi gagal tes acak), crypto 1D (~9 tahun;
+PF 1.24–1.44 tapi persentil vs entry-acak 42–71 dan return jauh di bawah buy&hold).
+TSMOM (trend following bulanan + vol-target, ide dari literatur time-series momentum):
+IDX SCRAP (PF 0.70, tapi maxDD −10% vs buy&hold −55%); crypto 1D: BTC PF 3.7, return +68%
+vs B&H +180% dengan maxDD −14% vs −53%, Sharpe 1.04 vs 0.92 — ciri klasik trend following
+(bukan lebih untung, tapi drawdown jauh lebih kecil), namun gagal tes acak (p69) dan PBO 0.74
+→ SCRAP sebagai *signal engine*. Layak hanya sebagai overlay risiko untuk yang memang memegang crypto.
 
-## Batasan v0.4 (sengaja)
+## Batasan v0.7 (sengaja)
 
 Long only; satu posisi per simbol; funding perp tidak dimodelkan (ada WARN);
 IDX hanya 1D via Yahoo (delay ~15 menit, split harus di-handle manual bila scrub BLOCK);

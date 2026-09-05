@@ -33,6 +33,9 @@ class ValidationReport:
     dsr_prob: float = 0.0
     monte_carlo: dict = field(default_factory=dict)
     n_trials: int = 0
+    random_pctile: float = float("nan")  # persentil PF strategi vs distribusi entry-acak (0-100)
+    pbo: float = float("nan")            # Probability of Backtest Overfitting (CSCV, Bailey et al. 2015)
+    benchmark: dict = field(default_factory=dict)  # buy&hold pada jendela OOS yang sama
     oos_trades: pd.DataFrame | None = None
     oos_equity: pd.Series | None = None
 
@@ -58,6 +61,11 @@ class ValidationReport:
                 fmt = lambda v: f"{v:.1%}"
             md.append(f"| {name} | {fmt(a)} | {fmt(b)} | {fmt(c2)} |")
         md += ["", f"- Deflated Sharpe prob (n_trials={self.n_trials}): {self.dsr_prob:.2f}",
+               f"- Timing vs entry acak: persentil {self.random_pctile:.0f} (harus >= 75)",
+               f"- Probability of Backtest Overfitting (CSCV): {self.pbo:.2f} (harus < 0.5)",
+               (f"- Buy & hold jendela OOS: return {self.benchmark.get('bh_return', 0):+.1%}, Sharpe {self.benchmark.get('bh_sharpe', 0):.2f}, "
+                f"maxDD {self.benchmark.get('bh_max_dd', 0):.1%} | strategi: return {self.benchmark.get('strat_return', 0):+.1%}, "
+                f"Sharpe {self.oos_metrics.get('sharpe', 0):.2f}, maxDD {self.oos_metrics.get('max_dd', 0):.1%}" if self.benchmark else "- Benchmark: n/a"),
                f"- Stabilitas parameter antar fold: {self.param_stability:.0%}",
                f"- Monte Carlo max DD: median {self.monte_carlo.get('dd_p50', 0):.1%}, p95 {self.monte_carlo.get('dd_p95', 0):.1%}",
                f"- Parameter terpilih (fold terakhir): {self.best_params}", "", "### Fold"]
@@ -91,6 +99,64 @@ def grid_search(df: pd.DataFrame, strat: Strategy, market: MarketProfile, risk: 
         if sc > best_s:
             best, best_m, best_s = p, m, sc
     return best or {}, best_m or {}, n
+
+
+def random_entry_pctile(seg: pd.DataFrame, sig: pd.DataFrame, market: MarketProfile, risk: RiskConfig,
+                        bars_per_year: int, actual_pf: float, n_sims: int = 100, seed: int = 0) -> float:
+    """Persentil PF strategi terhadap PF dari entry ACAK dengan jumlah entry, stop, target,
+    dan aturan exit yang sama. Menjawab: apakah *timing* entry bernilai, atau hanya arus pasar?"""
+    rng = np.random.default_rng(seed)
+    n_entry = int(sig["entry"].sum())
+    if n_entry < 3:
+        return float("nan")
+    valid = np.where(np.isfinite(sig["stop"].values) & np.isfinite(sig["target"].values))[0]
+    if len(valid) < n_entry:
+        return float("nan")
+    pfs = []
+    col = sig.columns.get_loc("entry")
+    for _ in range(n_sims):
+        r = sig.copy()
+        r.iloc[:, col] = False
+        r.iloc[rng.choice(valid, size=n_entry, replace=False), col] = True
+        res = run_backtest(seg, r, market, risk)
+        m = summarize(res.trades, res.equity, bars_per_year)
+        pfs.append(min(m["profit_factor"], 10.0))
+    pfs = np.array(pfs)
+    return float((pfs < min(actual_pf, 10.0)).mean() * 100)
+
+
+def pbo_cscv(df: pd.DataFrame, strat: Strategy, market: MarketProfile, risk: RiskConfig,
+             n_blocks: int = 8) -> float:
+    """Probability of Backtest Overfitting via Combinatorially Symmetric Cross-Validation.
+    Semua kombinasi grid dijalankan di seluruh data -> matriks return per bar (T x N).
+    Untuk tiap pembagian n_blocks/2 blok IS vs sisanya OOS: pilih kombinasi terbaik di IS,
+    lihat peringkat OOS-nya. PBO = proporsi kasus peringkat OOS di bawah median."""
+    keys = list(strat.grid.keys())
+    combos = list(itertools.product(*(strat.grid[k] for k in keys)))
+    if len(combos) < 2:
+        return float("nan")
+    cols = []
+    for combo in combos:
+        s_ = strat.with_params(**dict(zip(keys, combo)))
+        res = run_backtest(df, s_.run(df), market, risk)
+        cols.append(res.equity.pct_change().fillna(0.0).values)
+    M = np.column_stack(cols)  # T x N
+    T, N = M.shape
+    blocks = np.array_split(np.arange(T), n_blocks)
+    half = n_blocks // 2
+    n_below = 0; n_tot = 0
+    def sharpe(x):
+        sd = x.std(axis=0); mu = x.mean(axis=0)
+        return np.where(sd > 0, mu / np.where(sd > 0, sd, 1), -np.inf)
+    for is_idx in itertools.combinations(range(n_blocks), half):
+        is_rows = np.concatenate([blocks[b] for b in is_idx])
+        oos_rows = np.concatenate([blocks[b] for b in range(n_blocks) if b not in is_idx])
+        best = int(np.argmax(sharpe(M[is_rows])))
+        oos_sr = sharpe(M[oos_rows])
+        rank = (oos_sr < oos_sr[best]).sum() + 1  # 1 = terburuk
+        w = rank / (N + 1)
+        n_below += (w <= 0.5); n_tot += 1
+    return float(n_below / n_tot)
 
 
 def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timeframe: str,
@@ -181,6 +247,27 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
     o = rep.oos_metrics
     rep.dsr_prob = deflated_sharpe(o["sharpe"], len(eq), bpy, max(n_trials_total, 1), o.get("skew", 0), o.get("kurt", 3) + 3)
     rep.monte_carlo = monte_carlo_dd(trades, risk.initial_equity)
+    # baseline entry acak: sinyal OOS tiap fold digabung (parameter per fold), entry diacak
+    segs, sigs = [], []
+    for f in rep.folds:
+        s_ = strat.with_params(**f["params"])
+        t0 = df.index.get_loc(f["test"][0]); t1 = df.index.get_loc(f["test"][1]) + 1
+        seg = df.iloc[max(0, t0 - warmup):t1]
+        sg = s_.run(seg).iloc[t0 - max(0, t0 - warmup):]
+        segs.append(seg.loc[sg.index]); sigs.append(sg)
+    if segs:
+        rep.random_pctile = random_entry_pctile(pd.concat(segs), pd.concat(sigs), market, risk, bpy, o["profit_factor"])
+        allseg = pd.concat(segs)
+        bh = allseg.close / allseg.close.iloc[0]
+        bh_r = bh.pct_change().dropna()
+        rep.benchmark = {"bh_return": float(bh.iloc[-1] - 1),
+                         "bh_sharpe": float(bh_r.mean() / bh_r.std() * np.sqrt(bpy)) if bh_r.std() > 0 else 0.0,
+                         "bh_max_dd": float(((bh - bh.cummax()) / bh.cummax()).min()),
+                         "strat_return": float(o.get("total_return", 0.0))}
+    try:
+        rep.pbo = pbo_cscv(df, strat, market, risk)
+    except Exception:  # noqa: BLE001
+        rep.pbo = float("nan")
 
     # ---- verdict ----
     fails, warns = [], []
@@ -195,6 +282,14 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
         fails.append(f"degradasi IS→OOS {(is_pf - oos_pf) / is_pf:.0%} > {th.max_oos_degradation:.0%}: indikasi overfit")
     if rep.oos_metrics_cost_x2["profit_factor"] < 1.0:
         fails.append(f"PF OOS dengan biaya x{th.cost_stress_multiplier} = {rep.oos_metrics_cost_x2['profit_factor']:.2f} < 1: edge habis dimakan biaya")
+    if np.isfinite(rep.random_pctile) and rep.random_pctile < th.min_random_pctile:
+        fails.append(f"timing entry tidak lebih baik dari acak (persentil {rep.random_pctile:.0f} < {th.min_random_pctile:.0f}): hasil = arus pasar, bukan sinyal")
+    if np.isfinite(rep.pbo) and rep.pbo >= th.max_pbo:
+        fails.append(f"PBO {rep.pbo:.2f} >= {th.max_pbo}: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)")
+    elif np.isfinite(rep.pbo) and rep.pbo >= th.max_pbo * 0.6:
+        warns.append(f"PBO {rep.pbo:.2f} agak tinggi")
+    if rep.benchmark and o.get("sharpe", 0) < rep.benchmark.get("bh_sharpe", 0):
+        warns.append(f"Sharpe OOS {o.get('sharpe', 0):.2f} < buy&hold {rep.benchmark['bh_sharpe']:.2f}: belum lebih baik dari sekadar memegang aset")
     if rep.dsr_prob < th.min_deflated_sharpe_prob:
         warns.append(f"deflated Sharpe prob {rep.dsr_prob:.2f} < {th.min_deflated_sharpe_prob}: Sharpe bisa hasil kebetulan")
     ppt = strat.n_params / max(o["n_trades"], 1) * 100
@@ -206,7 +301,9 @@ def walk_forward(df: pd.DataFrame, strat: Strategy, market: MarketProfile, timef
     # SCRAP = edge tidak ada / habis oleh biaya. FIX = edge ada tapi bukti belum cukup.
     hard_fail = (o["profit_factor"] < th.min_oos_profit_factor or is_pf < 1.0
                  or rep.oos_metrics_cost_x2["profit_factor"] < 1.0
-                 or o["n_trades"] < th.min_trades_oos // 3)
+                 or o["n_trades"] < th.min_trades_oos // 3
+                 or (np.isfinite(rep.random_pctile) and rep.random_pctile < th.min_random_pctile)
+                 or (np.isfinite(rep.pbo) and rep.pbo >= th.max_pbo))
     if fails:
         rep.verdict = "SCRAP" if hard_fail else "FIX"
     elif warns:
@@ -252,6 +349,13 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
                                "n_trades": int(sum(m.get("n_trades", 0) for m in x2))}
     out.is_metrics = {k: float(np.mean([r.is_metrics.get(k, 0) for r in reps])) for k in reps[0].is_metrics}
     out.n_trials = max(r.n_trials for r in reps)
+    pct = [r.random_pctile for r in reps if np.isfinite(r.random_pctile)]
+    out.random_pctile = float(np.mean(pct)) if pct else float("nan")
+    pb = [r.pbo for r in reps if np.isfinite(r.pbo)]
+    out.pbo = float(np.mean(pb)) if pb else float("nan")
+    bms = [r.benchmark for r in reps if r.benchmark]
+    if bms:
+        out.benchmark = {k: float(np.mean([b[k] for b in bms])) for k in bms[0]}
     out.param_stability = float(np.mean([r.param_stability for r in reps]))
     out.folds = []
     o = out.oos_metrics
@@ -272,6 +376,12 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
         fails.append(f"degradasi IS→OOS {(is_pf - oos_pf) / is_pf:.0%} > {th.max_oos_degradation:.0%}")
     if out.oos_metrics_cost_x2["profit_factor"] < 1.0:
         fails.append(f"PF rata-rata dengan biaya x2 = {out.oos_metrics_cost_x2['profit_factor']:.2f} < 1")
+    if np.isfinite(out.random_pctile) and out.random_pctile < th.min_random_pctile:
+        fails.append(f"timing entry tidak lebih baik dari acak (rata-rata persentil {out.random_pctile:.0f} < {th.min_random_pctile:.0f})")
+    if np.isfinite(out.pbo) and out.pbo >= th.max_pbo:
+        fails.append(f"PBO rata-rata {out.pbo:.2f} >= {th.max_pbo}: overfit")
+    if out.benchmark and o.get("sharpe", 0) < out.benchmark.get("bh_sharpe", 0):
+        warns.append(f"Sharpe OOS {o.get('sharpe', 0):.2f} < rata-rata buy&hold {out.benchmark['bh_sharpe']:.2f}")
     if out.dsr_prob < th.min_deflated_sharpe_prob:
         warns.append(f"deflated Sharpe prob {out.dsr_prob:.2f} < {th.min_deflated_sharpe_prob}")
     if out.param_stability < 0.5:
@@ -280,7 +390,9 @@ def pool_reports(reps: list, bars_per_year: int, risk: RiskConfig = RiskConfig()
     if n_pos < len(reps) / 2:
         warns.append(f"hanya {n_pos}/{len(reps)} simbol profitable OOS: edge tidak merata")
     hard_fail = (oos_pf < th.min_oos_profit_factor or is_pf < 1.0 or out.oos_metrics_cost_x2["profit_factor"] < 1.0
-                 or o["n_trades"] < th.min_trades_oos // 3)
+                 or o["n_trades"] < th.min_trades_oos // 3
+                 or (np.isfinite(out.random_pctile) and out.random_pctile < th.min_random_pctile)
+                 or (np.isfinite(out.pbo) and out.pbo >= th.max_pbo))
     out.verdict = "SCRAP" if (fails and hard_fail) else ("FIX" if fails or warns else "SHIP")
     out.reasons = [f"Gabungan {len(reps)} simbol: " + ", ".join(r.symbol for r in reps)]
     out.reasons += [f"GAGAL: {f}" for f in fails] + [f"PERINGATAN: {w}" for w in warns]
