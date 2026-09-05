@@ -2,36 +2,46 @@
   "verdict": "SCRAP",
   "best_params": {},
   "oos": {
-    "n_trades": 43,
-    "profit_factor": 0.9277143085039609,
-    "win_rate": 0.3023255813953488,
-    "expectancy_r": 0.011178189356056746,
-    "avg_win_r": 2.4259752345165597,
-    "avg_loss_r": -1.0352338635468281,
-    "avg_bars": 10.976744186046512,
-    "exposure": 10.727272727272727,
-    "sharpe": -1.1767069937479024,
-    "sortino": -5.716430882212814,
-    "max_dd": -0.059959050445992756,
-    "total_return": -0.0151716906057201,
-    "cagr": -0.5327652044058083,
-    "calmar": -8.885484350451629,
-    "skew": 1.2809275027481204,
-    "kurt": 0.3374293530041452
+    "n_trades": 74,
+    "profit_factor": 0.8280151346161269,
+    "win_rate": 0.28378378378378377,
+    "expectancy_r": -0.05356707224123316,
+    "avg_win_r": 2.3006492696823395,
+    "avg_loss_r": -0.9863697737581204,
+    "avg_bars": 11.432432432432432,
+    "exposure": 11.28,
+    "sharpe": -3.690386310522171,
+    "sortino": -15.44067674260766,
+    "max_dd": -0.03605263942276159,
+    "total_return": -0.015796113412169466,
+    "cagr": -0.3718198471319971,
+    "calmar": -10.31324899050945,
+    "skew": 1.2530914218414502,
+    "kurt": 0.3278432155335853
   },
   "oos_cost_x2": {
-    "profit_factor": 0.8022197673199527,
-    "n_trades": 43
+    "profit_factor": 0.6659680266348702,
+    "n_trades": 74
   },
-  "dsr_prob": 0.014844073793277188,
+  "dsr_prob": 0.006811758808691095,
   "n_trials": 45,
+  "random_pctile": 64.25,
+  "pbo": 0.35,
+  "benchmark": {
+    "bh_return": -0.1738147194314293,
+    "bh_sharpe": -0.3257827631060327,
+    "bh_max_dd": -0.6054603112128782,
+    "strat_return": -0.016506552328203028
+  },
   "reasons": [
-    "Gabungan 1 simbol: BNB/USDT",
-    "GAGAL: PF OOS gabungan 0.93 < 1.15",
-    "GAGAL: degradasi IS\u2192OOS 40% > 40%",
-    "GAGAL: PF rata-rata dengan biaya x2 = 0.80 < 1",
+    "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
+    "GAGAL: PF OOS gabungan 0.83 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 44% > 40%",
+    "GAGAL: PF rata-rata dengan biaya x2 = 0.67 < 1",
+    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 64 < 75)",
+    "PERINGATAN: Sharpe OOS -3.69 < rata-rata buy&hold -0.33",
     "PERINGATAN: deflated Sharpe prob 0.01 < 0.9",
-    "PERINGATAN: hanya 0/1 simbol profitable OOS: edge tidak merata"
+    "PERINGATAN: hanya 0/4 simbol profitable OOS: edge tidak merata"
   ],
-  "generated": "2026-09-05 02:01:18.280279+00:00"
+  "generated": "2026-09-05 02:29:26.113749+00:00"
 }

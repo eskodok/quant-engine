@@ -43,14 +43,24 @@
   },
   "dsr_prob": 0.0012897338314025537,
   "n_trials": 60,
+  "random_pctile": 54.0,
+  "pbo": 0.07142857142857142,
+  "benchmark": {
+    "bh_return": -0.3449275362318841,
+    "bh_sharpe": -0.30567338403548,
+    "bh_max_dd": -0.5953124999999999,
+    "strat_return": -0.01420631163889896
+  },
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
     "GAGAL: trade OOS 6 < 30: belum cukup bukti",
     "GAGAL: PF OOS 0.56 < 1.15",
     "GAGAL: degradasi IS\u2192OOS 77% > 40%: indikasi overfit",
     "GAGAL: PF OOS dengan biaya x2.0 = 0.38 < 1: edge habis dimakan biaya",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 54 < 75): hasil = arus pasar, bukan sinyal",
+    "PERINGATAN: Sharpe OOS -0.37 < buy&hold -0.31: belum lebih baik dari sekadar memegang aset",
     "PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan",
     "PERINGATAN: 3 parameter untuk 6 trade OOS (50.0/100 trade)"
   ],
-  "generated": "2026-09-05 02:00:15.870307+00:00"
+  "generated": "2026-09-05 02:27:19.084194+00:00"
 }

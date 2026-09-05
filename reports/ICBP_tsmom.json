@@ -1,0 +1,63 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 120,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 5,
+    "profit_factor": 0.5480450491052872,
+    "win_rate": 0.2,
+    "expectancy_r": -0.40445816731677936,
+    "avg_win_r": 0.8205773773497039,
+    "avg_loss_r": -0.7107170534834002,
+    "avg_bars": 26.8,
+    "exposure": 0.19705882352941176,
+    "sharpe": -0.18320663765496084,
+    "sortino": -0.12688865183160697,
+    "max_dd": -0.11590178698311139,
+    "total_return": -0.05426160578665895,
+    "cagr": -0.01989988263174125,
+    "calmar": -0.17169608122298372,
+    "skew": -0.4043309215816446,
+    "kurt": 13.136949372717702
+  },
+  "oos_cost_x2": {
+    "n_trades": 5,
+    "profit_factor": 0.40780206030394495,
+    "win_rate": 0.2,
+    "expectancy_r": -0.4995901135241823,
+    "avg_win_r": 0.6931716803900937,
+    "avg_loss_r": -0.7977805620027513,
+    "avg_bars": 26.8,
+    "exposure": 0.19705882352941176,
+    "sharpe": -0.2882271533827805,
+    "sortino": -0.19987479433314498,
+    "max_dd": -0.12863556878436086,
+    "total_return": -0.07961080790187747,
+    "cagr": -0.0294472442195729,
+    "calmar": -0.22891992081083729,
+    "skew": -0.5625725959257643,
+    "kurt": 13.89751508325448
+  },
+  "dsr_prob": 0.008612102786714643,
+  "n_trials": 30,
+  "random_pctile": 90.0,
+  "pbo": 0.17142857142857143,
+  "benchmark": {
+    "bh_return": -0.29425837320574166,
+    "bh_sharpe": -0.2871550505723091,
+    "bh_max_dd": -0.53125,
+    "strat_return": -0.05426160578665895
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 5 < 30: belum cukup bukti",
+    "GAGAL: PF OOS 0.55 < 1.15",
+    "GAGAL: PF in-sample 0.26 < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.41 < 1: edge habis dimakan biaya",
+    "PERINGATAN: deflated Sharpe prob 0.01 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 5 trade OOS (40.0/100 trade)"
+  ],
+  "generated": "2026-09-05 02:28:24.153065+00:00"
+}

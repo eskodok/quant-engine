@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 60,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 10,
+    "profit_factor": 4.521816241596719,
+    "win_rate": 0.5,
+    "expectancy_r": 0.6853578243098246,
+    "avg_win_r": 1.9053562656399794,
+    "avg_loss_r": -0.5346406170203302,
+    "avg_bars": 46.2,
+    "exposure": 0.4863157894736842,
+    "sharpe": 0.823937875604139,
+    "sortino": 0.850030017399316,
+    "max_dd": -0.26114431143714045,
+    "total_return": 0.4545025318941507,
+    "cagr": 0.15482616881581102,
+    "calmar": 0.5928759005461963,
+    "skew": 1.001337062837072,
+    "kurt": 15.98612633670707
+  },
+  "oos_cost_x2": {
+    "n_trades": 10,
+    "profit_factor": 4.207047552327323,
+    "win_rate": 0.5,
+    "expectancy_r": 0.6515091749841112,
+    "avg_win_r": 1.8641327079164487,
+    "avg_loss_r": -0.5611143579482264,
+    "avg_bars": 46.2,
+    "exposure": 0.4863157894736842,
+    "sharpe": 0.7932231989396265,
+    "sortino": 0.8199047233677786,
+    "max_dd": -0.2640612458153455,
+    "total_return": 0.4315166934366512,
+    "cagr": 0.14777992176212185,
+    "calmar": 0.5596425984654422,
+    "skew": 1.004573460529557,
+    "kurt": 16.020364792057332
+  },
+  "dsr_prob": 0.22451349617585697,
+  "n_trials": 30,
+  "random_pctile": 94.0,
+  "pbo": 0.9142857142857143,
+  "benchmark": {
+    "bh_return": 1.367631344612645,
+    "bh_sharpe": 0.8882878413620892,
+    "bh_max_dd": -0.5819817904084117,
+    "strat_return": 0.4545025318941507
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 10 < 30: belum cukup bukti",
+    "GAGAL: PBO 0.91 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: Sharpe OOS 0.82 < buy&hold 0.89: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.22 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 10 trade OOS (20.0/100 trade)"
+  ],
+  "generated": "2026-09-05 02:26:57.948083+00:00"
+}

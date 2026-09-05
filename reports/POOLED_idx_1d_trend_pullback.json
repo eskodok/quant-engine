@@ -25,12 +25,22 @@
   },
   "dsr_prob": 0.00046819491233151563,
   "n_trials": 135,
+  "random_pctile": 62.833333333333336,
+  "pbo": 0.38452380952380955,
+  "benchmark": {
+    "bh_return": -0.11202959143991797,
+    "bh_sharpe": -0.03795632862852332,
+    "bh_max_dd": -0.4806750878966383,
+    "strat_return": -0.0076924528625394355
+  },
   "reasons": [
     "Gabungan 12 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, KLBF, ANTM, UNTR, PGAS",
     "GAGAL: PF OOS gabungan 0.77 < 1.15",
     "GAGAL: PF in-sample 0.78 < 1: OOS untung = kebetulan rezim, bukan edge",
     "GAGAL: PF rata-rata dengan biaya x2 = 0.69 < 1",
+    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 63 < 75)",
+    "PERINGATAN: Sharpe OOS -1.73 < rata-rata buy&hold -0.04",
     "PERINGATAN: deflated Sharpe prob 0.00 < 0.9"
   ],
-  "generated": "2026-09-05 02:01:18.356503+00:00"
+  "generated": "2026-09-05 02:29:26.387559+00:00"
 }

@@ -2,33 +2,40 @@
   "verdict": "FIX",
   "best_params": {},
   "oos": {
-    "n_trades": 17,
-    "profit_factor": 2.000312594955341,
-    "win_rate": 0.7058823529411765,
-    "expectancy_r": 0.3047099186967991,
-    "avg_win_r": 0.8865707339691205,
-    "avg_loss_r": -1.091756037956772,
-    "avg_bars": 11.882352941176471,
-    "exposure": 11.222222222222221,
-    "sharpe": 14.31607057160709,
-    "sortino": 54.43117127632475,
-    "max_dd": -0.019283920598234385,
-    "total_return": 0.03868493987141797,
-    "cagr": 100.28222319528524,
-    "calmar": 5200.3026399344835,
-    "skew": -0.3702105937408016,
-    "kurt": -0.6041563139371124
+    "n_trades": 44,
+    "profit_factor": 1.5351858916837915,
+    "win_rate": 0.6590909090909091,
+    "expectancy_r": 0.1576659211486171,
+    "avg_win_r": 0.8100812668182074,
+    "avg_loss_r": -1.103670413812591,
+    "avg_bars": 9.477272727272727,
+    "exposure": 9.266666666666667,
+    "sharpe": 8.8627161110647,
+    "sortino": 32.084992619045636,
+    "max_dd": -0.00790637097497775,
+    "total_return": 0.014193298991267644,
+    "cagr": 0.9855272624869154,
+    "calmar": 124.64976227474435,
+    "skew": -0.13233919836636834,
+    "kurt": -0.8821968709262835
   },
   "oos_cost_x2": {
-    "profit_factor": 1.6295451613321543,
-    "n_trades": 17
+    "profit_factor": 1.4822184356604482,
+    "n_trades": 44
   },
-  "dsr_prob": 0.2088477923996349,
+  "dsr_prob": 0.13806568150468806,
   "n_trials": 40,
+  "random_pctile": 83.75,
+  "pbo": 0.4928571428571429,
+  "benchmark": {
+    "bh_return": -0.1738147194314293,
+    "bh_sharpe": -0.3257827631060327,
+    "bh_max_dd": -0.6054603112128782,
+    "strat_return": 0.01398441186762725
+  },
   "reasons": [
-    "Gabungan 1 simbol: BNB/USDT",
-    "GAGAL: trade OOS gabungan 17 < 30",
-    "PERINGATAN: deflated Sharpe prob 0.21 < 0.9"
+    "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
+    "PERINGATAN: deflated Sharpe prob 0.14 < 0.9"
   ],
-  "generated": "2026-09-05 02:01:18.328909+00:00"
+  "generated": "2026-09-05 02:29:26.177488+00:00"
 }

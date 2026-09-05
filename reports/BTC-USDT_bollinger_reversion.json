@@ -1,13 +1,61 @@
 {
-  "verdict": "SCRAP",
-  "best_params": {},
-  "oos": {},
-  "oos_cost_x2": {},
-  "dsr_prob": 0.0,
-  "n_trials": 0,
+  "verdict": "FIX",
+  "best_params": {
+    "bb_n": 20,
+    "bb_k": 2.0,
+    "need_trend": 0
+  },
+  "oos": {
+    "n_trades": 21,
+    "profit_factor": 2.3195313793686956,
+    "win_rate": 0.7619047619047619,
+    "expectancy_r": 0.3251567648281898,
+    "avg_win_r": 0.7513041932432125,
+    "avg_loss_r": -1.0385150060998831,
+    "avg_bars": 7.380952380952381,
+    "exposure": 0.13025210084033614,
+    "sharpe": 0.9431146597103657,
+    "sortino": 0.549124317822098,
+    "max_dd": -0.018286211728273136,
+    "total_return": 0.07042866716319263,
+    "cagr": 0.021094711465587723,
+    "calmar": 1.1535856512572387,
+    "skew": 1.753206648638078,
+    "kurt": 33.481135407598
+  },
+  "oos_cost_x2": {
+    "n_trades": 21,
+    "profit_factor": 2.0898634038255426,
+    "win_rate": 0.7142857142857143,
+    "expectancy_r": 0.2797271127525839,
+    "avg_win_r": 0.7507932396082808,
+    "avg_loss_r": -0.8979382043866582,
+    "avg_bars": 7.380952380952381,
+    "exposure": 0.13025210084033614,
+    "sharpe": 0.8121428076786413,
+    "sortino": 0.4698467384007782,
+    "max_dd": -0.01868227417214787,
+    "total_return": 0.06019765117685383,
+    "cagr": 0.01809128334446708,
+    "calmar": 0.9683662266041541,
+    "skew": 1.5151065593846234,
+    "kurt": 34.223377485159105
+  },
+  "dsr_prob": 0.30749285399499615,
+  "n_trials": 40,
+  "random_pctile": 99.0,
+  "pbo": 0.17142857142857143,
+  "benchmark": {
+    "bh_return": 1.8009323521882878,
+    "bh_sharpe": 0.9152729275306338,
+    "bh_max_dd": -0.5296302120019447,
+    "strat_return": 0.07042866716319263
+  },
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
-    "Data terlalu pendek untuk 5 fold (test_len=37 bar)"
+    "GAGAL: trade OOS 21 < 30: belum cukup bukti",
+    "PERINGATAN: deflated Sharpe prob 0.31 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 21 trade OOS (14.3/100 trade)"
   ],
-  "generated": "2026-09-05 01:39:39.343349+00:00"
+  "generated": "2026-09-05 02:26:16.743680+00:00"
 }

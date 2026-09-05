@@ -21,6 +21,9 @@
 | CAGR | 0.5% | -0.0% | -0.3% |
 
 - Deflated Sharpe prob (n_trials=60): 0.01
+- Timing vs entry acak: persentil 78 (harus >= 75)
+- Probability of Backtest Overfitting (CSCV): 0.04 (harus < 0.5)
+- Buy & hold jendela OOS: return -29.4%, Sharpe -0.29, maxDD -53.1% | strategi: return -0.1%, Sharpe -0.04, maxDD -1.5%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median -1.1%, p95 -1.2%
 - Parameter terpilih (fold terakhir): {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0}

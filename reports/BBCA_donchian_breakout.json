@@ -42,14 +42,23 @@
   },
   "dsr_prob": 0.006844914700267906,
   "n_trials": 45,
+  "random_pctile": 64.0,
+  "pbo": 0.2857142857142857,
+  "benchmark": {
+    "bh_return": -0.23661971830985917,
+    "bh_sharpe": -0.20473637349301282,
+    "bh_max_dd": -0.5570776255707762,
+    "strat_return": -0.006237054440041745
+  },
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
     "GAGAL: trade OOS 4 < 30: belum cukup bukti",
     "GAGAL: PF OOS 0.71 < 1.15",
     "GAGAL: PF in-sample 0.85 < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan",
     "GAGAL: PF OOS dengan biaya x2.0 = 0.48 < 1: edge habis dimakan biaya",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 64 < 75): hasil = arus pasar, bukan sinyal",
     "PERINGATAN: deflated Sharpe prob 0.01 < 0.9: Sharpe bisa hasil kebetulan",
     "PERINGATAN: 2 parameter untuk 4 trade OOS (50.0/100 trade)"
   ],
-  "generated": "2026-09-05 02:00:08.225800+00:00"
+  "generated": "2026-09-05 02:27:04.270734+00:00"
 }

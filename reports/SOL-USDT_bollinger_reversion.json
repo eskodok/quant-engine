@@ -1,13 +1,63 @@
 {
   "verdict": "SCRAP",
-  "best_params": {},
-  "oos": {},
-  "oos_cost_x2": {},
-  "dsr_prob": 0.0,
-  "n_trials": 0,
+  "best_params": {
+    "bb_n": 20,
+    "bb_k": 2.0,
+    "need_trend": 0
+  },
+  "oos": {
+    "n_trades": 7,
+    "profit_factor": 1.9807875335788871,
+    "win_rate": 0.7142857142857143,
+    "expectancy_r": 0.291030497515517,
+    "avg_win_r": 0.813296762190894,
+    "avg_loss_r": -1.0146351641729257,
+    "avg_bars": 10.428571428571429,
+    "exposure": 0.1140625,
+    "sharpe": 0.608126255494674,
+    "sortino": 0.41789953883778574,
+    "max_dd": -0.01745983921030562,
+    "total_return": 0.020230984454882917,
+    "cagr": 0.011488311121568007,
+    "calmar": 0.6579849323461732,
+    "skew": 2.9235448249710503,
+    "kurt": 38.621715903378025
+  },
+  "oos_cost_x2": {
+    "n_trades": 7,
+    "profit_factor": 1.8976596247230524,
+    "win_rate": 0.7142857142857143,
+    "expectancy_r": 0.2704310812526665,
+    "avg_win_r": 0.7902743582480651,
+    "avg_loss_r": -1.02917711123583,
+    "avg_bars": 10.428571428571429,
+    "exposure": 0.1140625,
+    "sharpe": 0.5659985585085942,
+    "sortino": 0.38918723549788864,
+    "max_dd": -0.0175749274227901,
+    "total_return": 0.018768194929096094,
+    "cagr": 0.010660957937807414,
+    "calmar": 0.606600396197536,
+    "skew": 2.881325053557446,
+    "kurt": 38.47736156799482
+  },
+  "dsr_prob": 0.07434215607400432,
+  "n_trials": 40,
+  "random_pctile": 92.0,
+  "pbo": 0.8714285714285714,
+  "benchmark": {
+    "bh_return": -0.5661892854436614,
+    "bh_sharpe": -0.2254744744326644,
+    "bh_max_dd": -0.7624720319503944,
+    "strat_return": 0.020230984454882917
+  },
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
-    "Data terlalu pendek untuk 5 fold (test_len=37 bar)"
+    "GAGAL: trade OOS 7 < 30: belum cukup bukti",
+    "GAGAL: PF in-sample 0.81 < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan",
+    "GAGAL: PBO 0.87 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: deflated Sharpe prob 0.07 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 7 trade OOS (42.9/100 trade)"
   ],
-  "generated": "2026-09-05 01:39:40.048846+00:00"
+  "generated": "2026-09-05 02:26:42.956705+00:00"
 }

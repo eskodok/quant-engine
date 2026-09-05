@@ -1,0 +1,64 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 60,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 3,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": -0.2943596268056647,
+    "avg_win_r": 0.0,
+    "avg_loss_r": -0.2943596268056647,
+    "avg_bars": 34.666666666666664,
+    "exposure": 0.15294117647058825,
+    "sharpe": -0.1917354066028982,
+    "sortino": -0.1320942526887881,
+    "max_dd": -0.08021131250474278,
+    "total_return": -0.04730481658651908,
+    "cagr": -0.017308410667452145,
+    "calmar": -0.21578515706782286,
+    "skew": 2.0809150979689903,
+    "kurt": 35.66912023105254
+  },
+  "oos_cost_x2": {
+    "n_trades": 3,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": -0.36734812238705755,
+    "avg_win_r": 0.0,
+    "avg_loss_r": -0.36734812238705755,
+    "avg_bars": 34.666666666666664,
+    "exposure": 0.15294117647058825,
+    "sharpe": -0.2521383473674683,
+    "sortino": -0.17440876940350836,
+    "max_dd": -0.08922820873402487,
+    "total_return": -0.059693290438066704,
+    "cagr": -0.021931728337932332,
+    "calmar": -0.2457936637875062,
+    "skew": 2.0447555593731526,
+    "kurt": 35.2840366816273
+  },
+  "dsr_prob": 0.009149005119118744,
+  "n_trials": 30,
+  "random_pctile": 0.0,
+  "pbo": 0.15714285714285714,
+  "benchmark": {
+    "bh_return": -0.5710227272727273,
+    "bh_sharpe": -0.673387923085084,
+    "bh_max_dd": -0.6221590909090908,
+    "strat_return": -0.04730481658651908
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 3 < 30: belum cukup bukti",
+    "GAGAL: PF OOS 0.00 < 1.15",
+    "GAGAL: degradasi IS\u2192OOS 100% > 40%: indikasi overfit",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.00 < 1: edge habis dimakan biaya",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 0 < 75): hasil = arus pasar, bukan sinyal",
+    "PERINGATAN: deflated Sharpe prob 0.01 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 3 trade OOS (66.7/100 trade)"
+  ],
+  "generated": "2026-09-05 02:28:48.393154+00:00"
+}

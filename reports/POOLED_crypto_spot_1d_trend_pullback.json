@@ -1,12 +1,43 @@
 {
   "verdict": "SCRAP",
   "best_params": {},
-  "oos": {},
-  "oos_cost_x2": {},
-  "dsr_prob": 0.0,
-  "n_trials": 0,
+  "oos": {
+    "n_trades": 73,
+    "profit_factor": 1.4376013170379496,
+    "win_rate": 0.3287671232876712,
+    "expectancy_r": 0.16381542165667445,
+    "avg_win_r": 1.5474269085251227,
+    "avg_loss_r": -0.5138718372176675,
+    "avg_bars": 10.726027397260275,
+    "exposure": 10.58108108108108,
+    "sharpe": 2.420990616417182,
+    "sortino": 9.50403260389152,
+    "max_dd": -0.02471228276748041,
+    "total_return": 0.027550798951657685,
+    "cagr": 0.1434547579894203,
+    "calmar": 5.804998240720864,
+    "skew": 1.4680054193314322,
+    "kurt": 0.9415355147608206
+  },
+  "oos_cost_x2": {
+    "profit_factor": 1.566961583606947,
+    "n_trades": 73
+  },
+  "dsr_prob": 0.04957045276763817,
+  "n_trials": 135,
+  "random_pctile": 63.0,
+  "pbo": 0.7392857142857143,
+  "benchmark": {
+    "bh_return": 0.7178339390808004,
+    "bh_sharpe": 0.5028965078328815,
+    "bh_max_dd": -0.6373809029094331,
+    "strat_return": 0.027934929759995425
+  },
   "reasons": [
-    "tidak ada laporan OOS yang bisa digabung"
+    "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
+    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 63 < 75)",
+    "GAGAL: PBO rata-rata 0.74 >= 0.5: overfit",
+    "PERINGATAN: deflated Sharpe prob 0.05 < 0.9"
   ],
-  "generated": "2026-09-05 01:41:05.388279+00:00"
+  "generated": "2026-09-05 02:29:26.237557+00:00"
 }

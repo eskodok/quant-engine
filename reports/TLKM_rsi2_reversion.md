@@ -7,6 +7,9 @@
 - GAGAL: PF OOS 0.40 < 1.15
 - GAGAL: degradasi IS→OOS 89% > 40%: indikasi overfit
 - GAGAL: PF OOS dengan biaya x2.0 = 0.24 < 1: edge habis dimakan biaya
+- GAGAL: timing entry tidak lebih baik dari acak (persentil 40 < 75): hasil = arus pasar, bukan sinyal
+- PERINGATAN: PBO 0.46 agak tinggi
+- PERINGATAN: Sharpe OOS -0.77 < buy&hold -0.11: belum lebih baik dari sekadar memegang aset
 - PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan
 - PERINGATAN: 3 parameter untuk 14 trade OOS (21.4/100 trade)
 
@@ -21,6 +24,9 @@
 | CAGR | 0.8% | -1.0% | -1.5% |
 
 - Deflated Sharpe prob (n_trials=60): 0.00
+- Timing vs entry acak: persentil 40 (harus >= 75)
+- Probability of Backtest Overfitting (CSCV): 0.46 (harus < 0.5)
+- Buy & hold jendela OOS: return -25.3%, Sharpe -0.11, maxDD -45.6% | strategi: return -2.8%, Sharpe -0.77, maxDD -3.1%
 - Stabilitas parameter antar fold: 80%
 - Monte Carlo max DD: median -3.4%, p95 -4.2%
 - Parameter terpilih (fold terakhir): {'rsi_buy': 15.0, 'exit_ema': 5, 'need_trend': 1}

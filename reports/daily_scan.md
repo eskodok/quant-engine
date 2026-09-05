@@ -1,15 +1,15 @@
-# Scan harian — 2026-09-05 02:01 UTC (09:01 WIB)
+# Scan harian — 2026-09-05 02:29 UTC (09:29 WIB)
 
 | Simbol | TF | Aksi | Regime | Conf | Close | SL | TP | Validasi | Catatan |
 |---|---|---|---|---|---|---|---|---|---|
-| BTC/USDT | 4h | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 35% (terakhir 2024-05-24); outlier.gap_open: 1 open gap > 35% |
-| ETH/USDT | 4h | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 35% (terakhir 2024-05-24); outlier.gap_open: 1 open gap > 35% |
-| SOL/USDT | 4h | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 35% (terakhir 2024-05-24); outlier.gap_open: 1 open gap > 35% |
-| BNB/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 60% | 721.3 |  |  | FIX |  |
-| BTC/USDT | 1d | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 35% (terakhir 2020-03-12) |
-| ETH/USDT | 1d | DATA_BLOCKED | | | | | | | timestamp.gaps: 7 gap > 1.5x TF (maks 7.0x); outlier.return: 1 bar |return| > 35% (terakhir 2020-03-12) |
-| SOL/USDT | 1d | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 35% (terakhir 2022-11-09) |
-| BNB/USDT | 1d | DATA_BLOCKED | | | | | | | outlier.return: 2 bar |return| > 35% (terakhir 2021-02-19) |
+| BTC/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 55% | 79,652.7 |  |  | FIX |  |
+| ETH/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 44% | 2,455.69 |  |  | FIX |  |
+| SOL/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 44% | 101.93 |  |  | FIX |  |
+| BNB/USDT | 4h | **NO_TRADE** | UPTREND | 60% | 721.3 |  |  | FIX |  |
+| BTC/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 60% | 79,652.7 |  |  | FIX | outlier.return |
+| ETH/USDT | 1d | **NO_TRADE** | SIDEWAYS | 5% | 2,455.69 |  |  | SCRAP | outlier.return |
+| SOL/USDT | 1d | **NO_TRADE** | SIDEWAYS | 16% | 101.93 |  |  | SCRAP | outlier.return |
+| BNB/USDT | 1d | **NO_TRADE** | SIDEWAYS | 60% | 721.3 |  |  | FIX | outlier.return |
 | BBCA | 1d | **NO_TRADE** | DOWNTREND | 0% | 6,700 |  |  | SCRAP |  |
 | BBRI | 1d | **NO_TRADE** | SIDEWAYS | 13% | 3,390 |  |  | SCRAP |  |
 | BMRI | 1d | **NO_TRADE** | DOWNTREND | 0% | 4,420 |  |  | SCRAP |  |
@@ -27,7 +27,14 @@
 
 ## Regime pasar
 
-- BNB/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- BTC/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- ETH/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- SOL/USDT (4h): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- BNB/USDT (4h): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- BTC/USDT (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- ETH/USDT (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- SOL/USDT (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- BNB/USDT (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BBCA (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BBRI (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BMRI (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir

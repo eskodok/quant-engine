@@ -4,6 +4,7 @@
 
 - Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)
 - GAGAL: trade OOS 4 < 30: belum cukup bukti
+- GAGAL: PBO 0.51 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)
 - PERINGATAN: deflated Sharpe prob 0.03 < 0.9: Sharpe bisa hasil kebetulan
 - PERINGATAN: 3 parameter untuk 4 trade OOS (75.0/100 trade)
 
@@ -18,6 +19,9 @@
 | CAGR | 0.6% | 0.2% | 0.0% |
 
 - Deflated Sharpe prob (n_trials=40): 0.03
+- Timing vs entry acak: persentil 97 (harus >= 75)
+- Probability of Backtest Overfitting (CSCV): 0.51 (harus < 0.5)
+- Buy & hold jendela OOS: return -23.7%, Sharpe -0.20, maxDD -55.7% | strategi: return +0.6%, Sharpe 0.20, maxDD -1.1%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median 0.0%, p95 0.0%
 - Parameter terpilih (fold terakhir): {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0}

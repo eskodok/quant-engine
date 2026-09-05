@@ -43,6 +43,14 @@
   },
   "dsr_prob": 0.02076061088516938,
   "n_trials": 135,
+  "random_pctile": 91.0,
+  "pbo": 0.08571428571428572,
+  "benchmark": {
+    "bh_return": -0.11790393013100442,
+    "bh_sharpe": 0.029119833029777137,
+    "bh_max_dd": -0.4108108108108108,
+    "strat_return": 0.011206393960000005
+  },
   "reasons": [
     "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
     "GAGAL: trade OOS 10 < 30: belum cukup bukti",
@@ -50,5 +58,5 @@
     "PERINGATAN: deflated Sharpe prob 0.02 < 0.9: Sharpe bisa hasil kebetulan",
     "PERINGATAN: 3 parameter untuk 10 trade OOS (30.0/100 trade)"
   ],
-  "generated": "2026-09-05 02:00:37.981994+00:00"
+  "generated": "2026-09-05 02:28:04.038789+00:00"
 }

@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 60,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 14,
+    "profit_factor": 3.7281421612236105,
+    "win_rate": 0.42857142857142855,
+    "expectancy_r": 0.9059443872846441,
+    "avg_win_r": 2.815949861623059,
+    "avg_loss_r": -0.5265597184691673,
+    "avg_bars": 44.07142857142857,
+    "exposure": 0.5184873949579832,
+    "sharpe": 1.0392676477211176,
+    "sortino": 1.1939922922203647,
+    "max_dd": -0.1370800372771233,
+    "total_return": 0.6838170274562523,
+    "cagr": 0.17330191451060317,
+    "calmar": 1.2642388924964552,
+    "skew": 0.8787846404268026,
+    "kurt": 8.17490285271761
+  },
+  "oos_cost_x2": {
+    "n_trades": 14,
+    "profit_factor": 3.4718944336236923,
+    "win_rate": 0.42857142857142855,
+    "expectancy_r": 0.8676422278424906,
+    "avg_win_r": 2.7663294925504283,
+    "avg_loss_r": -0.5563732206884631,
+    "avg_bars": 44.07142857142857,
+    "exposure": 0.5184873949579832,
+    "sharpe": 0.9994551297628403,
+    "sortino": 1.1516474839565882,
+    "max_dd": -0.14064142195068977,
+    "total_return": 0.6483760020067366,
+    "cagr": 0.16567125444195763,
+    "calmar": 1.1779691370017829,
+    "skew": 0.8753228507618107,
+    "kurt": 8.167250000586606
+  },
+  "dsr_prob": 0.4203997535957935,
+  "n_trials": 30,
+  "random_pctile": 95.0,
+  "pbo": 0.7571428571428571,
+  "benchmark": {
+    "bh_return": 1.8009323521882878,
+    "bh_sharpe": 0.9152729275306338,
+    "bh_max_dd": -0.5296302120019447,
+    "strat_return": 0.6838170274562523
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 14 < 30: belum cukup bukti",
+    "GAGAL: PBO 0.76 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: deflated Sharpe prob 0.42 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 14 trade OOS (14.3/100 trade)",
+    "PERINGATAN: parameter tidak stabil antar fold (40%)"
+  ],
+  "generated": "2026-09-05 02:26:18.652158+00:00"
+}

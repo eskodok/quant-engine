@@ -7,6 +7,7 @@
 - GAGAL: PF OOS 1.04 < 1.15
 - GAGAL: PF in-sample 0.66 < 1: optimasi pun tidak menemukan parameter untung -> hasil OOS = kebetulan
 - GAGAL: PF OOS dengan biaya x2.0 = 0.74 < 1: edge habis dimakan biaya
+- PERINGATAN: PBO 0.44 agak tinggi
 - PERINGATAN: deflated Sharpe prob 0.01 < 0.9: Sharpe bisa hasil kebetulan
 - PERINGATAN: 2 parameter untuk 5 trade OOS (40.0/100 trade)
 
@@ -21,6 +22,9 @@
 | CAGR | -0.6% | 0.0% | -0.2% |
 
 - Deflated Sharpe prob (n_trials=45): 0.01
+- Timing vs entry acak: persentil 79 (harus >= 75)
+- Probability of Backtest Overfitting (CSCV): 0.44 (harus < 0.5)
+- Buy & hold jendela OOS: return -25.3%, Sharpe -0.11, maxDD -45.6% | strategi: return +0.1%, Sharpe 0.02, maxDD -2.1%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median -1.7%, p95 -1.9%
 - Parameter terpilih (fold terakhir): {'donchian_n': 20, 'rr': 1.5}

@@ -5,6 +5,8 @@
 - Gabungan 11 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, ANTM, UNTR, PGAS
 - GAGAL: PF OOS gabungan 0.77 < 1.15
 - GAGAL: PF in-sample 0.77 < 1: OOS untung = kebetulan rezim, bukan edge
+- GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 64 < 75)
+- PERINGATAN: Sharpe OOS -1.89 < rata-rata buy&hold 0.02
 - PERINGATAN: deflated Sharpe prob 0.00 < 0.9
 - PERINGATAN: hanya 5/11 simbol profitable OOS: edge tidak merata
 
@@ -19,6 +21,9 @@
 | CAGR | -0.4% | -3.1% | 0.0% |
 
 - Deflated Sharpe prob (n_trials=45): 0.00
+- Timing vs entry acak: persentil 64 (harus >= 75)
+- Probability of Backtest Overfitting (CSCV): 0.45 (harus < 0.5)
+- Buy & hold jendela OOS: return -7.0%, Sharpe 0.02, maxDD -46.8% | strategi: return -0.9%, Sharpe -1.89, maxDD -1.4%
 - Stabilitas parameter antar fold: 87%
 - Monte Carlo max DD: median -1.3%, p95 -1.8%
 - Parameter terpilih (fold terakhir): {}
