@@ -29,7 +29,7 @@ def main() -> int:
         if not it.csv_path.exists():
             lines.append(f"| {it.symbol} | {it.strategy} | NO_DATA | {prev} | | | | |"); continue
         try:
-            df = load_csv(str(it.csv_path), it.timeframe)
+            df = load_csv(str(it.csv_path), it.timeframe, continuous=MARKETS[it.market].continuous)
             rep_s = scrub(df, MARKETS[it.market], it.timeframe, now=now)
             if rep_s.blocked:
                 lines.append(f"| {it.symbol} | {it.strategy} | DATA_BLOCKED | {prev} | | | | data gagal scrub |"); continue

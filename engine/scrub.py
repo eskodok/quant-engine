@@ -77,11 +77,19 @@ def scrub(df: pd.DataFrame, market: MarketProfile, timeframe: str,
         add(Check("timestamp.gaps", sev, f"{len(gaps)} gap > 1.5x TF (maks {deltas.max()/tf:.1f}x)",
                   "isi dari exchange lain / potong rentang" if sev != "OK" else ""))
     else:
-        # IDX: gap 1-4 hari normal (weekend, libur). >7 hari kalender = suspensi/masalah.
-        gaps = deltas[deltas > 7 * 86400]
-        sev = "BLOCK" if len(gaps) > 2 else ("WARN" if len(gaps) else "OK")
-        add(Check("timestamp.gaps", sev, f"{len(gaps)} gap > 7 hari (kemungkinan suspensi)",
-                  "cek riwayat suspensi emiten" if sev != "OK" else ""))
+        # IDX: gap 1-4 hari normal (weekend, libur), 8-13 hari = libur Lebaran (1x/tahun).
+        # >13 hari kalender = suspensi/masalah data.
+        long_gaps = deltas[deltas > 13 * 86400]
+        lebaran = deltas[(deltas > 7 * 86400) & (deltas <= 13 * 86400)]
+        years = max((df.index[-1] - df.index[0]).days / 365, 1)
+        if len(long_gaps):
+            sev = "BLOCK" if len(long_gaps) > 1 else "WARN"
+            add(Check("timestamp.gaps", sev, f"{len(long_gaps)} gap > 13 hari (maks {long_gaps.max()/86400:.0f} hari) — suspensi?",
+                      "cek riwayat suspensi emiten / potong histori"))
+        elif len(lebaran) > years + 1:
+            add(Check("timestamp.gaps", "WARN", f"{len(lebaran)} gap 8-13 hari dalam {years:.0f} tahun (lebih dari libur Lebaran)"))
+        else:
+            add(Check("timestamp.gaps", "OK", f"{len(lebaran)} gap libur panjang (Lebaran) dalam {years:.0f} tahun"))
 
     # 4. NaN
     nan_rows = int(df[COLUMNS].isna().any(axis=1).sum())
@@ -136,8 +144,10 @@ def scrub(df: pd.DataFrame, market: MarketProfile, timeframe: str,
     add(Check("freshness", sev, f"bar terakhir {df.index[-1]} ({age:.1f}x TF yang lalu)",
               "refresh data" if sev != "OK" else ""))
 
-    # 10. Bar yang belum tutup
-    if (df.index[-1] + pd.Timedelta(seconds=tf)) > now:
+    # 10. Bar yang belum tutup. Crypto: stempel = jam BUKA bar (ts+TF harus <= now).
+    #     IDX: stempel = jam TUTUP sesi (ts harus <= now).
+    last_close = df.index[-1] + pd.Timedelta(seconds=tf) if market.continuous else df.index[-1]
+    if last_close > now:
         add(Check("open_bar", "BLOCK", "bar terakhir masih berjalan", "buang bar terakhir (engine.data melakukan ini)"))
 
     return rep

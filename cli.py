@@ -35,7 +35,7 @@ def _load(sym: str, a) -> pd.DataFrame:
                           continuous=MARKETS[a.market].continuous)
     if a.csv:
         from engine.data import load_csv
-        return load_csv(a.csv, a.tf)
+        return load_csv(a.csv, a.tf, continuous=MARKETS[a.market].continuous)
     from engine.data import load
     kw = {"limit_bars": a.bars} if a.market.startswith("crypto") else {}
     return load(sym, a.market, a.tf, cache=not a.no_cache, **kw)

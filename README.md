@@ -1,4 +1,4 @@
-# Quant Swing Engine v0.2 — anti garbage-in, garbage-out
+# Quant Swing Engine v0.3 — anti garbage-in, garbage-out
 
 > **Tidak bisa coding? Baca `SETUP.md`** — semua lewat browser, tidak perlu install apa pun.
 
@@ -21,7 +21,7 @@ outputnya setup (entry, SL, TP, qty, confidence, alasan) yang kamu eksekusi manu
 
 ```bash
 pip install pandas numpy scipy pyarrow ccxt yfinance pytest
-python -m pytest tests -q          # harus 11 passed
+python -m pytest tests -q          # harus 12 passed
 ```
 
 ## Alur kerja
@@ -85,7 +85,7 @@ engine/signal.py    setup hari ini + confidence yang bisa diaudit
 cli.py              scrub | backtest | validate | signal | scan
 scripts/            fetch_data, run_validate, run_daily (dipakai GitHub Actions)
 watchlist.txt       daftar simbol; edit langsung di GitHub
-tests/              11 uji anti-GIGO
+tests/              12 uji anti-GIGO
 ```
 
 ## Menambah strategi

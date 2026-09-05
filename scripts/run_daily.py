@@ -34,7 +34,7 @@ def main() -> int:
             rec.update(status="NO_DATA", note="file data belum ada (fetch gagal?)")
             out["items"].append(rec); rows.append(rec); continue
         try:
-            df = load_csv(str(it.csv_path), it.timeframe)
+            df = load_csv(str(it.csv_path), it.timeframe, continuous=MARKETS[it.market].continuous)
             rep = scrub(df, MARKETS[it.market], it.timeframe, now=now)
             rec["scrub"] = [{"check": c.name, "sev": c.severity, "detail": c.detail} for c in rep.checks if c.severity != "OK"]
             if rep.blocked:

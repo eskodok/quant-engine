@@ -98,3 +98,15 @@ def test_risk_per_trade_respected(df):
     # rugi per trade (tanpa gap) tidak boleh jauh > 1% equity awal + biaya
     stop_losses = res.trades[res.trades.exit_reason == "stop"]
     assert (stop_losses.pnl > -0.02 * risk.initial_equity).all()
+
+
+def test_load_csv_idx_keeps_yesterday_bar(tmp_path):
+    """Regresi: bar IDX kemarin (stempel 16:00 WIB) tidak boleh dibuang pagi ini."""
+    from engine.data import load_csv
+    d = make_ohlcv(n=500, timeframe="1d", seed=3, continuous=False)
+    # stempel semua bar di 09:00 UTC (16:00 WIB) hari masing-masing, terakhir = kemarin
+    end = (pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=1)).normalize() + pd.Timedelta(hours=9)
+    d.index = pd.date_range(end=end, periods=len(d), freq="B", tz="UTC") + pd.Timedelta(hours=9)
+    p = tmp_path / "x.csv"; d.to_csv(p, index_label="ts")
+    assert load_csv(str(p), "1d", continuous=False).index[-1] == d.index[-1]
+    assert len(load_csv(str(p), "1d", continuous=True)) == len(d) - 1  # aturan crypto memang membuangnya

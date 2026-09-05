@@ -117,20 +117,26 @@ def load_idx(ticker: str, timeframe: str = "1d", years: int = 6) -> pd.DataFrame
         raw.columns = raw.columns.get_level_values(0)
     raw = raw.rename(columns={"Open": "open", "High": "high", "Low": "low",
                               "Close": "close", "Volume": "volume"})
-    # Yahoo memberi tanggal lokal tanpa tz; tandai sebagai 09:00 Asia/Jakarta = open sesi.
-    idx = pd.to_datetime(raw.index).tz_localize("Asia/Jakarta") + pd.Timedelta(hours=9)
+    # Yahoo memberi tanggal lokal tanpa tz; tandai sebagai 16:00 Asia/Jakarta = TUTUP sesi,
+    # supaya timestamp bar = saat semua informasinya benar-benar tersedia.
+    idx = pd.to_datetime(raw.index).tz_localize("Asia/Jakarta") + pd.Timedelta(hours=16)
     raw.index = idx.tz_convert("UTC")
     # yfinance kadang menyertakan bar hari ini yang belum tutup; buang jika sesi belum selesai.
-    now_jkt = pd.Timestamp.now(tz="Asia/Jakarta")
-    last_local = raw.index[-1].tz_convert("Asia/Jakarta")
     df = _finalize(raw, timeframe, drop_open_bar=False)
-    if last_local.date() == now_jkt.date() and now_jkt.hour < 16:
+    # bar hari ini hanya sah bila sesi sudah tutup (16:00 WIB)
+    now_utc = pd.Timestamp.now(tz="UTC")
+    if len(df) and df.index[-1] > now_utc:
         df = df.iloc[:-1]
     return df
 
 
-def load_csv(path: str, timeframe: str) -> pd.DataFrame:
-    """CSV dengan kolom ts/timestamp/date + OHLCV. ts diasumsikan UTC bila tanpa tz."""
+def load_csv(path: str, timeframe: str, continuous: bool = True) -> pd.DataFrame:
+    """CSV dengan kolom ts/timestamp/date + OHLCV. ts diasumsikan UTC bila tanpa tz.
+
+    continuous=False (IDX): bar harian sudah ditandai pada jam tutup sesi oleh load_idx,
+    jadi aturan "bar belum tutup" (ts + TF > sekarang) TIDAK boleh dipakai — itu akan
+    membuang bar kemarin setiap pagi.
+    """
     raw = pd.read_csv(path)
     cols = {c.lower(): c for c in raw.columns}
     tcol = next((cols[c] for c in ("ts", "timestamp", "date", "datetime", "time") if c in cols), None)
@@ -138,7 +144,7 @@ def load_csv(path: str, timeframe: str) -> pd.DataFrame:
         raise ValueError("CSV harus punya kolom waktu (ts/timestamp/date)")
     raw = raw.rename(columns={cols[c]: c for c in COLUMNS if c in cols})
     raw.index = pd.to_datetime(raw[tcol], utc=True)
-    return _finalize(raw, timeframe)
+    return _finalize(raw, timeframe, drop_open_bar=continuous)
 
 
 def load(symbol: str, market: str, timeframe: str, cache: bool = True, **kw) -> pd.DataFrame:
