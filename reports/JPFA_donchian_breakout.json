@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "donchian_n": 40,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 7,
+    "profit_factor": 1.3235552671738877,
+    "win_rate": 0.42857142857142855,
+    "expectancy_r": 0.129998847258946,
+    "avg_win_r": 1.2241972337193268,
+    "avg_loss_r": -0.6906499425863395,
+    "avg_bars": 12.714285714285714,
+    "exposure": 0.13088235294117648,
+    "sharpe": 0.1808249482959585,
+    "sortino": 0.13068134067088863,
+    "max_dd": -0.0186481602681344,
+    "total_return": 0.00880574074238094,
+    "cagr": 0.0031637634299550577,
+    "calmar": 0.16965552550302954,
+    "skew": 1.699207169033488,
+    "kurt": 22.762938475178768
+  },
+  "oos_cost_x2": {
+    "n_trades": 7,
+    "profit_factor": 1.0881058715782799,
+    "win_rate": 0.42857142857142855,
+    "expectancy_r": 0.04033741262815037,
+    "avg_win_r": 1.1123400737979787,
+    "avg_loss_r": -0.7636645832492208,
+    "avg_bars": 12.714285714285714,
+    "exposure": 0.13088235294117648,
+    "sharpe": 0.06004353462247629,
+    "sortino": 0.04275477195533328,
+    "max_dd": -0.01939542839710092,
+    "total_return": 0.0025474704465153764,
+    "cagr": 0.0009170917868088768,
+    "calmar": 0.047283914953173016,
+    "skew": 1.4757048494727425,
+    "kurt": 22.02457985501372
+  },
+  "dsr_prob": 0.02550477596938337,
+  "n_trials": 45,
+  "random_pctile": 81.0,
+  "pbo": 0.5142857142857142,
+  "benchmark": {
+    "bh_return": 0.8857142857142857,
+    "bh_sharpe": 0.7519903081707738,
+    "bh_max_dd": -0.3924914675767917,
+    "strat_return": 0.00880574074238094
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 7 < 30: belum cukup bukti",
+    "GAGAL: PBO 0.51 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: Sharpe OOS 0.18 < buy&hold 0.75: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.03 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 7 trade OOS (28.6/100 trade)"
+  ],
+  "generated": "2026-09-07 12:10:50.743231+00:00"
+}

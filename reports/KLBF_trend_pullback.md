@@ -11,17 +11,17 @@
 | Metrik | In-sample (rata2 fold) | Out-of-sample (gabungan) | OOS biaya x2 |
 |---|---|---|---|
 | Trades | 22 | 3 | 3 |
-| Profit factor | 0.57 | 1.60 | 1.13 |
+| Profit factor | 0.57 | 1.84 | 1.26 |
 | Win rate | 17.6% | 33.3% | 33.3% |
-| Expectancy (R) | -0.18 | 0.16 | 0.04 |
-| Sharpe | -0.46 | 0.16 | 0.05 |
-| Max DD | -5.6% | -1.0% | -1.1% |
-| CAGR | -0.8% | 0.2% | 0.0% |
+| Expectancy (R) | -0.18 | 0.20 | 0.08 |
+| Sharpe | -0.45 | 0.20 | 0.08 |
+| Max DD | -5.6% | -0.9% | -1.0% |
+| CAGR | -0.8% | 0.2% | 0.1% |
 
 - Deflated Sharpe prob (n_trials=135): 0.01
 - Timing vs entry acak: persentil 89 (harus >= 75)
 - Probability of Backtest Overfitting (CSCV): 0.01 (harus < 0.5)
-- Buy & hold jendela OOS: return -57.1%, Sharpe -0.67, maxDD -62.2% | strategi: return +0.5%, Sharpe 0.16, maxDD -1.0%
+- Buy & hold jendela OOS: return -55.8%, Sharpe -0.64, maxDD -62.1% | strategi: return +0.6%, Sharpe 0.20, maxDD -0.9%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median 0.0%, p95 0.0%
 - Parameter terpilih (fold terakhir): {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5}
@@ -29,8 +29,8 @@
 ### Fold
 | # | Train | Test | Params | IS PF | OOS PF | OOS trades |
 |---|---|---|---|---|---|---|
-| 1 | 2018-09-04→2023-10-24 | 2023-10-25→2024-05-29 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.50 | 0.00 | 0 |
-| 2 | 2019-03-13→2024-05-29 | 2024-05-30→2024-12-11 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.58 | 4.77 | 2 |
-| 3 | 2019-09-19→2024-12-11 | 2024-12-12→2025-07-22 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.55 | 0.00 | 1 |
-| 4 | 2020-04-03→2025-07-22 | 2025-07-23→2026-02-06 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.61 | 0.00 | 0 |
-| 5 | 2020-10-27→2026-02-06 | 2026-02-09→2026-09-02 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.61 | 0.00 | 0 |
+| 1 | 2018-09-07→2023-10-26 | 2023-10-27→2024-05-31 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.50 | 0.00 | 0 |
+| 2 | 2019-03-18→2024-05-31 | 2024-06-03→2024-12-13 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.58 | 4.77 | 2 |
+| 3 | 2019-09-24→2024-12-13 | 2024-12-16→2025-07-24 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.55 | 0.00 | 1 |
+| 4 | 2020-04-08→2025-07-24 | 2025-07-25→2026-02-10 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.61 | 0.00 | 0 |
+| 5 | 2020-11-04→2026-02-10 | 2026-02-11→2026-09-04 | {'rsi_pb': 40.0, 'adx_min': 20.0, 'rr': 1.5} | 0.61 | 0.00 | 0 |

@@ -1,0 +1,63 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "donchian_n": 20,
+    "rr": 3.0
+  },
+  "oos": {
+    "n_trades": 5,
+    "profit_factor": 1.3759607753849075,
+    "win_rate": 0.4,
+    "expectancy_r": 0.14224755776138706,
+    "avg_win_r": 1.3166421119351663,
+    "avg_loss_r": -0.6406821450211324,
+    "avg_bars": 22.8,
+    "exposure": 0.1676470588235294,
+    "sharpe": 0.14068016150537369,
+    "sortino": 0.07916492211364957,
+    "max_dd": -0.02247972409550591,
+    "total_return": 0.006778112587926044,
+    "cagr": 0.002436839119915213,
+    "calmar": 0.10840164717156736,
+    "skew": -1.1757810123178236,
+    "kurt": 28.41052395886542
+  },
+  "oos_cost_x2": {
+    "n_trades": 5,
+    "profit_factor": 1.0549042880934334,
+    "win_rate": 0.4,
+    "expectancy_r": 0.019808793266762124,
+    "avg_win_r": 1.1473375606004614,
+    "avg_loss_r": -0.7318770516223708,
+    "avg_bars": 22.8,
+    "exposure": 0.1676470588235294,
+    "sharpe": 0.025252224713802385,
+    "sortino": 0.013865027891702441,
+    "max_dd": -0.023546902806582528,
+    "total_return": 0.0008155208062410324,
+    "cagr": 0.0002937507395492922,
+    "calmar": 0.012475132800360236,
+    "skew": -1.5305814568636689,
+    "kurt": 30.56116558184442
+  },
+  "dsr_prob": 0.023366654873501005,
+  "n_trials": 45,
+  "random_pctile": 96.0,
+  "pbo": 0.45714285714285713,
+  "benchmark": {
+    "bh_return": 0.00694444444444442,
+    "bh_sharpe": 0.19858780549802696,
+    "bh_max_dd": -0.5135135135135136,
+    "strat_return": 0.006778112587926044
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 5 < 30: belum cukup bukti",
+    "GAGAL: PF in-sample 0.88 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "PERINGATAN: PBO 0.46 agak tinggi",
+    "PERINGATAN: Sharpe OOS 0.14 < buy&hold 0.20: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.02 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 5 trade OOS (40.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:09:59.161724+00:00"
+}

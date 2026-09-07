@@ -3,28 +3,26 @@
 **Verdict: SCRAP**
 
 - Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT
-- GAGAL: PF OOS gabungan 0.92 < 1.15
-- GAGAL: degradasi IS→OOS 57% > 40%
-- GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 59 < 75)
+- GAGAL: degradasi IS→OOS 41% > 40%
 - GAGAL: 2/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas
-- PERINGATAN: deflated Sharpe prob 0.01 < 0.9
+- PERINGATAN: deflated Sharpe prob 0.06 < 0.9
 
 | Metrik | In-sample (rata2 fold) | Out-of-sample (gabungan) | OOS biaya x2 |
 |---|---|---|---|
-| Trades | 28 | 91 | 91 |
-| Profit factor | 2.12 | 0.92 | 1.04 |
-| Win rate | 32.2% | 19.8% | 0.0% |
-| Expectancy (R) | 0.48 | -0.03 | 0.00 |
-| Sharpe | 1.01 | -0.11 | 0.00 |
-| Max DD | -13.5% | -13.6% | 0.0% |
-| CAGR | 13.7% | -1.0% | 0.0% |
+| Trades | 32 | 94 | 94 |
+| Profit factor | 2.12 | 1.26 | 1.19 |
+| Win rate | 34.4% | 28.7% | 0.0% |
+| Expectancy (R) | 0.47 | 0.13 | 0.00 |
+| Sharpe | 0.99 | 0.29 | 0.00 |
+| Max DD | -13.7% | -13.6% | 0.0% |
+| CAGR | 13.9% | 1.9% | 0.0% |
 
-- Deflated Sharpe prob (n_trials=30): 0.01
-- Timing vs entry acak: persentil 59 (harus >= 75)
-- Probability of Backtest Overfitting (CSCV): 0.42 (harus < 0.5)
-- Buy & hold jendela OOS: return -17.4%, Sharpe -0.33, maxDD -60.5% | strategi: return -2.1%, Sharpe -0.11, maxDD -13.6%
-- Stabilitas parameter antar fold: 55%
-- Monte Carlo max DD: median -8.3%, p95 -11.9%
+- Deflated Sharpe prob (n_trials=30): 0.06
+- Timing vs entry acak: persentil 84 (harus >= 75)
+- Probability of Backtest Overfitting (CSCV): 0.41 (harus < 0.5)
+- Buy & hold jendela OOS: return -19.6%, Sharpe -0.38, maxDD -60.5% | strategi: return +4.0%, Sharpe 0.29, maxDD -13.6%
+- Stabilitas parameter antar fold: 70%
+- Monte Carlo max DD: median -6.2%, p95 -9.7%
 - Parameter terpilih (fold terakhir): {}
 
 ### Fold

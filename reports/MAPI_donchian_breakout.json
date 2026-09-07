@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "donchian_n": 20,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 4,
+    "profit_factor": 2.0325953181834344,
+    "win_rate": 0.5,
+    "expectancy_r": 0.3217778386231596,
+    "avg_win_r": 1.2622347167686967,
+    "avg_loss_r": -0.6186790395223776,
+    "avg_bars": 12.0,
+    "exposure": 0.07058823529411765,
+    "sharpe": 0.35053090834933004,
+    "sortino": 0.1311679109387611,
+    "max_dd": -0.010665221702708278,
+    "total_return": 0.012790153755216194,
+    "cagr": 0.004589495778481112,
+    "calmar": 0.43032352316836286,
+    "skew": 8.202824877394638,
+    "kurt": 213.5328725923064
+  },
+  "oos_cost_x2": {
+    "n_trades": 4,
+    "profit_factor": 1.6263828579035624,
+    "win_rate": 0.5,
+    "expectancy_r": 0.22165224319026727,
+    "avg_win_r": 1.1318000368346366,
+    "avg_loss_r": -0.688495550454102,
+    "avg_bars": 12.0,
+    "exposure": 0.07058823529411765,
+    "sharpe": 0.24768161348973142,
+    "sortino": 0.08355994444551655,
+    "max_dd": -0.011396579582386861,
+    "total_return": 0.008593354350074689,
+    "cagr": 0.003087664701854509,
+    "calmar": 0.2709290695101555,
+    "skew": 5.737604724496525,
+    "kurt": 206.54377184018412
+  },
+  "dsr_prob": 0.03614948729764545,
+  "n_trials": 45,
+  "random_pctile": 98.0,
+  "pbo": 0.44285714285714284,
+  "benchmark": {
+    "bh_return": -0.20797720797720798,
+    "bh_sharpe": 0.06114350545394401,
+    "bh_max_dd": -0.45999999999999996,
+    "strat_return": 0.012790153755216194
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 4 < 30: belum cukup bukti",
+    "GAGAL: PF in-sample 0.50 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "PERINGATAN: PBO 0.44 agak tinggi",
+    "PERINGATAN: deflated Sharpe prob 0.04 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 4 trade OOS (50.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:11:16.658526+00:00"
+}

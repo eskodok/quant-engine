@@ -1,0 +1,61 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 250,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 7,
+    "profit_factor": 3.646060422004386,
+    "win_rate": 0.2857142857142857,
+    "expectancy_r": 0.9978518476726741,
+    "avg_win_r": 5.2221026874354095,
+    "avg_loss_r": -0.6918484882324203,
+    "avg_bars": 40.714285714285715,
+    "exposure": 0.41911764705882354,
+    "sharpe": 0.7882664540627629,
+    "sortino": 0.8168062676737369,
+    "max_dd": -0.12155527503099935,
+    "total_return": 0.3120137249029875,
+    "cagr": 0.10278919911424267,
+    "calmar": 0.8456169350777175,
+    "skew": 5.084342249011996,
+    "kurt": 87.41078312365477
+  },
+  "oos_cost_x2": {
+    "n_trades": 7,
+    "profit_factor": 3.3003543825569692,
+    "win_rate": 0.2857142857142857,
+    "expectancy_r": 0.9234100418537728,
+    "avg_win_r": 5.077314214232154,
+    "avg_loss_r": -0.7381516270975794,
+    "avg_bars": 40.714285714285715,
+    "exposure": 0.41911764705882354,
+    "sharpe": 0.7418937841035926,
+    "sortino": 0.7659253674134592,
+    "max_dd": -0.12674130518398924,
+    "total_return": 0.2904553360428026,
+    "cagr": 0.09622586147700773,
+    "calmar": 0.7592304761049881,
+    "skew": 5.0095903737862235,
+    "kurt": 87.0830196321956
+  },
+  "dsr_prob": 0.1979656764434859,
+  "n_trials": 30,
+  "random_pctile": 83.0,
+  "pbo": 0.14285714285714285,
+  "benchmark": {
+    "bh_return": -0.29964539007092195,
+    "bh_sharpe": 0.21576678934892785,
+    "bh_max_dd": -0.8771764705882352,
+    "strat_return": 0.3120137249029875
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 7 < 30: belum cukup bukti",
+    "GAGAL: PF in-sample 0.99 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "PERINGATAN: deflated Sharpe prob 0.20 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 7 trade OOS (28.6/100 trade)"
+  ],
+  "generated": "2026-09-07 12:12:13.157561+00:00"
+}

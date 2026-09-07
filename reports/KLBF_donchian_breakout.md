@@ -24,7 +24,7 @@
 - Deflated Sharpe prob (n_trials=45): 0.01
 - Timing vs entry acak: persentil nan (harus >= 75)
 - Probability of Backtest Overfitting (CSCV): 0.21 (harus < 0.5)
-- Buy & hold jendela OOS: return -57.1%, Sharpe -0.67, maxDD -62.2% | strategi: return +0.0%, Sharpe 0.00, maxDD 0.0%
+- Buy & hold jendela OOS: return -55.8%, Sharpe -0.64, maxDD -62.1% | strategi: return +0.0%, Sharpe 0.00, maxDD 0.0%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median 0.0%, p95 0.0%
 - Parameter terpilih (fold terakhir): {'donchian_n': 20, 'rr': 1.5}
@@ -32,8 +32,8 @@
 ### Fold
 | # | Train | Test | Params | IS PF | OOS PF | OOS trades |
 |---|---|---|---|---|---|---|
-| 1 | 2018-09-04→2023-10-24 | 2023-10-25→2024-05-29 | {'donchian_n': 20, 'rr': 1.5} | 0.67 | 0.00 | 0 |
-| 2 | 2019-03-13→2024-05-29 | 2024-05-30→2024-12-11 | {'donchian_n': 20, 'rr': 1.5} | 0.99 | 0.00 | 0 |
-| 3 | 2019-09-19→2024-12-11 | 2024-12-12→2025-07-22 | {'donchian_n': 20, 'rr': 1.5} | 1.23 | 0.00 | 0 |
-| 4 | 2020-04-03→2025-07-22 | 2025-07-23→2026-02-06 | {'donchian_n': 20, 'rr': 1.5} | 1.06 | 0.00 | 0 |
-| 5 | 2020-10-27→2026-02-06 | 2026-02-09→2026-09-02 | {'donchian_n': 20, 'rr': 1.5} | 1.06 | 0.00 | 0 |
+| 1 | 2018-09-07→2023-10-26 | 2023-10-27→2024-05-31 | {'donchian_n': 20, 'rr': 1.5} | 0.67 | 0.00 | 0 |
+| 2 | 2019-03-18→2024-05-31 | 2024-06-03→2024-12-13 | {'donchian_n': 20, 'rr': 1.5} | 0.99 | 0.00 | 0 |
+| 3 | 2019-09-24→2024-12-13 | 2024-12-16→2025-07-24 | {'donchian_n': 20, 'rr': 1.5} | 1.23 | 0.00 | 0 |
+| 4 | 2020-04-08→2025-07-24 | 2025-07-25→2026-02-10 | {'donchian_n': 20, 'rr': 1.5} | 1.06 | 0.00 | 0 |
+| 5 | 2020-11-04→2026-02-10 | 2026-02-11→2026-09-04 | {'donchian_n': 20, 'rr': 1.5} | 1.06 | 0.00 | 0 |

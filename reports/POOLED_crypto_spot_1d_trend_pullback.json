@@ -3,42 +3,42 @@
   "best_params": {},
   "oos": {
     "n_trades": 73,
-    "profit_factor": 1.4376013170379496,
+    "profit_factor": 1.451115570963936,
     "win_rate": 0.3287671232876712,
-    "expectancy_r": 0.16381542165667445,
-    "avg_win_r": 1.5474269085251227,
-    "avg_loss_r": -0.5138718372176675,
-    "avg_bars": 10.726027397260275,
-    "exposure": 0.6563285834031852,
-    "sharpe": 0.5045664390066803,
-    "sortino": 0.4299757582738683,
-    "max_dd": -0.02552516356065154,
-    "total_return": 0.02793492975999534,
-    "cagr": 0.00846516039868317,
-    "calmar": 0.33163981020410327,
-    "skew": -0.39324623312279705,
-    "kurt": 25.73795495924527
+    "expectancy_r": 0.16842954020331397,
+    "avg_win_r": 1.5614615191353476,
+    "avg_loss_r": -0.5138718372327843,
+    "avg_bars": 10.767123287671232,
+    "exposure": 0.6577405857740586,
+    "sharpe": 0.5164748293424979,
+    "sortino": 0.4391750643039213,
+    "max_dd": -0.025525163560788263,
+    "total_return": 0.028852637529320324,
+    "cagr": 0.008725838876472825,
+    "calmar": 0.34185241774032943,
+    "skew": -0.3890717880466654,
+    "kurt": 25.338233703512792
   },
   "oos_cost_x2": {
-    "profit_factor": 1.566961583606947,
+    "profit_factor": 1.5865832289536064,
     "n_trades": 73
   },
-  "dsr_prob": 0.04957045276763817,
+  "dsr_prob": 0.052531691437257395,
   "n_trials": 135,
-  "random_pctile": 63.0,
-  "pbo": 0.7392857142857143,
+  "random_pctile": 60.0,
+  "pbo": 0.7285714285714285,
   "benchmark": {
-    "bh_return": 0.7178339390808004,
-    "bh_sharpe": 0.5028965078328815,
-    "bh_max_dd": -0.6373809029094331,
-    "strat_return": 0.027934929759995425
+    "bh_return": 0.7390207747324165,
+    "bh_sharpe": 0.5120720753511642,
+    "bh_max_dd": -0.637380902909433,
+    "strat_return": 0.028852637529320352
   },
   "reasons": [
     "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
-    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 63 < 75)",
-    "GAGAL: PBO rata-rata 0.74 >= 0.5: overfit",
+    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 60 < 75)",
+    "GAGAL: PBO rata-rata 0.73 >= 0.5: overfit",
     "GAGAL: 4/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
     "PERINGATAN: deflated Sharpe prob 0.05 < 0.9"
   ],
-  "generated": "2026-09-05 02:43:08.686849+00:00"
+  "generated": "2026-09-07 12:13:11.758511+00:00"
 }

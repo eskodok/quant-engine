@@ -1,0 +1,67 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 15.0,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 18,
+    "profit_factor": 0.7717866885680716,
+    "win_rate": 0.3333333333333333,
+    "expectancy_r": -0.09848741661232847,
+    "avg_win_r": 1.0319366205527751,
+    "avg_loss_r": -0.6636994351948803,
+    "avg_bars": 9.5,
+    "exposure": 0.2514705882352941,
+    "sharpe": -0.2732278046956035,
+    "sortino": -0.22126467210777384,
+    "max_dd": -0.047010445783370526,
+    "total_return": -0.018036934802648452,
+    "cagr": -0.006536467090094589,
+    "calmar": -0.13904286549877387,
+    "skew": 0.13757666529062784,
+    "kurt": 18.45214542671407
+  },
+  "oos_cost_x2": {
+    "n_trades": 18,
+    "profit_factor": 0.635873466982999,
+    "win_rate": 0.2777777777777778,
+    "expectancy_r": -0.1780513621101153,
+    "avg_win_r": 1.1337228117781328,
+    "avg_loss_r": -0.6825798905286723,
+    "avg_bars": 9.5,
+    "exposure": 0.2514705882352941,
+    "sharpe": -0.49719841654807523,
+    "sortino": -0.3956775023336669,
+    "max_dd": -0.051411175772129836,
+    "total_return": -0.03165836588103055,
+    "cagr": -0.011523864975639397,
+    "calmar": -0.22415097111796695,
+    "skew": -0.15507756164429562,
+    "kurt": 19.188476160515396
+  },
+  "dsr_prob": 0.0010305957138650585,
+  "n_trials": 135,
+  "random_pctile": 44.0,
+  "pbo": 0.9428571428571428,
+  "benchmark": {
+    "bh_return": 0.8857142857142857,
+    "bh_sharpe": 0.7519903081707738,
+    "bh_max_dd": -0.3924914675767917,
+    "strat_return": -0.018036934802648452
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 18 < 30: belum cukup bukti",
+    "GAGAL: PF OOS 0.77 < 1.15",
+    "GAGAL: PF in-sample 0.52 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.64 < 1: edge habis dimakan biaya",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 44 < 75): hasil = arus pasar, bukan sinyal",
+    "GAGAL: PBO 0.94 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: Sharpe OOS -0.27 < buy&hold 0.75: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 18 trade OOS (16.7/100 trade)"
+  ],
+  "generated": "2026-09-07 12:10:48.721104+00:00"
+}

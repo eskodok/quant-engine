@@ -8,7 +8,7 @@
 - GAGAL: degradasi IS→OOS 77% > 40%: indikasi overfit
 - GAGAL: PF OOS dengan biaya x2.0 = 0.38 < 1: edge habis dimakan biaya
 - GAGAL: timing entry tidak lebih baik dari acak (persentil 54 < 75): hasil = arus pasar, bukan sinyal
-- PERINGATAN: Sharpe OOS -0.37 < buy&hold -0.31: belum lebih baik dari sekadar memegang aset
+- PERINGATAN: Sharpe OOS -0.37 < buy&hold -0.27: belum lebih baik dari sekadar memegang aset
 - PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan
 - PERINGATAN: 3 parameter untuk 6 trade OOS (50.0/100 trade)
 
@@ -25,7 +25,7 @@
 - Deflated Sharpe prob (n_trials=60): 0.00
 - Timing vs entry acak: persentil 54 (harus >= 75)
 - Probability of Backtest Overfitting (CSCV): 0.07 (harus < 0.5)
-- Buy & hold jendela OOS: return -34.5%, Sharpe -0.31, maxDD -59.5% | strategi: return -1.4%, Sharpe -0.37, maxDD -3.1%
+- Buy & hold jendela OOS: return -32.2%, Sharpe -0.27, maxDD -59.5% | strategi: return -1.4%, Sharpe -0.37, maxDD -3.1%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median -2.4%, p95 -3.2%
 - Parameter terpilih (fold terakhir): {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0}
@@ -33,8 +33,8 @@
 ### Fold
 | # | Train | Test | Params | IS PF | OOS PF | OOS trades |
 |---|---|---|---|---|---|---|
-| 1 | 2018-09-04→2023-10-24 | 2023-10-25→2024-05-29 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 4.88 | 0.54 | 4 |
-| 2 | 2019-03-13→2024-05-29 | 2024-05-30→2024-12-11 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 2.55 | 0.00 | 0 |
-| 3 | 2019-09-19→2024-12-11 | 2024-12-12→2025-07-22 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 2.29 | 0.00 | 0 |
-| 4 | 2020-04-03→2025-07-22 | 2025-07-23→2026-02-06 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 1.49 | 0.60 | 2 |
-| 5 | 2020-10-27→2026-02-06 | 2026-02-09→2026-09-02 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 1.13 | 0.00 | 0 |
+| 1 | 2018-09-07→2023-10-26 | 2023-10-27→2024-05-31 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 4.88 | 0.54 | 4 |
+| 2 | 2019-03-18→2024-05-31 | 2024-06-03→2024-12-13 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 2.55 | 0.00 | 0 |
+| 3 | 2019-09-24→2024-12-13 | 2024-12-16→2025-07-24 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 2.29 | 0.00 | 0 |
+| 4 | 2020-04-08→2025-07-24 | 2025-07-25→2026-02-10 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 1.49 | 0.60 | 2 |
+| 5 | 2020-11-04→2026-02-10 | 2026-02-11→2026-09-04 | {'rsi_buy': 5.0, 'exit_ema': 10, 'need_trend': 0} | 1.13 | 0.00 | 0 |

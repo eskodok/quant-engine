@@ -1,0 +1,63 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 15.0,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 8,
+    "profit_factor": 3.856510725911892,
+    "win_rate": 0.5,
+    "expectancy_r": 0.517232490706106,
+    "avg_win_r": 1.3930567035919468,
+    "avg_loss_r": -0.3585917221797348,
+    "avg_bars": 7.875,
+    "exposure": 0.09264705882352942,
+    "sharpe": 0.982828877094306,
+    "sortino": 1.1283413274597225,
+    "max_dd": -0.011829798739937152,
+    "total_return": 0.04170551901648567,
+    "cagr": 0.014830255540762671,
+    "calmar": 1.2536354900693314,
+    "skew": 6.271864475230942,
+    "kurt": 64.73459523973449
+  },
+  "oos_cost_x2": {
+    "n_trades": 8,
+    "profit_factor": 3.2327965267509993,
+    "win_rate": 0.5,
+    "expectancy_r": 0.4553086254377938,
+    "avg_win_r": 1.3140766438976401,
+    "avg_loss_r": -0.4034593930220525,
+    "avg_bars": 7.875,
+    "exposure": 0.09264705882352942,
+    "sharpe": 0.8940706404129918,
+    "sortino": 0.9630475197355036,
+    "max_dd": -0.013325490017447043,
+    "total_return": 0.03664211211705415,
+    "cagr": 0.013050235406513844,
+    "calmar": 0.9793437531698416,
+    "skew": 5.9655116231564875,
+    "kurt": 59.389449870740165
+  },
+  "dsr_prob": 0.11210066222827858,
+  "n_trials": 135,
+  "random_pctile": 97.0,
+  "pbo": 0.9,
+  "benchmark": {
+    "bh_return": 0.3783783783783783,
+    "bh_sharpe": 0.4831470768917255,
+    "bh_max_dd": -0.6108695652173913,
+    "strat_return": 0.04170551901648567
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 8 < 30: belum cukup bukti",
+    "GAGAL: PF in-sample 1.08 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "GAGAL: PBO 0.90 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: deflated Sharpe prob 0.11 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 8 trade OOS (37.5/100 trade)"
+  ],
+  "generated": "2026-09-07 12:12:17.356361+00:00"
+}

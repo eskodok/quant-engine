@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "bb_n": 20,
+    "bb_k": 2.0,
+    "need_trend": 0
+  },
+  "oos": {
+    "n_trades": 9,
+    "profit_factor": 13.418714053556295,
+    "win_rate": 0.8888888888888888,
+    "expectancy_r": 0.6623408973095223,
+    "avg_win_r": 0.9168691653669856,
+    "avg_loss_r": -1.3738852471501852,
+    "avg_bars": 8.88888888888889,
+    "exposure": 0.11764705882352941,
+    "sharpe": 0.8353190683169399,
+    "sortino": 0.38571669085727567,
+    "max_dd": -0.0227080447215402,
+    "total_return": 0.06930887857180013,
+    "cagr": 0.0244380527742023,
+    "calmar": 1.0761848091227804,
+    "skew": 2.826344115388463,
+    "kurt": 87.0150639975391
+  },
+  "oos_cost_x2": {
+    "n_trades": 9,
+    "profit_factor": 9.139877269260495,
+    "win_rate": 0.8888888888888888,
+    "expectancy_r": 0.5685857453260885,
+    "avg_win_r": 0.8476452605663747,
+    "avg_loss_r": -1.6638903765961996,
+    "avg_bars": 8.88888888888889,
+    "exposure": 0.11764705882352941,
+    "sharpe": 0.7477148566454014,
+    "sortino": 0.3373237425684535,
+    "max_dd": -0.02370853114017513,
+    "total_return": 0.06145048136768971,
+    "cagr": 0.021719126393446198,
+    "calmar": 0.9160890763343074,
+    "skew": 2.222991221725084,
+    "kurt": 90.41413710569782
+  },
+  "dsr_prob": 0.20197367850200532,
+  "n_trials": 40,
+  "random_pctile": 100.0,
+  "pbo": 0.2571428571428571,
+  "benchmark": {
+    "bh_return": 4.491803278688525,
+    "bh_sharpe": 1.1807160495213804,
+    "bh_max_dd": -0.5713978992808948,
+    "strat_return": 0.06930887857180013
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 9 < 30: belum cukup bukti",
+    "PERINGATAN: Sharpe OOS 0.84 < buy&hold 1.18: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.20 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 9 trade OOS (33.3/100 trade)"
+  ],
+  "generated": "2026-09-07 12:10:29.908136+00:00"
+}

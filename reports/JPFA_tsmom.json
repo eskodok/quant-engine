@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 120,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 8,
+    "profit_factor": 1.6644024976300662,
+    "win_rate": 0.5,
+    "expectancy_r": 0.3229889798011412,
+    "avg_win_r": 1.4045590056578257,
+    "avg_loss_r": -0.7585810460555432,
+    "avg_bars": 42.75,
+    "exposure": 0.5029411764705882,
+    "sharpe": 0.2867529295003554,
+    "sortino": 0.2816876622767441,
+    "max_dd": -0.17558069015535727,
+    "total_return": 0.08302391625123451,
+    "cagr": 0.02915285850180349,
+    "calmar": 0.16603681461787437,
+    "skew": -0.6988455744444482,
+    "kurt": 15.315530801553379
+  },
+  "oos_cost_x2": {
+    "n_trades": 8,
+    "profit_factor": 1.499583037140857,
+    "win_rate": 0.5,
+    "expectancy_r": 0.26084311570886737,
+    "avg_win_r": 1.3190991176343487,
+    "avg_loss_r": -0.7974128862166141,
+    "avg_bars": 42.75,
+    "exposure": 0.5029411764705882,
+    "sharpe": 0.22764500063738696,
+    "sortino": 0.2219009168084244,
+    "max_dd": -0.18202176200594916,
+    "total_return": 0.06040757825532306,
+    "cagr": 0.021357325649768333,
+    "calmar": 0.11733391334312154,
+    "skew": -0.7879873085498582,
+    "kurt": 16.183636388353086
+  },
+  "dsr_prob": 0.056682595289225875,
+  "n_trials": 30,
+  "random_pctile": 88.0,
+  "pbo": 0.5428571428571428,
+  "benchmark": {
+    "bh_return": 0.8857142857142857,
+    "bh_sharpe": 0.7519903081707738,
+    "bh_max_dd": -0.3924914675767917,
+    "strat_return": 0.08302391625123451
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 8 < 30: belum cukup bukti",
+    "GAGAL: PBO 0.54 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: Sharpe OOS 0.29 < buy&hold 0.75: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.06 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 8 trade OOS (25.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:10:57.025815+00:00"
+}

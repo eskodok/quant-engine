@@ -1,0 +1,66 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 15.0,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 2,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": -0.700843181391292,
+    "avg_win_r": 0.0,
+    "avg_loss_r": -0.700843181391292,
+    "avg_bars": 10.0,
+    "exposure": 0.029411764705882353,
+    "sharpe": -0.7398581946848133,
+    "sortino": -0.19664965897422576,
+    "max_dd": -0.016966282146892178,
+    "total_return": -0.013812001507619076,
+    "cagr": -0.004998535102068935,
+    "calmar": -0.29461581852713375,
+    "skew": -0.589491006783849,
+    "kurt": 122.97679326333355
+  },
+  "oos_cost_x2": {
+    "n_trades": 2,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": -0.7788812266717176,
+    "avg_win_r": 0.0,
+    "avg_loss_r": -0.7788812266717176,
+    "avg_bars": 10.0,
+    "exposure": 0.029411764705882353,
+    "sharpe": -0.8104392065376634,
+    "sortino": -0.21439167825889635,
+    "max_dd": -0.018060173316349074,
+    "total_return": -0.015452617181105133,
+    "cagr": -0.005595239548570663,
+    "calmar": -0.30981095533039765,
+    "skew": -1.5308738154144939,
+    "kurt": 116.7671822219423
+  },
+  "dsr_prob": 7.666361152930855e-05,
+  "n_trials": 135,
+  "random_pctile": NaN,
+  "pbo": 1.0,
+  "benchmark": {
+    "bh_return": -0.5766331658291457,
+    "bh_sharpe": -0.4517481676894794,
+    "bh_max_dd": -0.7449748743718593,
+    "strat_return": -0.013812001507619076
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 2 < 30: belum cukup bukti",
+    "GAGAL: PF OOS 0.00 < 1.15",
+    "GAGAL: PF in-sample 0.00 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.00 < 1: edge habis dimakan biaya",
+    "GAGAL: PBO 1.00 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: Sharpe OOS -0.74 < buy&hold -0.45: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 2 trade OOS (150.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:12:40.855309+00:00"
+}

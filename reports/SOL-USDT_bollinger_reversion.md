@@ -20,9 +20,9 @@
 | CAGR | -0.3% | 1.1% | 1.1% |
 
 - Deflated Sharpe prob (n_trials=40): 0.07
-- Timing vs entry acak: persentil 92 (harus >= 75)
+- Timing vs entry acak: persentil 95 (harus >= 75)
 - Probability of Backtest Overfitting (CSCV): 0.87 (harus < 0.5)
-- Buy & hold jendela OOS: return -56.6%, Sharpe -0.23, maxDD -76.2% | strategi: return +2.0%, Sharpe 0.61, maxDD -1.7%
+- Buy & hold jendela OOS: return -55.5%, Sharpe -0.21, maxDD -76.2% | strategi: return +2.0%, Sharpe 0.61, maxDD -1.7%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median -1.0%, p95 -2.0%
 - Parameter terpilih (fold terakhir): {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0}
@@ -30,8 +30,8 @@
 ### Fold
 | # | Train | Test | Params | IS PF | OOS PF | OOS trades |
 |---|---|---|---|---|---|---|
-| 1 | 2021-08-04→2024-11-29 | 2024-11-30→2025-04-06 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 0.52 | 1.57 | 3 |
-| 2 | 2021-12-10→2025-04-06 | 2025-04-07→2025-08-12 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 0.73 | inf | 1 |
-| 3 | 2022-04-17→2025-08-12 | 2025-08-13→2025-12-18 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 0.68 | 1.96 | 3 |
-| 4 | 2022-08-23→2025-12-18 | 2025-12-19→2026-04-25 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.01 | 0.00 | 0 |
-| 5 | 2022-12-29→2026-04-25 | 2026-04-26→2026-08-31 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.11 | 0.00 | 0 |
+| 1 | 2021-08-04→2024-12-01 | 2024-12-02→2025-04-08 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 0.52 | 1.57 | 3 |
+| 2 | 2021-12-10→2025-04-08 | 2025-04-09→2025-08-14 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 0.73 | inf | 1 |
+| 3 | 2022-04-17→2025-08-14 | 2025-08-15→2025-12-20 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 0.68 | 1.96 | 3 |
+| 4 | 2022-08-23→2025-12-20 | 2025-12-21→2026-04-27 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.01 | 0.00 | 0 |
+| 5 | 2022-12-29→2026-04-27 | 2026-04-28→2026-09-02 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.11 | 0.00 | 0 |

@@ -1,0 +1,62 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 20.0,
+    "rr": 3.0
+  },
+  "oos": {
+    "n_trades": 7,
+    "profit_factor": 2.6944555911961596,
+    "win_rate": 0.42857142857142855,
+    "expectancy_r": 0.30133401324201375,
+    "avg_win_r": 1.1131595982769507,
+    "avg_loss_r": -0.30753517553418896,
+    "avg_bars": 13.142857142857142,
+    "exposure": 0.13529411764705881,
+    "sharpe": 0.5028164891859497,
+    "sortino": 0.3368589527333958,
+    "max_dd": -0.01971813965430901,
+    "total_return": 0.019310898562399537,
+    "cagr": 0.006915076380642926,
+    "calmar": 0.35069618644940337,
+    "skew": 2.999209569129786,
+    "kurt": 44.3079634948813
+  },
+  "oos_cost_x2": {
+    "n_trades": 7,
+    "profit_factor": 2.0382726252329566,
+    "win_rate": 0.42857142857142855,
+    "expectancy_r": 0.21076578869886145,
+    "avg_win_r": 0.9798867588752614,
+    "avg_loss_r": -0.36607493893343857,
+    "avg_bars": 13.142857142857142,
+    "exposure": 0.13529411764705881,
+    "sharpe": 0.37545066354275264,
+    "sortino": 0.25162650697633987,
+    "max_dd": -0.022242045932992106,
+    "total_return": 0.014192661928433603,
+    "cagr": 0.005090497796331972,
+    "calmar": 0.22886823503862685,
+    "skew": 2.6270648468219377,
+    "kurt": 40.77916777425492
+  },
+  "dsr_prob": 0.030302678188013292,
+  "n_trials": 135,
+  "random_pctile": 89.0,
+  "pbo": 0.7142857142857143,
+  "benchmark": {
+    "bh_return": -0.29964539007092195,
+    "bh_sharpe": 0.21576678934892785,
+    "bh_max_dd": -0.8771764705882352,
+    "strat_return": 0.019310898562399537
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 7 < 30: belum cukup bukti",
+    "GAGAL: PBO 0.71 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: deflated Sharpe prob 0.03 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 7 trade OOS (42.9/100 trade)"
+  ],
+  "generated": "2026-09-07 12:12:04.739187+00:00"
+}

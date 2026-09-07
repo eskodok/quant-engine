@@ -2,46 +2,43 @@
   "verdict": "SCRAP",
   "best_params": {},
   "oos": {
-    "n_trades": 66,
-    "profit_factor": 0.7713293675072526,
-    "win_rate": 0.4393939393939394,
-    "expectancy_r": -0.13665050034211804,
-    "avg_win_r": 1.1675167868740604,
-    "avg_loss_r": -1.158835671403447,
-    "avg_bars": 11.257575757575758,
-    "exposure": 1.091042584434655,
-    "sharpe": -0.438118575592621,
-    "sortino": -0.3643357962045163,
-    "max_dd": -0.014971522354092107,
-    "total_return": -0.0086329190031047,
-    "cagr": -0.0031144463837792236,
-    "calmar": -0.20802469582713906,
-    "skew": -2.9353312760324055,
-    "kurt": 34.25434333651042
+    "n_trades": 143,
+    "profit_factor": 1.2135276401990451,
+    "win_rate": 0.48951048951048953,
+    "expectancy_r": 0.11666529136690364,
+    "avg_win_r": 1.326001573808097,
+    "avg_loss_r": -1.0429722397410899,
+    "avg_bars": 10.573426573426573,
+    "exposure": 2.2170087976539588,
+    "sharpe": 0.51904534728607,
+    "sortino": 0.5220744533316471,
+    "max_dd": -0.008977726363257247,
+    "total_return": 0.007788559941464879,
+    "cagr": 0.0027909909447096926,
+    "calmar": 0.31087948460227754,
+    "skew": -2.017018692712622,
+    "kurt": 19.790623352032764
   },
   "oos_cost_x2": {
     "profit_factor": Infinity,
-    "n_trades": 66
+    "n_trades": 143
   },
-  "dsr_prob": 0.0009960454014522832,
+  "dsr_prob": 0.12217253216316487,
   "n_trials": 45,
-  "random_pctile": 64.27272727272727,
-  "pbo": 0.4454545454545455,
+  "random_pctile": 71.66666666666667,
+  "pbo": 0.4945578231292516,
   "benchmark": {
-    "bh_return": -0.07030294272784438,
-    "bh_sharpe": 0.019810179958436744,
-    "bh_max_dd": -0.46781290580459706,
-    "strat_return": -0.0086329190031048
+    "bh_return": 0.8388532416197402,
+    "bh_sharpe": 0.2550407433213092,
+    "bh_max_dd": -0.5354825546070798,
+    "strat_return": 0.007788559941464964
   },
   "reasons": [
-    "Gabungan 11 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ASII, ICBP, INDF, ANTM, UNTR, PGAS",
-    "GAGAL: PF OOS gabungan 0.77 < 1.15",
-    "GAGAL: PF in-sample 0.77 < 1.1: OOS untung = kebetulan rezim, bukan edge",
-    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 64 < 75)",
-    "GAGAL: 7/11 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
-    "PERINGATAN: Sharpe OOS -0.44 < rata-rata buy&hold 0.02",
-    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9",
-    "PERINGATAN: hanya 5/11 simbol profitable OOS: edge tidak merata"
+    "Gabungan 21 simbol: BBCA, BBRI, BMRI, BBNI, TLKM, ICBP, PGAS, AKRA, ASII, ENRG, ESSA, JPFA, PTRO, MAPI, INDF, BUMI, ANTM, TPIA, SCMA, UNVR, UNTR",
+    "GAGAL: PF in-sample 1.02 < 1.1: OOS untung = kebetulan rezim, bukan edge",
+    "GAGAL: timing entry tidak lebih baik dari acak (rata-rata persentil 72 < 75)",
+    "GAGAL: 15/21 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
+    "PERINGATAN: deflated Sharpe prob 0.12 < 0.9"
   ],
-  "generated": "2026-09-05 02:43:08.991318+00:00"
+  "generated": "2026-09-07 12:13:12.064956+00:00"
 }

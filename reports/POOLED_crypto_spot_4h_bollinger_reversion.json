@@ -2,42 +2,43 @@
   "verdict": "SCRAP",
   "best_params": {},
   "oos": {
-    "n_trades": 44,
-    "profit_factor": 1.5351858916837915,
-    "win_rate": 0.6590909090909091,
-    "expectancy_r": 0.1576659211486171,
-    "avg_win_r": 0.8100812668182074,
-    "avg_loss_r": -1.103670413812591,
-    "avg_bars": 9.477272727272727,
-    "exposure": 0.08881789137380192,
-    "sharpe": 0.7180356980152162,
-    "sortino": 0.2753722823182893,
-    "max_dd": -0.00897785977539665,
-    "total_return": 0.013984411867627333,
-    "cagr": 0.006498917301595242,
-    "calmar": 0.7238826918866768,
-    "skew": 4.453816848840694,
-    "kurt": 208.00224354902116
+    "n_trades": 36,
+    "profit_factor": 1.579831024325566,
+    "win_rate": 0.6666666666666666,
+    "expectancy_r": 0.19631116537930157,
+    "avg_win_r": 0.8439852743502524,
+    "avg_loss_r": -1.0990370525625999,
+    "avg_bars": 8.527777777777779,
+    "exposure": 0.06538871139510118,
+    "sharpe": 0.633678426337096,
+    "sortino": 0.25064363214365165,
+    "max_dd": -0.009000097249603007,
+    "total_return": 0.01233583362893187,
+    "cagr": 0.005735277427572738,
+    "calmar": 0.6372461617373879,
+    "skew": 15.367759900969755,
+    "kurt": 701.4857920826931
   },
   "oos_cost_x2": {
-    "profit_factor": 1.4822184356604482,
-    "n_trades": 44
+    "profit_factor": 1.5707495658545978,
+    "n_trades": 36
   },
-  "dsr_prob": 0.13806568150468806,
+  "dsr_prob": 0.14882318219419427,
   "n_trials": 40,
-  "random_pctile": 83.75,
-  "pbo": 0.4928571428571429,
+  "random_pctile": 88.5,
+  "pbo": 0.5285714285714286,
   "benchmark": {
-    "bh_return": -0.1738147194314293,
-    "bh_sharpe": -0.3257827631060327,
-    "bh_max_dd": -0.6054603112128782,
-    "strat_return": 0.01398441186762725
+    "bh_return": -0.19649552922148594,
+    "bh_sharpe": -0.3760147619846562,
+    "bh_max_dd": -0.6054603112128781,
+    "strat_return": 0.012335833628931814
   },
   "reasons": [
     "Gabungan 4 simbol: BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT",
     "GAGAL: PF in-sample 1.00 < 1.1: OOS untung = kebetulan rezim, bukan edge",
+    "GAGAL: PBO rata-rata 0.53 >= 0.5: overfit",
     "GAGAL: 2/4 simbol gagal PBO atau tes acak: basket tidak boleh menutupi kegagalan mayoritas",
-    "PERINGATAN: deflated Sharpe prob 0.14 < 0.9"
+    "PERINGATAN: deflated Sharpe prob 0.15 < 0.9"
   ],
-  "generated": "2026-09-05 02:43:08.584295+00:00"
+  "generated": "2026-09-07 12:13:11.657274+00:00"
 }

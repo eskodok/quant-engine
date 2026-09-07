@@ -8,7 +8,7 @@
 - GAGAL: degradasi IS→OOS 45% > 40%: indikasi overfit
 - GAGAL: PF OOS dengan biaya x2.0 = 0.62 < 1: edge habis dimakan biaya
 - GAGAL: PBO 0.80 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)
-- PERINGATAN: Sharpe OOS -0.13 < buy&hold -0.11: belum lebih baik dari sekadar memegang aset
+- PERINGATAN: Sharpe OOS -0.13 < buy&hold -0.09: belum lebih baik dari sekadar memegang aset
 - PERINGATAN: deflated Sharpe prob 0.01 < 0.9: Sharpe bisa hasil kebetulan
 - PERINGATAN: 3 parameter untuk 7 trade OOS (42.9/100 trade)
 
@@ -23,9 +23,9 @@
 | CAGR | 0.4% | -0.2% | -0.5% |
 
 - Deflated Sharpe prob (n_trials=40): 0.01
-- Timing vs entry acak: persentil 77 (harus >= 75)
+- Timing vs entry acak: persentil 76 (harus >= 75)
 - Probability of Backtest Overfitting (CSCV): 0.80 (harus < 0.5)
-- Buy & hold jendela OOS: return -25.3%, Sharpe -0.11, maxDD -45.6% | strategi: return -0.6%, Sharpe -0.13, maxDD -2.7%
+- Buy & hold jendela OOS: return -23.7%, Sharpe -0.09, maxDD -45.6% | strategi: return -0.6%, Sharpe -0.13, maxDD -2.7%
 - Stabilitas parameter antar fold: 100%
 - Monte Carlo max DD: median -2.4%, p95 -3.4%
 - Parameter terpilih (fold terakhir): {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0}
@@ -33,8 +33,8 @@
 ### Fold
 | # | Train | Test | Params | IS PF | OOS PF | OOS trades |
 |---|---|---|---|---|---|---|
-| 1 | 2018-09-04→2023-10-25 | 2023-10-26→2024-05-30 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 2.82 | 0.21 | 3 |
-| 2 | 2019-03-13→2024-05-30 | 2024-05-31→2024-12-12 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.17 | 0.00 | 0 |
-| 3 | 2019-09-20→2024-12-12 | 2024-12-13→2025-07-23 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.17 | inf | 1 |
-| 4 | 2020-04-06→2025-07-23 | 2025-07-24→2026-02-09 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.10 | inf | 1 |
-| 5 | 2020-11-02→2026-02-09 | 2026-02-10→2026-09-03 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.43 | 0.26 | 2 |
+| 1 | 2018-09-07→2023-10-27 | 2023-10-30→2024-06-03 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 2.82 | 0.21 | 3 |
+| 2 | 2019-03-18→2024-06-03 | 2024-06-04→2024-12-16 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.17 | 0.00 | 0 |
+| 3 | 2019-09-25→2024-12-16 | 2024-12-17→2025-07-25 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.17 | inf | 1 |
+| 4 | 2020-04-09→2025-07-25 | 2025-07-28→2026-02-11 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.10 | inf | 1 |
+| 5 | 2020-11-05→2026-02-11 | 2026-02-12→2026-09-07 | {'bb_n': 20, 'bb_k': 2.0, 'need_trend': 0} | 1.43 | 0.26 | 2 |

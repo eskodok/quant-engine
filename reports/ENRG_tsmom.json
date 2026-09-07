@@ -1,0 +1,63 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "lookback": 60,
+    "rebalance": 10
+  },
+  "oos": {
+    "n_trades": 9,
+    "profit_factor": 2.1869805855070843,
+    "win_rate": 0.4444444444444444,
+    "expectancy_r": 0.7748011326030491,
+    "avg_win_r": 2.443414887414276,
+    "avg_loss_r": -0.5600898712459326,
+    "avg_bars": 29.0,
+    "exposure": 0.38382352941176473,
+    "sharpe": 0.5404257872810934,
+    "sortino": 0.5053621913892519,
+    "max_dd": -0.12927636358716235,
+    "total_return": 0.16649746315916847,
+    "cagr": 0.05705561918710389,
+    "calmar": 0.4413461022875626,
+    "skew": 0.9204592319129785,
+    "kurt": 13.192812263222017
+  },
+  "oos_cost_x2": {
+    "n_trades": 9,
+    "profit_factor": 2.0053136529756572,
+    "win_rate": 0.4444444444444444,
+    "expectancy_r": 0.723740527838273,
+    "avg_win_r": 2.369256326215117,
+    "avg_loss_r": -0.5926721108632026,
+    "avg_bars": 29.0,
+    "exposure": 0.38382352941176473,
+    "sharpe": 0.484679810191508,
+    "sortino": 0.45209264796663584,
+    "max_dd": -0.13579004660514274,
+    "total_return": 0.14584259472893035,
+    "cagr": 0.05027342366336307,
+    "calmar": 0.37022907731632726,
+    "skew": 0.873119791911135,
+    "kurt": 13.212520760001293
+  },
+  "dsr_prob": 0.11731940057448076,
+  "n_trials": 30,
+  "random_pctile": 56.00000000000001,
+  "pbo": 0.9,
+  "benchmark": {
+    "bh_return": 4.491803278688525,
+    "bh_sharpe": 1.1807160495213804,
+    "bh_max_dd": -0.5713978992808948,
+    "strat_return": 0.16649746315916847
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 9 < 30: belum cukup bukti",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 56 < 75): hasil = arus pasar, bukan sinyal",
+    "GAGAL: PBO 0.90 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: Sharpe OOS 0.54 < buy&hold 1.18: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.12 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 9 trade OOS (22.2/100 trade)"
+  ],
+  "generated": "2026-09-07 12:10:31.667690+00:00"
+}

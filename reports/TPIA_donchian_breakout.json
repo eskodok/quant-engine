@@ -1,0 +1,61 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "donchian_n": 20,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 10,
+    "profit_factor": 1.437780779125998,
+    "win_rate": 0.6,
+    "expectancy_r": 0.18389975364678723,
+    "avg_win_r": 1.0127764036044067,
+    "avg_loss_r": -1.0594152212896417,
+    "avg_bars": 10.7,
+    "exposure": 0.15735294117647058,
+    "sharpe": 0.26837608762759607,
+    "sortino": 0.15052669223408963,
+    "max_dd": -0.02488072646193725,
+    "total_return": 0.017887537479645443,
+    "cagr": 0.006408257817511531,
+    "calmar": 0.2575591121631814,
+    "skew": -0.10309368848125995,
+    "kurt": 26.487306371728256
+  },
+  "oos_cost_x2": {
+    "n_trades": 10,
+    "profit_factor": 1.2401163003208588,
+    "win_rate": 0.6,
+    "expectancy_r": 0.10066888345001042,
+    "avg_win_r": 0.9119568080384998,
+    "avg_loss_r": -1.1162630034327234,
+    "avg_bars": 10.7,
+    "exposure": 0.15735294117647058,
+    "sharpe": 0.1592746188615986,
+    "sortino": 0.08774763950097154,
+    "max_dd": -0.025919888597753828,
+    "total_return": 0.010007566371090126,
+    "cagr": 0.003594188452760383,
+    "calmar": 0.13866527393454342,
+    "skew": -0.4469204328953287,
+    "kurt": 26.75879102954864
+  },
+  "dsr_prob": 0.037230264965995734,
+  "n_trials": 45,
+  "random_pctile": 66.0,
+  "pbo": 0.18571428571428572,
+  "benchmark": {
+    "bh_return": -0.29964539007092195,
+    "bh_sharpe": 0.21576678934892785,
+    "bh_max_dd": -0.8771764705882352,
+    "strat_return": 0.017887537479645443
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 10 < 30: belum cukup bukti",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 66 < 75): hasil = arus pasar, bukan sinyal",
+    "PERINGATAN: deflated Sharpe prob 0.04 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 2 parameter untuk 10 trade OOS (20.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:12:06.792943+00:00"
+}

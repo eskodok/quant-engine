@@ -1,0 +1,56 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_pb": 40.0,
+    "adx_min": 15.0,
+    "rr": 1.5
+  },
+  "oos": {
+    "n_trades": 0,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": 0.0,
+    "sharpe": 0.0,
+    "sortino": 0.0,
+    "max_dd": 0.0,
+    "cagr": 0.0,
+    "total_return": 0.0,
+    "avg_bars": 0.0,
+    "exposure": 0.0
+  },
+  "oos_cost_x2": {
+    "n_trades": 0,
+    "profit_factor": 0.0,
+    "win_rate": 0.0,
+    "expectancy_r": 0.0,
+    "sharpe": 0.0,
+    "sortino": 0.0,
+    "max_dd": 0.0,
+    "cagr": 0.0,
+    "total_return": 0.0,
+    "avg_bars": 0.0,
+    "exposure": 0.0
+  },
+  "dsr_prob": 0.004237877344253393,
+  "n_trials": 135,
+  "random_pctile": NaN,
+  "pbo": 0.5285714285714286,
+  "benchmark": {
+    "bh_return": -0.5766129032258065,
+    "bh_sharpe": -0.5985423771640817,
+    "bh_max_dd": -0.5967741935483871,
+    "strat_return": 0.0
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 0 < 30: belum cukup bukti",
+    "GAGAL: PF OOS 0.00 < 1.15",
+    "GAGAL: PF in-sample 0.48 < 1.1: optimasi pun tidak menemukan parameter yang jelas untung -> hasil OOS = kebetulan",
+    "GAGAL: degradasi IS\u2192OOS 100% > 40%: indikasi overfit",
+    "GAGAL: PF OOS dengan biaya x2.0 = 0.00 < 1: edge habis dimakan biaya",
+    "GAGAL: PBO 0.53 >= 0.5: parameter terbaik in-sample cenderung jelek out-of-sample (overfit)",
+    "PERINGATAN: deflated Sharpe prob 0.00 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 0 trade OOS (300.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:12:52.224881+00:00"
+}

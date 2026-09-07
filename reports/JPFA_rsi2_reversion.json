@@ -1,0 +1,64 @@
+{
+  "verdict": "SCRAP",
+  "best_params": {
+    "rsi_buy": 10.0,
+    "exit_ema": 10,
+    "need_trend": 1
+  },
+  "oos": {
+    "n_trades": 20,
+    "profit_factor": 1.5391553856859463,
+    "win_rate": 0.8,
+    "expectancy_r": 0.09436472095180426,
+    "avg_win_r": 0.33061451191650015,
+    "avg_loss_r": -0.8506344429069793,
+    "avg_bars": 3.4,
+    "exposure": 0.1,
+    "sharpe": 0.41906345156048547,
+    "sortino": 0.19184230499457963,
+    "max_dd": -0.012892484041388567,
+    "total_return": 0.018407690314601766,
+    "cagr": 0.006593522042984468,
+    "calmar": 0.5114237118166967,
+    "skew": -1.0105791515178493,
+    "kurt": 49.61157048356149
+  },
+  "oos_cost_x2": {
+    "n_trades": 20,
+    "profit_factor": 1.089119166916414,
+    "win_rate": 0.6,
+    "expectancy_r": 0.019322900587088278,
+    "avg_win_r": 0.3479183442350908,
+    "avg_loss_r": -0.4735702648849155,
+    "avg_bars": 3.4,
+    "exposure": 0.1,
+    "sharpe": 0.08178212492503677,
+    "sortino": 0.0368952808365867,
+    "max_dd": -0.013972812454877644,
+    "total_return": 0.0032956778243651286,
+    "cagr": 0.0011861638928911677,
+    "calmar": 0.08489084761723116,
+    "skew": -1.8841356174111628,
+    "kurt": 54.24230315897494
+  },
+  "dsr_prob": 0.052951726727483384,
+  "n_trials": 60,
+  "random_pctile": 74.0,
+  "pbo": 0.3,
+  "benchmark": {
+    "bh_return": 0.8857142857142857,
+    "bh_sharpe": 0.7519903081707738,
+    "bh_max_dd": -0.3924914675767917,
+    "strat_return": 0.018407690314601766
+  },
+  "reasons": [
+    "Uji lookahead: LULUS (sinyal masa lalu tidak berubah saat data masa depan diacak)",
+    "GAGAL: trade OOS 20 < 30: belum cukup bukti",
+    "GAGAL: timing entry tidak lebih baik dari acak (persentil 74 < 75): hasil = arus pasar, bukan sinyal",
+    "PERINGATAN: PBO 0.30 agak tinggi",
+    "PERINGATAN: Sharpe OOS 0.42 < buy&hold 0.75: belum lebih baik dari sekadar memegang aset",
+    "PERINGATAN: deflated Sharpe prob 0.05 < 0.9: Sharpe bisa hasil kebetulan",
+    "PERINGATAN: 3 parameter untuk 20 trade OOS (15.0/100 trade)"
+  ],
+  "generated": "2026-09-07 12:10:53.385189+00:00"
+}
