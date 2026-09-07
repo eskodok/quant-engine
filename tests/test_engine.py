@@ -101,12 +101,18 @@ def test_risk_per_trade_respected(df):
 
 
 def test_load_csv_idx_keeps_yesterday_bar(tmp_path):
-    """Regresi: bar IDX kemarin (stempel 16:00 WIB) tidak boleh dibuang pagi ini."""
+    """Regresi: bar IDX kemarin (stempel jam TUTUP sesi) tidak boleh dibuang pagi ini,
+    sedangkan aturan crypto (stempel jam BUKA bar) memang membuang bar yang belum tutup.
+    Dibuat deterministik: tidak bergantung pada jam berapa test dijalankan."""
     from engine.data import load_csv
     d = make_ohlcv(n=500, timeframe="1d", seed=3, continuous=False)
-    # stempel semua bar di 09:00 UTC (16:00 WIB) hari masing-masing, terakhir = kemarin
-    end = (pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=1)).normalize() + pd.Timedelta(hours=9)
-    d.index = pd.date_range(end=end, periods=len(d), freq="B", tz="UTC") + pd.Timedelta(hours=9)
+    now = pd.Timestamp.now(tz="UTC")
+    # bar terakhir distempel 2 jam yang lalu: untuk IDX itu = sesi sudah tutup (harus tetap ada);
+    # untuk crypto itu = bar 1d yang baru berjalan 2 jam (harus dibuang).
+    last = now.floor("h") - pd.Timedelta(hours=2)
+    d.index = pd.date_range(end=last, periods=len(d), freq="D", tz="UTC")
     p = tmp_path / "x.csv"; d.to_csv(p, index_label="ts")
-    assert load_csv(str(p), "1d", continuous=False).index[-1] == d.index[-1]
-    assert len(load_csv(str(p), "1d", continuous=True)) == len(d) - 1  # aturan crypto memang membuangnya
+    kept = load_csv(str(p), "1d", continuous=False)
+    dropped = load_csv(str(p), "1d", continuous=True)
+    assert kept.index[-1] == d.index[-1] and len(kept) == len(d)
+    assert len(dropped) == len(d) - 1
