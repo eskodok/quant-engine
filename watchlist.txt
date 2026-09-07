@@ -7,6 +7,7 @@
 #               Pilihan manual: trend_pullback | donchian_breakout | rsi2_reversion | bollinger_reversion | tsmom
 # Baris yang diawali # diabaikan. Validasi mingguan menguji SEMUA strategi untuk tiap simbol.
 
+# ---------- CRYPTO ----------
 crypto_spot BTC/USDT 4h
 crypto_spot ETH/USDT 4h
 crypto_spot SOL/USDT 4h
@@ -16,15 +17,35 @@ crypto_spot ETH/USDT 1d
 crypto_spot SOL/USDT 1d
 crypto_spot BNB/USDT 1d
 
+# ---------- SAHAM IDX: blue chip awal ----------
 idx BBCA 1d
 idx BBRI 1d
 idx BMRI 1d
 idx BBNI 1d
 idx TLKM 1d
-idx ASII 1d
 idx ICBP 1d
-idx INDF 1d
-idx KLBF 1d
-idx ANTM 1d
-idx UNTR 1d
 idx PGAS 1d
+
+# ---------- SAHAM IDX: daftar Fahmi (5 Sep 2026) ----------
+idx AADI 1d
+idx AKRA 1d
+idx AMMN 1d
+idx ASII 1d
+idx BREN 1d
+idx EMAS 1d
+idx ENRG 1d
+idx ESSA 1d
+idx JPFA 1d
+idx PTRO 1d
+idx MAPI 1d
+idx INDF 1d
+idx BUMI 1d
+idx ANTM 1d
+idx CDIA 1d
+idx DSSA 1d
+idx TPIA 1d
+idx SCMA 1d
+idx KLBF 1d
+idx UNVR 1d
+idx MNCN 1d
+idx UNTR 1d
