@@ -1,15 +1,15 @@
-# Scan harian — 2026-09-07 12:13 UTC (19:13 WIB)
+# Scan harian — 2026-09-08 01:13 UTC (08:13 WIB)
 
 | Simbol | TF | Aksi | Regime | Conf | Close | SL | TP | Validasi | Catatan |
 |---|---|---|---|---|---|---|---|---|---|
-| BTC/USDT | 4h | **NO_TRADE** | UPTREND | 55% | 79,415 |  |  | FIX |  |
-| ETH/USDT | 4h | **NO_TRADE** | UPTREND | 0% | 2,489.39 |  |  | SCRAP |  |
-| SOL/USDT | 4h | **NO_TRADE** | UPTREND | 12% | 104.93 |  |  | SCRAP |  |
-| BNB/USDT | 4h | **NO_TRADE** | UPTREND | 60% | 744.898 |  |  | FIX |  |
-| BTC/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 60% | 80,343.5 |  |  | FIX | outlier.return |
-| ETH/USDT | 1d | **NO_TRADE** | UPTREND | 5% | 2,515.06 |  |  | SCRAP | outlier.return |
-| SOL/USDT | 1d | **NO_TRADE** | SIDEWAYS | 17% | 106.57 |  |  | SCRAP | outlier.return |
-| BNB/USDT | 1d | **NO_TRADE** | SIDEWAYS | 60% | 752.999 |  |  | FIX | outlier.return |
+| BTC/USDT | 4h | **NO_TRADE** | UPTREND | 55% | 79,117.8 |  |  | FIX |  |
+| ETH/USDT | 4h | **NO_TRADE** | UPTREND | 0% | 2,490.24 |  |  | SCRAP |  |
+| SOL/USDT | 4h | **NO_TRADE** | UPTREND | 12% | 103.79 |  |  | SCRAP |  |
+| BNB/USDT | 4h | **NO_TRADE** | UPTREND | 60% | 740.146 |  |  | FIX |  |
+| BTC/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 60% | 79,117.8 |  |  | FIX | outlier.return |
+| ETH/USDT | 1d | **NO_TRADE** | UPTREND | 5% | 2,490.24 |  |  | SCRAP | outlier.return |
+| SOL/USDT | 1d | **NO_TRADE** | SIDEWAYS | 17% | 103.79 |  |  | SCRAP | outlier.return |
+| BNB/USDT | 1d | **NO_TRADE** | UPTREND | 60% | 740.146 |  |  | FIX | outlier.return |
 | BBCA | 1d | **NO_TRADE** | DOWNTREND | 0% | 6,625 |  |  | SCRAP |  |
 | BBRI | 1d | **NO_TRADE** | SIDEWAYS | 13% | 3,370 |  |  | SCRAP |  |
 | BMRI | 1d | **NO_TRADE** | DOWNTREND | 0% | 4,390 |  |  | SCRAP |  |
@@ -51,7 +51,7 @@
 - BTC/USDT (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ETH/USDT (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - SOL/USDT (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
-- BNB/USDT (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- BNB/USDT (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BBCA (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BBRI (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - BMRI (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir

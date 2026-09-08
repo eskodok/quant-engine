@@ -1,15 +1,15 @@
-# Fetch log — 2026-09-07 12:05 UTC
+# Fetch log — 2026-09-08 01:12 UTC
 
 | item | status | bar | bar terakhir | sumber |
 |---|---|---|---|---|
-| crypto_spot__BTC-USDT__4h | OK | 4999 | 2026-09-07 08:00:00+00:00 | kucoin:BTC/USDT |
-| crypto_spot__ETH-USDT__4h | OK | 4999 | 2026-09-07 08:00:00+00:00 | kucoin:ETH/USDT |
-| crypto_spot__SOL-USDT__4h | OK | 4999 | 2026-09-07 08:00:00+00:00 | kucoin:SOL/USDT |
-| crypto_spot__BNB-USDT__4h | OK | 11999 | 2026-09-07 08:00:00+00:00 | kucoin:BNB/USDT |
-| crypto_spot__BTC-USDT__1d | OK | 3238 | 2026-09-06 00:00:00+00:00 | kucoin:BTC/USDT |
-| crypto_spot__ETH-USDT__1d | OK | 3218 | 2026-09-06 00:00:00+00:00 | kucoin:ETH/USDT |
-| crypto_spot__SOL-USDT__1d | OK | 1860 | 2026-09-06 00:00:00+00:00 | kucoin:SOL/USDT |
-| crypto_spot__BNB-USDT__1d | OK | 2637 | 2026-09-06 00:00:00+00:00 | kucoin:BNB/USDT |
+| crypto_spot__BTC-USDT__4h | OK | 4999 | 2026-09-07 20:00:00+00:00 | kucoin:BTC/USDT |
+| crypto_spot__ETH-USDT__4h | OK | 4999 | 2026-09-07 20:00:00+00:00 | kucoin:ETH/USDT |
+| crypto_spot__SOL-USDT__4h | OK | 4999 | 2026-09-07 20:00:00+00:00 | kucoin:SOL/USDT |
+| crypto_spot__BNB-USDT__4h | OK | 11999 | 2026-09-07 20:00:00+00:00 | kucoin:BNB/USDT |
+| crypto_spot__BTC-USDT__1d | OK | 3239 | 2026-09-07 00:00:00+00:00 | kucoin:BTC/USDT |
+| crypto_spot__ETH-USDT__1d | OK | 3219 | 2026-09-07 00:00:00+00:00 | kucoin:ETH/USDT |
+| crypto_spot__SOL-USDT__1d | OK | 1861 | 2026-09-07 00:00:00+00:00 | kucoin:SOL/USDT |
+| crypto_spot__BNB-USDT__1d | OK | 2638 | 2026-09-07 00:00:00+00:00 | kucoin:BNB/USDT |
 | idx__BBCA__1d | OK | 1950 | 2026-09-07 09:00:00+00:00 | idx |
 | idx__BBRI__1d | OK | 1951 | 2026-09-07 09:00:00+00:00 | idx |
 | idx__BMRI__1d | OK | 1951 | 2026-09-07 09:00:00+00:00 | idx |
