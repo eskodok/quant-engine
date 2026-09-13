@@ -49,3 +49,13 @@ idx KLBF 1d
 idx UNVR 1d
 idx MNCN 1d
 idx UNTR 1d
+idx CUAN 1d
+idx INET 1d
+idx KPIG 1d
+idx LUCY 1d
+idx BULL 1d
+idx BNBR 1d
+idx COCO 1d
+idx DEWA 1d
+idx MUTU 1d
+idx KIJA 1d
