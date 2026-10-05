@@ -1,54 +1,54 @@
-# Scan harian — 2026-10-02 02:15 UTC (09:15 WIB)
+# Scan harian — 2026-10-05 02:00 UTC (09:00 WIB)
 
 | Simbol | TF | Aksi | Regime | Conf | Close | SL | TP | Validasi | Catatan |
 |---|---|---|---|---|---|---|---|---|---|
-| BTC/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 55% | 84,893.5 |  |  | FIX |  |
-| ETH/USDT | 4h | **NO_TRADE** | UPTREND | 0% | 2,706.48 |  |  | SCRAP |  |
-| SOL/USDT | 4h | **NO_TRADE** | UPTREND | 12% | 118.41 |  |  | SCRAP |  |
-| BNB/USDT | 4h | **NO_TRADE** | UPTREND | 55% | 771.598 |  |  | FIX |  |
-| BTC/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 60% | 84,893.5 |  |  | FIX | outlier.return |
-| ETH/USDT | 1d | **NO_TRADE** | UPTREND | 5% | 2,706.48 |  |  | SCRAP | outlier.return |
-| SOL/USDT | 1d | **NO_TRADE** | UPTREND | 17% | 118.41 |  |  | SCRAP | outlier.return |
-| BNB/USDT | 1d | **NO_TRADE** | UPTREND | 60% | 771.598 |  |  | FIX | outlier.return |
-| BBCA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 6,000 |  |  | SCRAP |  |
-| BBRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 8% | 3,100 |  |  | SCRAP |  |
-| BMRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 4,010 |  |  | SCRAP |  |
-| BBNI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 3,410 |  |  | SCRAP |  |
+| BTC/USDT | 4h | **AVOID_OR_EXIT** | UPTREND | 60% | 86,514.9 |  |  | FIX |  |
+| ETH/USDT | 4h | **NO_TRADE** | UPTREND | 0% | 2,726.87 |  |  | SCRAP |  |
+| SOL/USDT | 4h | **NO_TRADE** | UPTREND | 17% | 121.61 |  |  | SCRAP |  |
+| BNB/USDT | 4h | **NO_TRADE** | UPTREND | 60% | 795.113 |  |  | FIX |  |
+| BTC/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 60% | 86,514.9 |  |  | FIX | outlier.return |
+| ETH/USDT | 1d | **NO_TRADE** | UPTREND | 5% | 2,726.87 |  |  | SCRAP | outlier.return |
+| SOL/USDT | 1d | **NO_TRADE** | UPTREND | 17% | 121.61 |  |  | SCRAP | outlier.return |
+| BNB/USDT | 1d | **NO_TRADE** | UPTREND | 60% | 795.113 |  |  | FIX | outlier.return |
+| BBCA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 6,100 |  |  | SCRAP |  |
+| BBRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 8% | 3,080 |  |  | SCRAP |  |
+| BMRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 4,030 |  |  | SCRAP |  |
+| BBNI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 3,420 |  |  | SCRAP |  |
 | TLKM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 2,250 |  |  | SCRAP |  |
-| ICBP | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 6,625 |  |  | SCRAP |  |
-| PGAS | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 1,380 |  |  | SCRAP |  |
-| AADI | 1d | **NO_TRADE** | UPTREND | 5% | 11,150 |  |  | SCRAP |  |
-| AKRA | 1d | **NO_TRADE** | UPTREND | 5% | 1,450 |  |  | SCRAP |  |
-| AMMN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 4,370 |  |  | SCRAP |  |
-| ASII | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 4,510 |  |  | SCRAP |  |
-| BREN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 2,870 |  |  | SCRAP |  |
-| EMAS | 1d | DATA_BLOCKED | | | | | | | history: hanya 250 bar (< 400) |
-| ENRG | 1d | **NO_TRADE** | UPTREND | 0% | 1,410 |  |  | SCRAP | volume.spikes |
-| ESSA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 570 |  |  | SCRAP |  |
-| JPFA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,040 |  |  | SCRAP |  |
-| PTRO | 1d | **NO_TRADE** | SIDEWAYS | 55% | 5,225 |  |  | FIX |  |
-| MAPI | 1d | **AVOID_OR_EXIT** | UPTREND | 0% | 1,480 |  |  | SCRAP |  |
-| INDF | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 10% | 6,750 |  |  | SCRAP |  |
-| BUMI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 170 |  |  | SCRAP | volume.spikes |
-| ANTM | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 3,120 |  |  | SCRAP |  |
-| CDIA | 1d | DATA_BLOCKED | | | | | | | history: hanya 302 bar (< 400) |
-| DSSA | 1d | DATA_BLOCKED | | | | | | | stale_bars: 784 bar (40.2%) volume 0 & datar |
-| TPIA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 20% | 1,730 |  |  | SCRAP |  |
-| SCMA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 25% | 171 |  |  | SCRAP |  |
-| KLBF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 16% | 720 |  |  | SCRAP |  |
-| UNVR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,625 |  |  | SCRAP |  |
-| MNCN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 120 |  |  | SCRAP |  |
-| UNTR | 1d | **NO_TRADE** | SIDEWAYS | 24% | 26,350 |  |  | SCRAP |  |
-| CUAN | 1d | **NO_TRADE** | DOWNTREND | 0% | 865 |  |  | NONE | stale_bars |
+| ICBP | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 6,750 |  |  | SCRAP |  |
+| PGAS | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,375 |  |  | SCRAP |  |
+| AADI | 1d | **NO_TRADE** | UPTREND | 5% | 11,550 |  |  | SCRAP |  |
+| AKRA | 1d | **NO_TRADE** | UPTREND | 5% | 1,460 |  |  | SCRAP |  |
+| AMMN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 4,240 |  |  | SCRAP |  |
+| ASII | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 4,630 |  |  | SCRAP |  |
+| BREN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 2,830 |  |  | SCRAP |  |
+| EMAS | 1d | DATA_BLOCKED | | | | | | | history: hanya 251 bar (< 400) |
+| ENRG | 1d | **NO_TRADE** | UPTREND | 0% | 1,440 |  |  | SCRAP | volume.spikes |
+| ESSA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 590 |  |  | SCRAP |  |
+| JPFA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,995 |  |  | SCRAP |  |
+| PTRO | 1d | **NO_TRADE** | DOWNTREND | 55% | 5,125 |  |  | FIX |  |
+| MAPI | 1d | **NO_TRADE** | UPTREND | 0% | 1,485 |  |  | SCRAP |  |
+| INDF | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 10% | 6,825 |  |  | SCRAP |  |
+| BUMI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 175 |  |  | SCRAP | volume.spikes |
+| ANTM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,140 |  |  | SCRAP |  |
+| CDIA | 1d | DATA_BLOCKED | | | | | | | history: hanya 303 bar (< 400) |
+| DSSA | 1d | DATA_BLOCKED | | | | | | | stale_bars: 781 bar (40.1%) volume 0 & datar |
+| TPIA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 20% | 1,700 |  |  | SCRAP |  |
+| SCMA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 25% | 172 |  |  | SCRAP |  |
+| KLBF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 16% | 725 |  |  | SCRAP |  |
+| UNVR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,580 |  |  | SCRAP |  |
+| MNCN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 119 |  |  | SCRAP |  |
+| UNTR | 1d | **NO_TRADE** | SIDEWAYS | 24% | 26,000 |  |  | SCRAP |  |
+| CUAN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 845 |  |  | NONE | stale_bars |
 | INET | 1d | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 36% (terakhir 2025-12-29); outlier.gap_open: 1 open gap > 36% |
-| KPIG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 48 |  |  | NONE | volume.spikes |
-| LUCY | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 254 |  |  | NONE | stale_bars; volume.spikes |
-| BULL | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 348 |  |  | NONE | stale_bars |
-| BNBR | 1d | DATA_BLOCKED | | | | | | | stale_bars: 1107 bar (56.6%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36% |
+| KPIG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 43 |  |  | NONE | volume.spikes |
+| LUCY | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 256 |  |  | NONE | stale_bars; volume.spikes |
+| BULL | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 346 |  |  | NONE | stale_bars |
+| BNBR | 1d | DATA_BLOCKED | | | | | | | stale_bars: 1104 bar (56.5%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36% |
 | COCO | 1d | DATA_BLOCKED | | | | | | | outlier.return: 2 bar |return| > 36% (terakhir 2026-06-29); outlier.gap_open: 2 open gap > 36% |
-| DEWA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 334 |  |  | NONE | stale_bars; volume.spikes |
-| MUTU | 1d | **AVOID_OR_EXIT** | UPTREND | 0% | 118 |  |  | NONE | volume.spikes |
-| KIJA | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 158 |  |  | NONE | volume.spikes |
+| DEWA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 338 |  |  | NONE | stale_bars; volume.spikes |
+| MUTU | 1d | **AVOID_OR_EXIT** | UPTREND | 0% | 119 |  |  | NONE | volume.spikes |
+| KIJA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 151 |  |  | NONE | volume.spikes |
 
 **Setup LONG hari ini: 0**
 
@@ -69,29 +69,29 @@
 - TLKM (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ICBP (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - PGAS (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- AADI (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
-- AKRA (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- AADI (1d): UPTREND — regime UPTREND, ADX 33, RSI 56, close vs EMA20/50/200: +2.0%/+8.3%/+23.6%
+- AKRA (1d): UPTREND — regime UPTREND, ADX 27, RSI 52, close vs EMA20/50/200: +0.2%/+1.9%/+7.2%
 - AMMN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ASII (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BREN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ENRG (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - ESSA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - JPFA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- PTRO (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
-- MAPI (1d): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- PTRO (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- MAPI (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - INDF (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BUMI (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- ANTM (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- ANTM (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - TPIA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - SCMA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - KLBF (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - UNVR (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - MNCN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - UNTR (1d): SIDEWAYS — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
-- CUAN (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- CUAN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - KPIG (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - LUCY (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BULL (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - DEWA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - MUTU (1d): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- KIJA (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- KIJA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
