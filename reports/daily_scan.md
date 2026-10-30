@@ -1,67 +1,87 @@
-# Scan harian — 2026-10-29 02:27 UTC (09:27 WIB)
+# Scan harian — 2026-10-30 02:36 UTC (09:36 WIB)
 
 | Simbol | TF | Aksi | Regime | Conf | Close | SL | TP | Validasi | Catatan |
 |---|---|---|---|---|---|---|---|---|---|
-| BTC/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 55% | 81,340.4 |  |  | FIX |  |
-| ETH/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 5% | 2,359.53 |  |  | SCRAP |  |
-| SOL/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 12% | 102.44 |  |  | SCRAP |  |
-| BNB/USDT | 4h | **NO_TRADE** | UPTREND | 55% | 759.696 |  |  | FIX |  |
-| BTC/USDT | 1d | **NO_TRADE** | UPTREND | 55% | 81,340.4 |  |  | FIX | outlier.return |
-| ETH/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 5% | 2,359.53 |  |  | SCRAP | outlier.return |
-| SOL/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 17% | 102.44 |  |  | SCRAP | outlier.return |
-| BNB/USDT | 1d | **NO_TRADE** | UPTREND | 55% | 759.696 |  |  | FIX | outlier.return |
-| BBCA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 5,275 |  |  | SCRAP |  |
-| BBRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 8% | 2,920 |  |  | SCRAP |  |
-| BMRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 3,840 |  |  | SCRAP |  |
-| BBNI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,350 |  |  | SCRAP |  |
-| TLKM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 2,070 |  |  | SCRAP |  |
-| ICBP | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 5,775 |  |  | SCRAP |  |
-| PGAS | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,280 |  |  | SCRAP |  |
-| AADI | 1d | **NO_TRADE** | UPTREND | 0% | 11,650 |  |  | SCRAP |  |
-| AKRA | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,405 |  |  | SCRAP |  |
-| AMMN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,900 |  |  | SCRAP |  |
-| ASII | 1d | **NO_TRADE** | DOWNTREND | 15% | 5,000 |  |  | SCRAP |  |
-| BREN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,070 |  |  | SCRAP |  |
-| EMAS | 1d | DATA_BLOCKED | | | | | | | history: hanya 265 bar (< 400) |
-| ENRG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 715 |  |  | SCRAP | volume.spikes |
-| ESSA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 525 |  |  | SCRAP |  |
-| JPFA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,810 |  |  | SCRAP |  |
-| PTRO | 1d | **AVOID_OR_EXIT** | DOWNTREND | 50% | 2,670 |  |  | FIX |  |
-| MAPI | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,320 |  |  | SCRAP |  |
-| INDF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 6,375 |  |  | SCRAP |  |
-| BUMI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 127 |  |  | SCRAP | volume.spikes |
-| ANTM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,800 |  |  | SCRAP |  |
-| CDIA | 1d | DATA_BLOCKED | | | | | | | history: hanya 317 bar (< 400) |
-| DSSA | 1d | DATA_BLOCKED | | | | | | | stale_bars: 765 bar (39.3%) volume 0 & datar |
-| TPIA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 1,335 |  |  | SCRAP |  |
-| SCMA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 25% | 139 |  |  | SCRAP |  |
-| KLBF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 16% | 735 |  |  | SCRAP |  |
-| UNVR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,405 |  |  | SCRAP |  |
+| BTC/USDT | 4h | **NO_TRADE** | DOWNTREND | 55% | 77,988.8 |  |  | FIX |  |
+| ETH/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,253.61 |  |  | SCRAP |  |
+| SOL/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 12% | 95.63 |  |  | SCRAP |  |
+| BNB/USDT | 4h | **AVOID_OR_EXIT** | SIDEWAYS | 55% | 698 |  |  | FIX |  |
+| BTC/USDT | 1d | **LONG** | UPTREND | 55% | 77,988.8 | 73,811 | 90,522.2 | FIX | outlier.return |
+| ETH/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 5% | 2,253.61 |  |  | SCRAP | outlier.return |
+| SOL/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 17% | 95.63 |  |  | SCRAP | outlier.return |
+| BNB/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 55% | 698 |  |  | FIX | outlier.return |
+| BBCA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 4,940 |  |  | SCRAP |  |
+| BBRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 8% | 2,810 |  |  | SCRAP |  |
+| BMRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 3,720 |  |  | SCRAP |  |
+| BBNI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,240 |  |  | SCRAP |  |
+| TLKM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,980 |  |  | SCRAP |  |
+| ICBP | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 5,575 |  |  | SCRAP |  |
+| PGAS | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,215 |  |  | SCRAP |  |
+| AADI | 1d | **NO_TRADE** | UPTREND | 0% | 11,125 |  |  | SCRAP |  |
+| AKRA | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,400 |  |  | SCRAP |  |
+| AMMN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,740 |  |  | SCRAP |  |
+| ASII | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 4,690 |  |  | SCRAP |  |
+| BREN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 1,930 |  |  | SCRAP |  |
+| EMAS | 1d | DATA_BLOCKED | | | | | | | history: hanya 266 bar (< 400) |
+| ENRG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 665 |  |  | SCRAP | volume.spikes |
+| ESSA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 505 |  |  | SCRAP |  |
+| JPFA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,735 |  |  | SCRAP |  |
+| PTRO | 1d | **AVOID_OR_EXIT** | DOWNTREND | 50% | 2,490 |  |  | FIX |  |
+| MAPI | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,260 |  |  | SCRAP |  |
+| INDF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 6,275 |  |  | SCRAP |  |
+| BUMI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 121 |  |  | SCRAP | volume.spikes |
+| ANTM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,670 |  |  | SCRAP |  |
+| CDIA | 1d | DATA_BLOCKED | | | | | | | history: hanya 318 bar (< 400) |
+| DSSA | 1d | DATA_BLOCKED | | | | | | | stale_bars: 764 bar (39.2%) volume 0 & datar |
+| TPIA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 1,350 |  |  | SCRAP |  |
+| SCMA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 130 |  |  | SCRAP |  |
+| KLBF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 16% | 715 |  |  | SCRAP |  |
+| UNVR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,400 |  |  | SCRAP |  |
 | MNCN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 84 |  |  | SCRAP |  |
-| UNTR | 1d | **NO_TRADE** | DOWNTREND | 19% | 25,600 |  |  | SCRAP |  |
-| CUAN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 432 |  |  | NONE | stale_bars |
+| UNTR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 19% | 24,550 |  |  | SCRAP |  |
+| CUAN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 410 |  |  | NONE | stale_bars |
 | INET | 1d | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 36% (terakhir 2025-12-29); outlier.gap_open: 1 open gap > 36% |
-| KPIG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 28 |  |  | NONE | volume.spikes |
-| LUCY | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 114 |  |  | NONE | stale_bars; volume.spikes |
-| BULL | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 262 |  |  | NONE | stale_bars |
-| BNBR | 1d | DATA_BLOCKED | | | | | | | stale_bars: 1080 bar (55.5%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36% |
+| KPIG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 27 |  |  | NONE | volume.spikes |
+| LUCY | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 120 |  |  | NONE | stale_bars; volume.spikes |
+| BULL | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 244 |  |  | NONE | stale_bars |
+| BNBR | 1d | DATA_BLOCKED | | | | | | | stale_bars: 1079 bar (55.4%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36% |
 | COCO | 1d | DATA_BLOCKED | | | | | | | outlier.return: 2 bar |return| > 36% (terakhir 2026-06-29); outlier.gap_open: 2 open gap > 36% |
-| DEWA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 240 |  |  | NONE | stale_bars; volume.spikes |
-| MUTU | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 104 |  |  | NONE | volume.spikes |
-| KIJA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 119 |  |  | NONE | volume.spikes |
+| DEWA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 226 |  |  | NONE | stale_bars; volume.spikes |
+| MUTU | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 99 |  |  | NONE | volume.spikes |
+| KIJA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 113 |  |  | NONE | volume.spikes |
 
-**Setup LONG hari ini: 0**
+**Setup LONG hari ini: 1**
+
+```
+=== BTC/USDT [crypto_spot 1d] strategi=bollinger_reversion ===
+bar tutup terakhir : 2026-10-29 00:00:00+00:00
+AKSI               : LONG   (validasi: FIX, confidence 55%)
+regime             : UPTREND
+entry (open bar berikutnya, zona) : 77,466.6 – 78,511  (ref close 77,988.8)
+stop loss          : 73,811  (-5.36%)
+take profit        : 90,522.2  (+16.07%)  RR 1:3.0
+qty                : 0.011968  nilai 933  risiko 50
+batalkan bila open bar berikutnya di luar zona entry (gap = RR rusak)
+alasan:
+  - close < Bollinger bawah(20,2.0)
+  - regime UPTREND, ADX 18, RSI 36, close vs EMA20/50/200: -4.2%/-3.4%/+2.0%
+confidence:
+  - verdict validasi FIX -> basis 0.35
+  - PF OOS 2.32 -> +0.20
+peringatan data:
+  - outlier.return: 1 pergerakan ekstrem nyata > 35% (terakhir 2020-03-12)
+```
 
 ## Regime pasar
 
-- BTC/USDT (4h): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- BTC/USDT (4h): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - ETH/USDT (4h): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - SOL/USDT (4h): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- BNB/USDT (4h): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
-- BTC/USDT (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
-- ETH/USDT (1d): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- SOL/USDT (1d): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- BNB/USDT (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- BNB/USDT (4h): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- BTC/USDT (1d): UPTREND — regime UPTREND, ADX 18, RSI 36, close vs EMA20/50/200: -4.2%/-3.4%/+2.0%
+- ETH/USDT (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- SOL/USDT (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
+- BNB/USDT (1d): UPTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BBCA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BBRI (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BMRI (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
@@ -72,7 +92,7 @@
 - AADI (1d): UPTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
 - AKRA (1d): SIDEWAYS — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - AMMN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- ASII (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- ASII (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - BREN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ENRG (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - ESSA (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
@@ -87,7 +107,7 @@
 - KLBF (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - UNVR (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - MNCN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
-- UNTR (1d): DOWNTREND — tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir
+- UNTR (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - CUAN (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - KPIG (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
 - LUCY (1d): DOWNTREND — close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli
