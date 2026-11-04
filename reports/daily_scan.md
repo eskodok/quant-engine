@@ -1,54 +1,54 @@
-# Scan harian — 2026-11-03 03:56 UTC (10:56 WIB)
+# Scan harian — 2026-11-04 03:01 UTC (10:01 WIB)
 
 | Simbol | TF | Aksi | Regime | Conf | Close | SL | TP | Validasi | Catatan |
 |---|---|---|---|---|---|---|---|---|---|
-| BTC/USDT | 4h | **NO_TRADE** | DOWNTREND | 55% | 76,808.9 |  |  | FIX |  |
-| ETH/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,253.08 |  |  | SCRAP |  |
-| SOL/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 17% | 91.98 |  |  | SCRAP |  |
-| BNB/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 60% | 699.055 |  |  | FIX |  |
-| BTC/USDT | 1d | **NO_TRADE** | UPTREND | 55% | 76,808.9 |  |  | FIX | outlier.return |
-| ETH/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 5% | 2,253.08 |  |  | SCRAP | outlier.return |
-| SOL/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 17% | 91.98 |  |  | SCRAP | outlier.return |
-| BNB/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 55% | 699.055 |  |  | FIX | outlier.return |
-| BBCA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 4,980 |  |  | SCRAP |  |
-| BBRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 8% | 2,820 |  |  | SCRAP |  |
-| BMRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 3,700 |  |  | SCRAP |  |
-| BBNI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,290 |  |  | SCRAP |  |
-| TLKM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,960 |  |  | SCRAP |  |
-| ICBP | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 5,725 |  |  | SCRAP |  |
-| PGAS | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,370 |  |  | SCRAP |  |
-| AADI | 1d | **AVOID_OR_EXIT** | UPTREND | 0% | 10,700 |  |  | SCRAP |  |
-| AKRA | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,355 |  |  | SCRAP |  |
-| AMMN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,680 |  |  | SCRAP |  |
-| ASII | 1d | **NO_TRADE** | DOWNTREND | 15% | 4,860 |  |  | SCRAP |  |
-| BREN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,070 |  |  | SCRAP |  |
-| EMAS | 1d | DATA_BLOCKED | | | | | | | history: hanya 268 bar (< 400) |
-| ENRG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 625 |  |  | SCRAP | volume.spikes |
-| ESSA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 530 |  |  | SCRAP |  |
-| JPFA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,735 |  |  | SCRAP |  |
-| PTRO | 1d | **AVOID_OR_EXIT** | DOWNTREND | 50% | 2,570 |  |  | FIX |  |
-| MAPI | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,210 |  |  | SCRAP |  |
-| INDF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 6,550 |  |  | SCRAP |  |
-| BUMI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 128 |  |  | SCRAP | volume.spikes |
-| ANTM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,580 |  |  | SCRAP |  |
-| CDIA | 1d | DATA_BLOCKED | | | | | | | history: hanya 320 bar (< 400) |
+| BTC/USDT | 4h | **NO_TRADE** | DOWNTREND | 55% | 77,451.9 |  |  | FIX |  |
+| ETH/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,274.79 |  |  | SCRAP |  |
+| SOL/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 17% | 92.83 |  |  | SCRAP |  |
+| BNB/USDT | 4h | **AVOID_OR_EXIT** | DOWNTREND | 60% | 698.158 |  |  | FIX |  |
+| BTC/USDT | 1d | **NO_TRADE** | UPTREND | 55% | 77,451.9 |  |  | FIX | outlier.return |
+| ETH/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 5% | 2,274.79 |  |  | SCRAP | outlier.return |
+| SOL/USDT | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 17% | 92.83 |  |  | SCRAP | outlier.return |
+| BNB/USDT | 1d | **AVOID_OR_EXIT** | UPTREND | 60% | 698.158 |  |  | FIX | outlier.return |
+| BBCA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 4,840 |  |  | SCRAP |  |
+| BBRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 8% | 2,660 |  |  | SCRAP |  |
+| BMRI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 3,590 |  |  | SCRAP |  |
+| BBNI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,200 |  |  | SCRAP |  |
+| TLKM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,880 |  |  | SCRAP |  |
+| ICBP | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 5,650 |  |  | SCRAP |  |
+| PGAS | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,330 |  |  | SCRAP |  |
+| AADI | 1d | **AVOID_OR_EXIT** | UPTREND | 0% | 10,425 |  |  | SCRAP |  |
+| AKRA | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,320 |  |  | SCRAP |  |
+| AMMN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 3,430 |  |  | SCRAP |  |
+| ASII | 1d | **NO_TRADE** | DOWNTREND | 15% | 4,750 |  |  | SCRAP |  |
+| BREN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,100 |  |  | SCRAP |  |
+| EMAS | 1d | DATA_BLOCKED | | | | | | | history: hanya 269 bar (< 400) |
+| ENRG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 585 |  |  | SCRAP | volume.spikes |
+| ESSA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 496 |  |  | SCRAP |  |
+| JPFA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,665 |  |  | SCRAP |  |
+| PTRO | 1d | **AVOID_OR_EXIT** | DOWNTREND | 50% | 2,400 |  |  | FIX |  |
+| MAPI | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 1,245 |  |  | SCRAP |  |
+| INDF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 6,500 |  |  | SCRAP |  |
+| BUMI | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 120 |  |  | SCRAP | volume.spikes |
+| ANTM | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 2,400 |  |  | SCRAP |  |
+| CDIA | 1d | DATA_BLOCKED | | | | | | | history: hanya 321 bar (< 400) |
 | DSSA | 1d | DATA_BLOCKED | | | | | | | stale_bars: 762 bar (39.2%) volume 0 & datar |
-| TPIA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 1,345 |  |  | SCRAP |  |
-| SCMA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 135 |  |  | SCRAP |  |
-| KLBF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 16% | 720 |  |  | SCRAP |  |
-| UNVR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,395 |  |  | SCRAP |  |
-| MNCN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 80 |  |  | SCRAP |  |
-| UNTR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 19% | 23,850 |  |  | SCRAP |  |
-| CUAN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 408 |  |  | NONE | stale_bars |
+| TPIA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 10% | 1,255 |  |  | SCRAP |  |
+| SCMA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 15% | 127 |  |  | SCRAP |  |
+| KLBF | 1d | **AVOID_OR_EXIT** | DOWNTREND | 16% | 715 |  |  | SCRAP |  |
+| UNVR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 5% | 1,380 |  |  | SCRAP |  |
+| MNCN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 75 |  |  | SCRAP |  |
+| UNTR | 1d | **AVOID_OR_EXIT** | DOWNTREND | 19% | 23,175 |  |  | SCRAP |  |
+| CUAN | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 380 |  |  | NONE | stale_bars |
 | INET | 1d | DATA_BLOCKED | | | | | | | outlier.return: 1 bar |return| > 36% (terakhir 2025-12-29); outlier.gap_open: 1 open gap > 36% |
-| KPIG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 26 |  |  | NONE | volume.spikes |
-| LUCY | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 105 |  |  | NONE | stale_bars; volume.spikes |
-| BULL | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 248 |  |  | NONE | stale_bars |
-| BNBR | 1d | DATA_BLOCKED | | | | | | | stale_bars: 1075 bar (55.3%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36% |
+| KPIG | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 25 |  |  | NONE | volume.spikes |
+| LUCY | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 95 |  |  | NONE | stale_bars; volume.spikes |
+| BULL | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 232 |  |  | NONE | stale_bars |
+| BNBR | 1d | DATA_BLOCKED | | | | | | | stale_bars: 1075 bar (55.2%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36% |
 | COCO | 1d | DATA_BLOCKED | | | | | | | outlier.return: 2 bar |return| > 36% (terakhir 2026-06-29); outlier.gap_open: 2 open gap > 36% |
-| DEWA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 238 |  |  | NONE | stale_bars; volume.spikes |
-| MUTU | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 104 |  |  | NONE | volume.spikes |
-| KIJA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 114 |  |  | NONE | volume.spikes |
+| DEWA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 222 |  |  | NONE | stale_bars; volume.spikes |
+| MUTU | 1d | **AVOID_OR_EXIT** | SIDEWAYS | 0% | 97 |  |  | NONE | volume.spikes |
+| KIJA | 1d | **AVOID_OR_EXIT** | DOWNTREND | 0% | 108 |  |  | NONE | volume.spikes |
 
 **Setup LONG hari ini: 0**
 
