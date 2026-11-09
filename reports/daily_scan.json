@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06 03:27:07.757678+00:00",
+  "generated": "2026-11-09 02:40:15.591261+00:00",
   "items": [
     {
       "key": "crypto_spot__BTC-USDT__4h",
@@ -15,15 +15,15 @@
         "market": "crypto_spot",
         "timeframe": "4h",
         "strategy": "bollinger_reversion",
-        "as_of": "2026-11-05 20:00:00+00:00",
+        "as_of": "2026-11-08 20:00:00+00:00",
         "action": "NO_TRADE",
-        "entry_ref": 76087.9,
+        "entry_ref": 74842.5,
         "entry_zone": [
-          75791.421444,
-          76384.378556
+          74655.134149,
+          75029.865851
         ],
-        "stop": 73716.07155509798,
-        "target": 83203.38533470605,
+        "stop": 73343.57319288535,
+        "target": 79339.28042134394,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -32,10 +32,10 @@
         "confidence_notes": [
           "verdict validasi FIX -> basis 0.35",
           "PF OOS 2.32 -> +0.20",
-          "ADX 26 > 25 tren kuat -> +0.05"
+          "ADX 35 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 26, RSI 37, close vs EMA20/50/200: -2.7%/-3.1%/-5.3%",
+          "regime DOWNTREND, ADX 35, RSI 31, close vs EMA20/50/200: -1.8%/-3.0%/-6.0%",
           "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
         ],
         "regime": "DOWNTREND",
@@ -57,15 +57,15 @@
         "market": "crypto_spot",
         "timeframe": "4h",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 20:00:00+00:00",
+        "as_of": "2026-11-08 20:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 2238.01,
+        "entry_ref": 2127.66,
         "entry_zone": [
-          2226.129244,
-          2249.890756
+          2118.760512,
+          2136.559488
         ],
-        "stop": 2182.5484888403525,
-        "target": 2321.2022667394717,
+        "stop": 2036.7510236310402,
+        "target": 2264.023464553439,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -74,10 +74,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.64 -> +0.00",
-          "ADX 26 > 25 tren kuat -> +0.05"
+          "ADX 31 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 26, RSI 39, close vs EMA20/50/200: -3.5%/-3.2%/-6.6%",
+          "regime DOWNTREND, ADX 31, RSI 23, close vs EMA20/50/200: -5.1%/-6.3%/-10.2%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -99,15 +99,15 @@
         "market": "crypto_spot",
         "timeframe": "4h",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 20:00:00+00:00",
+        "as_of": "2026-11-08 20:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 89.35,
+        "entry_ref": 86.53,
         "entry_zone": [
-          88.783368,
-          89.916632
+          86.147518,
+          86.912482
         ],
-        "stop": 87.16673593285334,
-        "target": 95.89979220143995,
+        "stop": 84.2350364649078,
+        "target": 93.41489060527663,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -119,7 +119,7 @@
           "ADX 28 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 28, RSI 36, close vs EMA20/50/200: -4.4%/-6.3%/-12.4%",
+          "regime DOWNTREND, ADX 28, RSI 27, close vs EMA20/50/200: -3.9%/-6.3%/-13.5%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -141,15 +141,15 @@
         "market": "crypto_spot",
         "timeframe": "4h",
         "strategy": "donchian_breakout",
-        "as_of": "2026-11-05 20:00:00+00:00",
+        "as_of": "2026-11-08 20:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 689.95,
+        "entry_ref": 684.997,
         "entry_zone": [
-          687.315412,
-          692.584588
+          683.25331,
+          686.74069
         ],
-        "stop": 680.87,
-        "target": 708.1100000000001,
+        "stop": 683.92,
+        "target": 687.151,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -160,7 +160,7 @@
           "PF OOS 2.95 -> +0.20"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 25, RSI 41, close vs EMA20/50/200: -2.0%/-2.9%/-5.4%",
+          "regime DOWNTREND, ADX 19, RSI 36, close vs EMA20/50/200: -1.7%/-2.5%/-5.3%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -188,15 +188,15 @@
         "market": "crypto_spot",
         "timeframe": "1d",
         "strategy": "bollinger_reversion",
-        "as_of": "2026-11-05 00:00:00+00:00",
+        "as_of": "2026-11-08 00:00:00+00:00",
         "action": "NO_TRADE",
-        "entry_ref": 76087.9,
+        "entry_ref": 74842.5,
         "entry_zone": [
-          75479.332304,
-          76696.467696
+          74272.812362,
+          75412.187638
         ],
-        "stop": 71219.35842932324,
-        "target": 90693.52471203027,
+        "stop": 70284.9988954895,
+        "target": 88515.00331353153,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -207,7 +207,7 @@
           "PF OOS 2.32 -> +0.20"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 21, RSI 39, close vs EMA20/50/200: -4.4%/-4.9%/-0.6%",
+          "regime SIDEWAYS, ADX 20, RSI 36, close vs EMA20/50/200: -4.7%/-5.8%/-2.2%",
           "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
         ],
         "regime": "SIDEWAYS",
@@ -237,27 +237,26 @@
         "market": "crypto_spot",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 00:00:00+00:00",
+        "as_of": "2026-11-08 00:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 2238.01,
+        "entry_ref": 2127.66,
         "entry_zone": [
-          2212.725388,
-          2263.294612
+          2102.856497,
+          2152.463503
         ],
-        "stop": 2155.740775466981,
-        "target": 2361.413836799529,
+        "stop": 2004.9429933312529,
+        "target": 2311.7355100031205,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.05,
+        "confidence": 0.0,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.64 -> +0.00",
-          "ADX 27 > 25 tren kuat -> +0.05"
+          "PF OOS 0.64 -> +0.00"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 27, RSI 39, close vs EMA20/50/200: -4.6%/-6.9%/-3.4%",
+          "regime SIDEWAYS, ADX 24, RSI 33, close vs EMA20/50/200: -7.8%/-10.6%/-8.0%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "SIDEWAYS",
@@ -287,15 +286,15 @@
         "market": "crypto_spot",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 00:00:00+00:00",
+        "as_of": "2026-11-08 00:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 89.35,
+        "entry_ref": 86.53,
         "entry_zone": [
-          88.146734,
-          90.553266
+          85.404864,
+          87.655136
         ],
-        "stop": 85.89346786567354,
-        "target": 99.71959640297935,
+        "stop": 82.74972809799009,
+        "target": 97.87081570602975,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -304,10 +303,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 1.65 -> +0.12",
-          "ADX 34 > 25 tren kuat -> +0.05"
+          "ADX 35 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 34, RSI 29, close vs EMA20/50/200: -9.6%/-12.8%/-8.8%",
+          "regime SIDEWAYS, ADX 35, RSI 27, close vs EMA20/50/200: -10.1%/-14.2%/-11.5%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "SIDEWAYS",
@@ -337,15 +336,15 @@
         "market": "crypto_spot",
         "timeframe": "1d",
         "strategy": "donchian_breakout",
-        "as_of": "2026-11-05 00:00:00+00:00",
+        "as_of": "2026-11-08 00:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 689.95,
+        "entry_ref": 684.997,
         "entry_zone": [
-          683.674976,
-          696.225024
+          679.285197,
+          690.708803
         ],
         "stop": 679.584,
-        "target": 710.6820000000002,
+        "target": 695.823,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -356,7 +355,7 @@
           "PF OOS 2.95 -> +0.20"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 24, RSI 39, close vs EMA20/50/200: -4.3%/-5.1%/-0.4%",
+          "regime SIDEWAYS, ADX 24, RSI 38, close vs EMA20/50/200: -4.0%/-5.2%/-1.2%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "SIDEWAYS",
@@ -380,27 +379,26 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 5125.0,
+        "entry_ref": 5200.0,
         "entry_zone": [
-          5071.988063,
-          5178.011937
+          5147.02463,
+          5252.97537
         ],
-        "stop": 4713.976125460849,
-        "target": 5741.535811808726,
+        "stop": 4714.049259356503,
+        "target": 5928.926110965245,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.05,
+        "confidence": 0.0,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.69 -> +0.00",
-          "ADX 26 > 25 tren kuat -> +0.05"
+          "PF OOS 0.69 -> +0.00"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 26, RSI 43, close vs EMA20/50/200: -2.7%/-9.9%/-20.7%",
+          "regime DOWNTREND, ADX 24, RSI 45, close vs EMA20/50/200: -1.2%/-8.3%/-19.4%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -422,15 +420,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 2710.0,
+        "entry_ref": 2810.0,
         "entry_zone": [
-          2680.075288,
-          2739.924712
+          2779.712767,
+          2840.287233
         ],
-        "stop": 2590.1505760091145,
-        "target": 2949.698847981771,
+        "stop": 2589.4255348656066,
+        "target": 3251.148930268787,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -442,7 +440,7 @@
           "ADX 26 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 26, RSI 37, close vs EMA20/50/200: -5.3%/-9.2%/-16.1%",
+          "regime DOWNTREND, ADX 26, RSI 45, close vs EMA20/50/200: -1.6%/-5.7%/-12.9%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -464,15 +462,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 3610.0,
+        "entry_ref": 3700.0,
         "entry_zone": [
-          3577.859663,
-          3642.140337
+          3667.833973,
+          3732.166027
         ],
-        "stop": 3485.7193264971643,
-        "target": 3796.421010254254,
+        "stop": 3485.667946033081,
+        "target": 4021.4980809503786,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -484,7 +482,7 @@
           "ADX 28 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 28, RSI 37, close vs EMA20/50/200: -4.5%/-8.6%/-16.3%",
+          "regime DOWNTREND, ADX 28, RSI 43, close vs EMA20/50/200: -1.9%/-6.1%/-14.1%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -506,15 +504,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 3320.0,
+        "entry_ref": 3400.0,
         "entry_zone": [
-          3286.66641,
-          3353.33359
+          3366.54738,
+          3433.45262
         ],
-        "stop": 3093.332819199962,
-        "target": 3773.3343616000757,
+        "stop": 3093.094760685679,
+        "target": 4013.810478628642,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -525,7 +523,7 @@
           "PF OOS 1.04 -> +0.00"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 20, RSI 48, close vs EMA20/50/200: +0.0%/-3.2%/-10.8%",
+          "regime DOWNTREND, ADX 19, RSI 52, close vs EMA20/50/200: +2.2%/-0.8%/-8.6%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -547,15 +545,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 1990.0,
+        "entry_ref": 1980.0,
         "entry_zone": [
-          1963.693947,
-          2016.306053
+          1954.144379,
+          2005.855621
         ],
-        "stop": 1792.38789304174,
-        "target": 2286.41816043739,
+        "stop": 1793.288757824473,
+        "target": 2260.0668632632905,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -564,10 +562,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.49 -> +0.00",
-          "ADX 30 > 25 tren kuat -> +0.05"
+          "ADX 29 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 30, RSI 41, close vs EMA20/50/200: -4.6%/-12.2%/-25.7%",
+          "regime DOWNTREND, ADX 29, RSI 41, close vs EMA20/50/200: -4.6%/-12.2%/-25.9%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -589,15 +587,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 6125.0,
+        "entry_ref": 6325.0,
         "entry_zone": [
-          6060.923429,
-          6189.076571
+          6256.571756,
+          6393.428244
         ],
-        "stop": 5271.846858953819,
-        "target": 7404.729711569272,
+        "stop": 5363.143511885689,
+        "target": 7767.784732171467,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -606,10 +604,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.00 -> +0.00",
-          "ADX 41 > 25 tren kuat -> +0.05"
+          "ADX 39 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 41, RSI 48, close vs EMA20/50/200: +0.8%/-5.6%/-15.7%",
+          "regime DOWNTREND, ADX 39, RSI 53, close vs EMA20/50/200: +3.6%/-2.4%/-12.8%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -631,27 +629,26 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "NO_TRADE",
-        "entry_ref": 1415.0,
+        "entry_ref": 1430.0,
         "entry_zone": [
-          1397.260955,
-          1432.739045
+          1412.635172,
+          1447.364828
         ],
-        "stop": 1224.5219097115644,
-        "target": 1795.9561805768712,
+        "stop": 1265.270344732167,
+        "target": 1759.4593105356662,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
         "risk_amount": 0.0,
-        "confidence": 0.05,
+        "confidence": 0.0,
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
-          "PF OOS 0.48 -> +0.00",
-          "ADX 25 > 25 tren kuat -> +0.05"
+          "PF OOS 0.48 -> +0.00"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 25, RSI 55, close vs EMA20/50/200: +5.0%/+1.0%/-11.0%",
+          "regime DOWNTREND, ADX 24, RSI 56, close vs EMA20/50/200: +5.5%/+2.0%/-9.9%",
           "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
         ],
         "regime": "DOWNTREND",
@@ -673,15 +670,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 10250.0,
+        "entry_ref": 10150.0,
         "entry_zone": [
-          10107.520328,
-          10392.479672
+          10013.679591,
+          10286.320409
         ],
-        "stop": 9890.040656490826,
-        "target": 10969.918687018348,
+        "stop": 9752.359181027196,
+        "target": 10945.281637945609,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -692,7 +689,7 @@
           "PF OOS 0.00 -> +0.00"
         ],
         "reasons": [
-          "regime UPTREND, ADX 18, RSI 39, close vs EMA20/50/200: -7.3%/-6.6%/+5.1%",
+          "regime UPTREND, ADX 18, RSI 38, close vs EMA20/50/200: -7.5%/-7.2%/+4.1%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "UPTREND",
@@ -714,15 +711,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 1310.0,
+        "entry_ref": 1370.0,
         "entry_zone": [
-          1295.04862,
-          1324.95138
+          1354.420147,
+          1385.579853
         ],
-        "stop": 1250.0972399674029,
-        "target": 1399.8541400488957,
+        "stop": 1243.8402942554455,
+        "target": 1559.2395586168318,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -733,10 +730,10 @@
           "PF OOS 1.03 -> +0.00"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 16, RSI 42, close vs EMA20/50/200: -4.2%/-6.2%/-4.1%",
+          "regime UPTREND, ADX 16, RSI 49, close vs EMA20/50/200: +0.1%/-1.8%/+0.3%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
-        "regime": "SIDEWAYS",
+        "regime": "UPTREND",
         "validation_verdict": "SCRAP",
         "data_warnings": []
       }
@@ -755,15 +752,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 3660.0,
+        "entry_ref": 3620.0,
         "entry_zone": [
-          3591.805153,
-          3728.194847
+          3553.283356,
+          3686.716644
         ],
-        "stop": 3053.6103052058684,
-        "target": 4872.779389588263,
+        "stop": 3056.5667119768777,
+        "target": 4746.8665760462445,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -772,10 +769,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.00 -> +0.00",
-          "ATR 7.5% sangat tinggi -> -0.10"
+          "ATR 7.4% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 25, RSI 42, close vs EMA20/50/200: -5.1%/-10.9%/-24.7%",
+          "regime DOWNTREND, ADX 25, RSI 42, close vs EMA20/50/200: -5.6%/-11.4%/-25.3%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -797,15 +794,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "NO_TRADE",
-        "entry_ref": 4930.0,
+        "entry_ref": 5000.0,
         "entry_zone": [
-          4880.905128,
-          4979.094872
+          4951.733333,
+          5048.266667
         ],
-        "stop": 4491.810255523423,
-        "target": 5587.2846167148655,
+        "stop": 4493.466665843178,
+        "target": 5759.800001235233,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -816,7 +813,7 @@
           "PF OOS 1.77 -> +0.15"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 15, RSI 57, close vs EMA20/50/200: +4.2%/+3.6%/-5.1%",
+          "regime DOWNTREND, ADX 15, RSI 59, close vs EMA20/50/200: +5.1%/+4.8%/-3.8%",
           "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
         ],
         "regime": "DOWNTREND",
@@ -838,15 +835,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 2180.0,
+        "entry_ref": 2110.0,
         "entry_zone": [
-          2126.42727,
-          2233.57273
+          2057.932465,
+          2162.067535
         ],
-        "stop": 1562.8545391048262,
-        "target": 3414.2909217903475,
+        "stop": 1565.8649291687673,
+        "target": 3198.2701416624654,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -855,11 +852,11 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.00 -> +0.00",
-          "ADX 29 > 25 tren kuat -> +0.05",
-          "ATR 9.8% sangat tinggi -> -0.10"
+          "ADX 27 > 25 tren kuat -> +0.05",
+          "ATR 9.9% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 29, RSI 44, close vs EMA20/50/200: -3.1%/-17.2%/-50.0%",
+          "regime DOWNTREND, ADX 27, RSI 42, close vs EMA20/50/200: -5.7%/-19.2%/-51.4%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -878,11 +875,11 @@
         {
           "check": "history",
           "sev": "BLOCK",
-          "detail": "hanya 271 bar (< 400)"
+          "detail": "hanya 272 bar (< 400)"
         }
       ],
       "status": "DATA_BLOCKED",
-      "note": "history: hanya 271 bar (< 400)"
+      "note": "history: hanya 272 bar (< 400)"
     },
     {
       "key": "idx__ENRG__1d",
@@ -904,15 +901,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 565.0,
+        "entry_ref": 555.0,
         "entry_zone": [
-          548.34501,
-          581.65499
+          538.820367,
+          571.179633
         ],
-        "stop": 511.6900203863004,
-        "target": 724.9299388410989,
+        "stop": 497.6407332158504,
+        "target": 727.0778003524488,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -921,11 +918,11 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.83 -> +0.00",
-          "ADX 43 > 25 tren kuat -> +0.05",
-          "ATR 11.8% sangat tinggi -> -0.10"
+          "ADX 44 > 25 tren kuat -> +0.05",
+          "ATR 11.7% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 43, RSI 23, close vs EMA20/50/200: -26.8%/-41.8%/-51.7%",
+          "regime DOWNTREND, ADX 44, RSI 22, close vs EMA20/50/200: -26.1%/-41.9%/-52.4%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -949,15 +946,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 496.0,
+        "entry_ref": 488.0,
         "entry_zone": [
-          488.959329,
-          503.040671
+          481.247948,
+          494.752052
         ],
-        "stop": 469.91865714986017,
-        "target": 574.2440285504194,
+        "stop": 470.4958959248701,
+        "target": 540.5123122253897,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -968,7 +965,7 @@
           "PF OOS 0.15 -> +0.00"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 21, RSI 39, close vs EMA20/50/200: -5.6%/-12.2%/-21.2%",
+          "regime DOWNTREND, ADX 21, RSI 37, close vs EMA20/50/200: -6.5%/-13.1%/-22.3%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -990,15 +987,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 1665.0,
+        "entry_ref": 1550.0,
         "entry_zone": [
-          1644.803471,
-          1685.196529
+          1529.192509,
+          1570.807491
         ],
-        "stop": 1574.6069417467247,
-        "target": 1800.589587379913,
+        "stop": 1508.3850173362443,
+        "target": 1612.4224739956335,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1007,10 +1004,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.77 -> +0.00",
-          "ADX 42 > 25 tren kuat -> +0.05"
+          "ADX 43 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 42, RSI 34, close vs EMA20/50/200: -7.6%/-14.9%/-22.5%",
+          "regime DOWNTREND, ADX 43, RSI 28, close vs EMA20/50/200: -12.8%/-20.1%/-27.7%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1032,15 +1029,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "donchian_breakout",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 2160.0,
+        "entry_ref": 2010.0,
         "entry_zone": [
-          2093.709342,
-          2226.290658
+          1945.765818,
+          2074.234182
         ],
-        "stop": 1629.6747395397192,
-        "target": 3750.9757813808424,
+        "stop": 1496.1265438583105,
+        "target": 3551.6203684250686,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1050,10 +1047,10 @@
           "verdict validasi FIX -> basis 0.35",
           "PF OOS 3.79 -> +0.20",
           "ADX 50 > 25 tren kuat -> +0.05",
-          "ATR 12.3% sangat tinggi -> -0.10"
+          "ATR 12.8% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 50, RSI 18, close vs EMA20/50/200: -30.4%/-45.0%/-56.1%",
+          "regime DOWNTREND, ADX 50, RSI 17, close vs EMA20/50/200: -33.0%/-47.9%/-58.9%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1075,15 +1072,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 1270.0,
+        "entry_ref": 1275.0,
         "entry_zone": [
-          1250.585071,
-          1289.414929
+          1255.811137,
+          1294.188863
         ],
-        "stop": 1111.1701414474132,
-        "target": 1587.6597171051735,
+        "stop": 1111.6222742011694,
+        "target": 1601.7554515976612,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1092,13 +1089,13 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.53 -> +0.00",
-          "ATR 6.1% sangat tinggi -> -0.10"
+          "ATR 6.0% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 24, RSI 42, close vs EMA20/50/200: -4.4%/-9.2%/-9.2%",
+          "regime DOWNTREND, ADX 24, RSI 43, close vs EMA20/50/200: -3.7%/-8.5%/-8.7%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
-        "regime": "SIDEWAYS",
+        "regime": "DOWNTREND",
         "validation_verdict": "SCRAP",
         "data_warnings": []
       }
@@ -1117,15 +1114,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
-        "action": "AVOID_OR_EXIT",
-        "entry_ref": 6725.0,
+        "as_of": "2026-11-06 09:00:00+00:00",
+        "action": "NO_TRADE",
+        "entry_ref": 6875.0,
         "entry_zone": [
-          6669.722883,
-          6780.277117
+          6818.314106,
+          6931.685894
         ],
-        "stop": 6089.4457659138825,
-        "target": 7996.108468172235,
+        "stop": 6211.628211205749,
+        "target": 8201.743577588502,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1134,11 +1131,11 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 1.38 -> +0.05",
-          "ADX 29 > 25 tren kuat -> +0.05"
+          "ADX 27 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 29, RSI 51, close vs EMA20/50/200: +1.2%/-1.2%/-2.7%",
-          "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
+          "regime DOWNTREND, ADX 27, RSI 56, close vs EMA20/50/200: +3.1%/+1.0%/-0.5%",
+          "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
         ],
         "regime": "DOWNTREND",
         "validation_verdict": "SCRAP",
@@ -1165,15 +1162,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 118.0,
+        "entry_ref": 115.0,
         "entry_zone": [
-          115.393785,
-          120.606215
+          112.472801,
+          117.527199
         ],
-        "stop": 106.7875708731064,
-        "target": 134.8186436903404,
+        "stop": 106.94560152502737,
+        "target": 127.08159771245894,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1182,11 +1179,11 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.32 -> +0.00",
-          "ADX 31 > 25 tren kuat -> +0.05",
+          "ADX 30 > 25 tren kuat -> +0.05",
           "ATR 8.8% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 31, RSI 31, close vs EMA20/50/200: -13.9%/-25.1%/-35.7%",
+          "regime DOWNTREND, ADX 30, RSI 30, close vs EMA20/50/200: -14.8%/-26.2%/-37.1%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1210,15 +1207,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 2720.0,
+        "entry_ref": 2690.0,
         "entry_zone": [
-          2679.971752,
-          2760.028248
+          2651.045198,
+          2728.954802
         ],
-        "stop": 2249.9435040778576,
-        "target": 3425.0847438832134,
+        "stop": 2252.090396643725,
+        "target": 3346.864405034413,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1230,7 +1227,7 @@
           "ADX 28 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 28, RSI 46, close vs EMA20/50/200: -1.7%/-7.1%/-12.8%",
+          "regime DOWNTREND, ADX 28, RSI 45, close vs EMA20/50/200: -2.5%/-7.8%/-13.7%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1249,11 +1246,11 @@
         {
           "check": "history",
           "sev": "BLOCK",
-          "detail": "hanya 323 bar (< 400)"
+          "detail": "hanya 324 bar (< 400)"
         }
       ],
       "status": "DATA_BLOCKED",
-      "note": "history: hanya 323 bar (< 400)"
+      "note": "history: hanya 324 bar (< 400)"
     },
     {
       "key": "idx__DSSA__1d",
@@ -1266,7 +1263,7 @@
         {
           "check": "stale_bars",
           "sev": "BLOCK",
-          "detail": "761 bar (39.1%) volume 0 & datar"
+          "detail": "760 bar (39.1%) volume 0 & datar"
         },
         {
           "check": "volume.spikes",
@@ -1275,7 +1272,7 @@
         }
       ],
       "status": "DATA_BLOCKED",
-      "note": "stale_bars: 761 bar (39.1%) volume 0 & datar"
+      "note": "stale_bars: 760 bar (39.1%) volume 0 & datar"
     },
     {
       "key": "idx__TPIA__1d",
@@ -1291,15 +1288,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 1285.0,
+        "entry_ref": 1245.0,
         "entry_zone": [
-          1255.645906,
-          1314.354094
+          1216.492627,
+          1273.507373
         ],
-        "stop": 1116.2918112776438,
-        "target": 1791.1245661670687,
+        "stop": 1117.9852533292408,
+        "target": 1626.0442400122777,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1308,10 +1305,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 2.69 -> +0.20",
-          "ATR 9.1% sangat tinggi -> -0.10"
+          "ATR 9.2% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 20, RSI 39, close vs EMA20/50/200: -7.7%/-20.5%/-61.3%",
+          "regime DOWNTREND, ADX 20, RSI 37, close vs EMA20/50/200: -9.6%/-22.3%/-62.2%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1333,15 +1330,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 133.0,
+        "entry_ref": 136.0,
         "entry_zone": [
-          130.883528,
-          135.116472
+          133.909705,
+          138.090295
         ],
-        "stop": 116.76705645610363,
-        "target": 157.34941531584457,
+        "stop": 121.81940956638194,
+        "target": 157.2708856504271,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1351,10 +1348,10 @@
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 3.86 -> +0.20",
           "ADX 38 > 25 tren kuat -> +0.05",
-          "ATR 6.4% sangat tinggi -> -0.10"
+          "ATR 6.1% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 38, RSI 34, close vs EMA20/50/200: -10.0%/-20.6%/-38.3%",
+          "regime DOWNTREND, ADX 38, RSI 37, close vs EMA20/50/200: -7.3%/-18.2%/-36.7%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1376,15 +1373,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "NO_TRADE",
-        "entry_ref": 760.0,
+        "entry_ref": 755.0,
         "entry_zone": [
-          752.483817,
-          767.516183
+          747.484973,
+          762.515027
         ],
-        "stop": 694.9676344746946,
-        "target": 857.548548287958,
+        "stop": 694.9699462979307,
+        "target": 845.0450805531038,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1395,7 +1392,7 @@
           "PF OOS 1.84 -> +0.16"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 15, RSI 56, close vs EMA20/50/200: +4.1%/+2.4%/-12.4%",
+          "regime DOWNTREND, ADX 15, RSI 55, close vs EMA20/50/200: +3.1%/+1.7%/-12.8%",
           "tidak ada setup: syarat entry strategi tidak terpenuhi di bar terakhir"
         ],
         "regime": "DOWNTREND",
@@ -1417,15 +1414,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 1455.0,
+        "entry_ref": 1515.0,
         "entry_zone": [
-          1442.634804,
-          1467.365196
+          1501.821603,
+          1528.178397
         ],
-        "stop": 1340.269607284604,
-        "target": 1627.0955890730938,
+        "stop": 1338.6432067642752,
+        "target": 1779.5351898535873,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1434,10 +1431,10 @@
         "confidence_notes": [
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.00 -> +0.00",
-          "ADX 36 > 25 tren kuat -> +0.05"
+          "ADX 34 > 25 tren kuat -> +0.05"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 36, RSI 47, close vs EMA20/50/200: +0.6%/-5.4%/-17.0%",
+          "regime DOWNTREND, ADX 34, RSI 55, close vs EMA20/50/200: +4.2%/-1.5%/-13.5%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1459,15 +1456,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 72.0,
+        "entry_ref": 71.0,
         "entry_zone": [
-          70.254535,
-          73.745465
+          69.289926,
+          72.710074
         ],
-        "stop": 65.50907051778871,
-        "target": 81.73639422331692,
+        "stop": 63.57985119508952,
+        "target": 82.13022320736573,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1477,10 +1474,10 @@
           "verdict validasi SCRAP -> basis 0.00",
           "PF OOS 0.00 -> +0.00",
           "ADX 58 > 25 tren kuat -> +0.05",
-          "ATR 9.7% sangat tinggi -> -0.10"
+          "ATR 9.6% sangat tinggi -> -0.10"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 58, RSI 21, close vs EMA20/50/200: -22.8%/-43.2%/-62.4%",
+          "regime DOWNTREND, ADX 58, RSI 21, close vs EMA20/50/200: -22.1%/-43.0%/-62.7%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1502,15 +1499,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 23500.0,
+        "entry_ref": 23025.0,
         "entry_zone": [
-          23260.098106,
-          23739.901894
+          22787.948242,
+          23262.051758
         ],
-        "stop": 22195.196212940056,
-        "target": 26109.607574119887,
+        "stop": 22200.896483444336,
+        "target": 24673.20703311133,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1521,7 +1518,7 @@
           "PF OOS 1.94 -> +0.19"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 18, RSI 44, close vs EMA20/50/200: -3.5%/-4.6%/-8.1%",
+          "regime DOWNTREND, ADX 18, RSI 41, close vs EMA20/50/200: -4.9%/-6.3%/-9.9%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1549,15 +1546,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 360.0,
+        "entry_ref": 358.0,
         "entry_zone": [
-          347.990975,
-          372.009025
+          346.420191,
+          369.579809
         ],
-        "stop": 315.9819503653095,
-        "target": 448.036099269381,
+        "stop": 312.8403824820731,
+        "target": 448.3192350358538,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1567,7 +1564,7 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 48, RSI 18, close vs EMA20/50/200: -28.9%/-44.5%/-62.9%",
+          "regime DOWNTREND, ADX 50, RSI 18, close vs EMA20/50/200: -27.3%/-43.8%/-62.8%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1588,7 +1585,7 @@
         {
           "check": "stale_bars",
           "sev": "WARN",
-          "detail": "24 bar (3.1%) volume 0 & datar"
+          "detail": "24 bar (3.0%) volume 0 & datar"
         },
         {
           "check": "outlier.return",
@@ -1624,15 +1621,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 25.0,
+        "entry_ref": 26.0,
         "entry_zone": [
-          24.232409,
-          25.767591
+          25.251522,
+          26.748478
         ],
-        "stop": 21.464817260210907,
-        "target": 32.070365479578186,
+        "stop": 21.503044598767268,
+        "target": 34.993910802465464,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1642,7 +1639,7 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 32, RSI 26, close vs EMA20/50/200: -20.7%/-44.3%/-71.1%",
+          "regime DOWNTREND, ADX 32, RSI 29, close vs EMA20/50/200: -16.1%/-41.1%/-69.8%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1677,15 +1674,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 79.0,
+        "entry_ref": 76.0,
         "entry_zone": [
-          74.103771,
-          83.896229
+          71.310644,
+          80.689356
         ],
-        "stop": 68.20754135432695,
-        "target": 100.5849172913461,
+        "stop": 62.62128840044646,
+        "target": 102.75742319910708,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1695,7 +1692,7 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 41, RSI 25, close vs EMA20/50/200: -39.0%/-66.0%/-85.9%",
+          "regime DOWNTREND, ADX 42, RSI 24, close vs EMA20/50/200: -38.9%/-66.4%/-86.4%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1726,15 +1723,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 222.0,
+        "entry_ref": 218.0,
         "entry_zone": [
-          216.068662,
-          227.931338
+          212.242329,
+          223.757671
         ],
-        "stop": 204.13732389008686,
-        "target": 257.7253522198263,
+        "stop": 196.4846578979378,
+        "target": 261.0306842041244,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1744,7 +1741,7 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 42, RSI 31, close vs EMA20/50/200: -19.0%/-31.7%/-38.5%",
+          "regime DOWNTREND, ADX 42, RSI 31, close vs EMA20/50/200: -18.8%/-32.0%/-39.3%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
@@ -1765,7 +1762,7 @@
         {
           "check": "stale_bars",
           "sev": "BLOCK",
-          "detail": "1074 bar (55.2%) volume 0 & datar"
+          "detail": "1071 bar (55.1%) volume 0 & datar"
         },
         {
           "check": "outlier.return",
@@ -1784,7 +1781,7 @@
         }
       ],
       "status": "DATA_BLOCKED",
-      "note": "stale_bars: 1074 bar (55.2%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36%"
+      "note": "stale_bars: 1071 bar (55.1%) volume 0 & datar; outlier.return: 2 bar |return| > 36% (terakhir 2026-05-18); outlier.gap_open: 2 open gap > 36%"
     },
     {
       "key": "idx__COCO__1d",
@@ -1834,7 +1831,7 @@
         {
           "check": "volume.spikes",
           "sev": "WARN",
-          "detail": "173 bar volume > 20x median"
+          "detail": "172 bar volume > 20x median"
         }
       ],
       "status": "OK",
@@ -1843,15 +1840,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 230.0,
+        "entry_ref": 224.0,
         "entry_zone": [
-          224.312682,
-          235.687318
+          218.433205,
+          229.566795
         ],
-        "stop": 194.62536465325837,
-        "target": 300.74927069348325,
+        "stop": 194.86641003516849,
+        "target": 282.26717992966303,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1861,14 +1858,14 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 38, RSI 34, close vs EMA20/50/200: -12.5%/-27.5%/-39.3%",
+          "regime DOWNTREND, ADX 37, RSI 33, close vs EMA20/50/200: -13.6%/-28.6%/-40.6%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
         "validation_verdict": "NONE",
         "data_warnings": [
           "stale_bars: 91 bar (4.7%) volume 0 & datar",
-          "volume.spikes: 173 bar volume > 20x median"
+          "volume.spikes: 172 bar volume > 20x median"
         ]
       }
     },
@@ -1892,15 +1889,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 100.0,
+        "entry_ref": 101.0,
         "entry_zone": [
-          97.826051,
-          102.173949
+          98.927762,
+          103.072238
         ],
-        "stop": 90.65210171569143,
-        "target": 118.69579656861714,
+        "stop": 90.85552302171348,
+        "target": 121.28895395657304,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1910,7 +1907,7 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime SIDEWAYS, ADX 21, RSI 41, close vs EMA20/50/200: -6.0%/-11.4%/-10.8%",
+          "regime SIDEWAYS, ADX 20, RSI 42, close vs EMA20/50/200: -4.6%/-10.1%/-9.9%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "SIDEWAYS",
@@ -1940,15 +1937,15 @@
         "market": "idx",
         "timeframe": "1d",
         "strategy": "trend_pullback",
-        "as_of": "2026-11-05 09:00:00+00:00",
+        "as_of": "2026-11-06 09:00:00+00:00",
         "action": "AVOID_OR_EXIT",
-        "entry_ref": 108.0,
+        "entry_ref": 106.0,
         "entry_zone": [
-          105.417112,
-          110.582888
+          103.512319,
+          108.487681
         ],
-        "stop": 96.83422480096065,
-        "target": 130.3315503980787,
+        "stop": 97.02463731517776,
+        "target": 123.95072536964449,
         "rr": 0.0,
         "qty": 0.0,
         "position_value": 0.0,
@@ -1958,7 +1955,7 @@
           "belum ada validasi walk-forward untuk simbol+strategi ini -> jalankan `validate` dulu"
         ],
         "reasons": [
-          "regime DOWNTREND, ADX 44, RSI 34, close vs EMA20/50/200: -13.3%/-24.0%/-33.2%",
+          "regime DOWNTREND, ADX 45, RSI 33, close vs EMA20/50/200: -13.7%/-24.7%/-34.2%",
           "close < EMA50: tren patah. Bila pegang posisi -> exit di open berikutnya; bila tidak -> jangan beli"
         ],
         "regime": "DOWNTREND",
